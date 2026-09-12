@@ -7,7 +7,7 @@ export function StaticPage({ path }: { path: string }) {
   if (!page) notFound();
   return (
     <div>
-      <PageHero kicker={page.kicker} title={page.title} intro={page.intro} />
+      <PageHero kicker={page.kicker} title={page.title} intro={page.intro} image={page.image} />
       <ContentBody sections={page.sections} />
     </div>
   );

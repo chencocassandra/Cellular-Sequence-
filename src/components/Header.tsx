@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { BrandLogo } from "@/components/BrandLogo";
 import { PeptideSearch } from "@/components/PeptideSearch";
 import { primaryNav } from "@/lib/navigation";
 
@@ -15,32 +16,44 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-ivory/95 backdrop-blur">
       <p className="bg-ink px-4 py-2 text-center text-[11px] tracking-[0.12em] text-paper uppercase">
-        Educational encyclopaedia + lawful consumer products — research-only peptides are never sold
+        Research-only peptides are never sold — purchase products stay in the shop
       </p>
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 lg:px-6">
-        <Link href="/" className="shrink-0 leading-tight">
-          <span className="block font-serif text-xl tracking-tight md:text-2xl">
-            Longevity Protocol
-          </span>
-          <span className="hidden text-[10px] uppercase tracking-[0.22em] text-ink-soft sm:block">
-            Science. Skin. Restraint.
-          </span>
+        <Link href="/" className="shrink-0" aria-label="Longevity Protocol home">
+          <BrandLogo showTagline={false} />
         </Link>
 
         <nav className="hidden items-center lg:flex" aria-label="Primary">
           {primaryNav.map((item) => {
+            const hasMenu = item.groups.some((g) => g.links.length > 0);
+            const research = item.label === "Research Peptides";
             const active =
-              pathname === item.href || pathname.startsWith(`${item.href}/`);
+              item.label === "Shop"
+                ? pathname === "/shop" || pathname.startsWith("/shop/")
+                : item.href === "/shop"
+                  ? pathname === "/shop"
+                  : item.href === "/peptides"
+                    ? pathname === "/peptides" ||
+                      pathname.startsWith("/peptides/a-z") ||
+                      pathname.startsWith("/peptides/area")
+                    : pathname === item.href || pathname.startsWith(`${item.href}/`);
             return (
-              <div key={item.href} className="group relative">
+              <div key={`${item.label}-${item.href}`} className="group relative">
                 <Link
                   href={item.href}
                   className={`inline-flex items-center px-1.5 py-2 text-[10px] font-medium uppercase tracking-[0.14em] xl:px-2.5 xl:text-[11px] xl:tracking-[0.16em] ${
-                    active ? "text-bronze-deep" : "text-ink hover:text-bronze-deep"
+                    active
+                      ? research
+                        ? "text-danger"
+                        : "text-bronze-deep"
+                      : research
+                        ? "text-danger/80 hover:text-danger"
+                        : "text-ink hover:text-bronze-deep"
                   }`}
                 >
                   {item.label}
                 </Link>
+                {hasMenu ? (
                 <div className="invisible absolute left-1/2 top-full z-40 w-[min(90vw,720px)] -translate-x-1/2 pt-2 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                   <div className="border border-line bg-paper p-6 shadow-[0_24px_60px_rgba(28,25,21,0.12)]">
                     {item.description ? (
@@ -75,6 +88,7 @@ export function Header() {
                     </div>
                   </div>
                 </div>
+                ) : null}
               </div>
             );
           })}
@@ -116,15 +130,18 @@ export function Header() {
       {open ? (
         <div className="max-h-[80vh] overflow-y-auto border-t border-line bg-paper lg:hidden">
           {primaryNav.map((item) => (
-            <div key={item.href} className="border-b border-line">
+            <div key={`${item.label}-${item.href}`} className="border-b border-line">
               <div className="flex items-center justify-between">
                 <Link
                   href={item.href}
-                  className="px-4 py-3 text-sm uppercase tracking-[0.14em]"
+                  className={`px-4 py-3 text-sm uppercase tracking-[0.14em] ${
+                    item.label === "Research Peptides" ? "text-danger" : ""
+                  }`}
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
                 </Link>
+                {item.groups.some((g) => g.links.length > 0) ? (
                 <button
                   type="button"
                   className="px-4 py-3 text-xs text-ink-soft"
@@ -134,6 +151,7 @@ export function Header() {
                 >
                   {mobileSection === item.href ? "Close" : "Open"}
                 </button>
+                ) : null}
               </div>
               {mobileSection === item.href
                 ? item.groups.flatMap((g) => g.links).map((link) => (

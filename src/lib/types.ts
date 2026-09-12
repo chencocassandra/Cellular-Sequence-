@@ -68,6 +68,53 @@ export type Peptide = {
   references: PeptideReference[];
 };
 
+export const OIL_TABLET_FORMS = ["oil", "tablet"] as const;
+export type OilTabletForm = (typeof OIL_TABLET_FORMS)[number];
+
+export const OIL_TABLET_FORM_LABELS: Record<OilTabletForm, string> = {
+  oil: "Oil / injectable",
+  tablet: "Tablet / capsule",
+};
+
+export const OIL_TABLET_CATEGORIES = [
+  "anabolic-steroid",
+  "sarm-secretagogue",
+  "endocrine-accessory",
+  "thyroid-stimulant",
+  "sexual-health",
+  "other-medicine",
+  "industrial-poison",
+] as const;
+
+export type OilTabletCategory = (typeof OIL_TABLET_CATEGORIES)[number];
+
+export const OIL_TABLET_CATEGORY_LABELS: Record<OilTabletCategory, string> = {
+  "anabolic-steroid": "Anabolic–androgenic steroids",
+  "sarm-secretagogue": "SARMs and related research agents",
+  "endocrine-accessory": "Anti-oestrogens and endocrine accessories",
+  "thyroid-stimulant": "Thyroid and stimulants",
+  "sexual-health": "Sexual-health medicines",
+  "other-medicine": "Other listed medicines",
+  "industrial-poison": "Industrial / metabolic poisons",
+};
+
+export type OilTabletEntry = {
+  slug: string;
+  name: string;
+  alternativeNames: string[];
+  forms: OilTabletForm[];
+  category: OilTabletCategory;
+  chemicalClass: string;
+  cataloguePresentations: string[];
+  whatItIs: string;
+  risks: string;
+  regulatoryStatus: string;
+  australianRegulatoryStatus: string;
+  badges: RegulatoryBadge[];
+  searchTerms: string[];
+  peptideHref?: string;
+};
+
 export type Product = {
   slug: string;
   name: string;
@@ -75,4 +122,8 @@ export type Product = {
   price: string;
   summary: string;
   badge?: string;
+  image: string;
+  labelName?: string;
+  labelDetail?: string;
+  labelFooter?: string;
 };

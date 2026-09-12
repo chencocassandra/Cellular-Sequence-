@@ -1,5 +1,6 @@
 import { CategoryNav, ProductGrid } from "@/components/ShopCatalog";
 import { PageHero } from "@/components/PageHero";
+import { shopPeptidesIntro } from "@/lib/navigation";
 import { products } from "@/lib/products";
 
 export const metadata = {
@@ -13,8 +14,8 @@ export default function ShopPage() {
     <div>
       <PageHero
         kicker="Shop"
-        title="Shop the protocol"
-        intro="Cosmetic peptide serums, facial needling systems, cooling, hygiene and permitted supplements. Research-only peptides are documented in the encyclopaedia and cannot be added to the cart."
+        title="Shop the Peptides"
+        intro={shopPeptidesIntro}
       />
       <CategoryNav />
       <ProductGrid items={products} />

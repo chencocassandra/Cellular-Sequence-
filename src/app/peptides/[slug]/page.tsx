@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { StatusBadge } from "@/components/StatusBadge";
-import { getPeptide, peptides } from "@/lib/peptides";
+import { getPeptide, peptideAvailability, peptides } from "@/lib/peptides";
 import { AREA_LABELS } from "@/lib/types";
 
 export function generateStaticParams() {
@@ -41,6 +41,13 @@ export default async function PeptideEntryPage({
   const { slug } = await params;
   const p = getPeptide(slug);
   if (!p) notFound();
+  const availability = peptideAvailability(p);
+  const box =
+    availability.tone === "shop"
+      ? "border-sage/30 bg-[#eef3ef] text-sage"
+      : availability.tone === "cosmetic"
+        ? "border-line bg-[#f4f1ea] text-ink-soft"
+        : "border-danger/30 bg-[#f6ece8] text-danger";
 
   return (
     <article>
@@ -60,26 +67,17 @@ export default async function PeptideEntryPage({
               Also known as {p.alternativeNames.join(", ")}.
             </p>
           ) : null}
-          {!p.availableToPurchase ? (
-            <p className="mt-6 border border-danger/30 bg-[#f6ece8] px-4 py-3 text-sm text-danger">
-              Research / medicine listing only. This compound is not available for
-              consumer purchase from Longevity Protocol and must not be confused with
-              shop products.
-            </p>
-          ) : (
-            <p className="mt-6 border border-sage/30 bg-[#eef3ef] px-4 py-3 text-sm text-sage">
-              Cosmetic / topical context. Related products may appear in the shop —
-              they are leave-on cosmetics, not injectable medicines.
-              {p.productHref ? (
-                <>
-                  {" "}
-                  <Link href={p.productHref} className="underline">
-                    View related products
-                  </Link>
-                </>
-              ) : null}
-            </p>
-          )}
+          <p className={`mt-6 border px-4 py-3 text-sm ${box}`}>
+            {availability.banner}
+            {p.productHref ? (
+              <>
+                {" "}
+                <Link href={p.productHref} className="underline">
+                  View related products
+                </Link>
+              </>
+            ) : null}
+          </p>
         </div>
       </header>
 

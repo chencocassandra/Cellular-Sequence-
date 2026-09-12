@@ -27,7 +27,7 @@ export default async function ShopCategoryPage({
   return (
     <div>
       <PageHero kicker="Shop" title={cat.title} intro={cat.intro} />
-      <CategoryNav />
+      <CategoryNav currentHref={`/shop/${slug}`} />
       <ProductGrid items={productsForCategory(slug)} />
     </div>
   );

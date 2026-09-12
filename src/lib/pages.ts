@@ -1,109 +1,20 @@
-import { SCIENCE_EMAIL } from "./site";
+import { SCIENCE_EMAIL, SITE_URL } from "./site";
 
 export type ContentPage = {
   title: string;
   kicker?: string;
   intro: string;
+  image?: string;
   sections: { heading: string; body: string }[];
 };
 
 export const pages: Record<string, ContentPage> = {
-  "/longevity": {
-    kicker: "Longevity",
-    title: "Healthy ageing, explained with restraint",
-    intro:
-      "Longevity Protocol treats ageing biology as a literacy project — NAD+, mitochondria, oxidative stress — without selling unapproved peptide drugs as anti-ageing cures.",
-    sections: [
-      {
-        heading: "How to use this section",
-        body: "Start with NAD+ education, then NMN and NR as distinct molecules with different regulatory stories. Shop links, where present, go only to permitted consumer products.",
-      },
-    ],
-  },
-  "/longevity/nad": {
-    kicker: "NAD+ education",
-    title: "What NAD+ is — and is not",
-    intro:
-      "Nicotinamide adenine dinucleotide is a cofactor in redox metabolism and a substrate for sirtuins and PARPs. Blood or tissue NAD+ is not a consumer peptide, and IV NAD+ is not an encyclopaedia-approved shortcut.",
-    sections: [
-      {
-        heading: "The honest version",
-        body: "NAD+ biology is real. Consumer ‘NAD+ boosting’ claims often outrun human outcome data. We separate mechanisms, precursors (NMN, NR, niacin), and what remains investigational.",
-      },
-    ],
-  },
-  "/longevity/nmn": {
-    kicker: "NMN",
-    title: "Nicotinamide mononucleotide",
-    intro:
-      "NMN is a NAD+ precursor studied in metabolic ageing research. Its food-supplement status has been contested in several markets. We cover the science here; we do not treat NMN as an unapproved medicine.",
-    sections: [
-      {
-        heading: "Regulatory note (Australia)",
-        body: "Always check current TGA and Food Standards positions before purchasing NMN products. Longevity Protocol will only offer NMN if it is lawful as a complementary medicine or food in Australia at the time of sale.",
-      },
-    ],
-  },
-  "/longevity/nr": {
-    kicker: "NR",
-    title: "Nicotinamide riboside",
-    intro:
-      "NR is another NAD+ precursor with a more established listed-supplement pathway in some jurisdictions. Evidence for dramatic longevity outcomes in healthy humans remains limited.",
-    sections: [
-      {
-        heading: "Read next",
-        body: "Compare NR with NMN in the Longevity Library, then return to permitted antioxidant products in the shop if you want a consumer product pathway.",
-      },
-    ],
-  },
-  "/longevity/healthy-ageing": {
-    kicker: "Healthy ageing",
-    title: "The unfashionable fundamentals",
-    intro:
-      "Cardiorespiratory fitness, protein and resistance training, sleep, cardiometabolic control and not smoking still dominate healthy-ageing evidence. Peptides do not replace them.",
-    sections: [
-      {
-        heading: "Where peptides fit",
-        body: "Cosmetic peptides may support the look of skin. Approved peptide medicines treat diseases. Research-only peptides stay in the encyclopaedia.",
-      },
-    ],
-  },
-  "/longevity/mitochondrial-health": {
-    kicker: "Mitochondrial health",
-    title: "Energy organelles, not a product category",
-    intro:
-      "Mitochondria sit at the centre of ageing hypotheses — ROS, mtDNA, NAD+/NADH ratios. Education first; products second, and only when permitted.",
-    sections: [{ heading: "Library", body: "See the Longevity Library for structured explainers." }],
-  },
-  "/longevity/antioxidants": {
-    kicker: "Antioxidants",
-    title: "Redox literacy",
-    intro:
-      "Antioxidant nutrients can be part of a permitted supplement range. High-dose antioxidant medicine stories are often weaker than marketing implies.",
-    sections: [
-      {
-        heading: "Shop",
-        body: "Permitted antioxidant complexes live in Shop → Longevity. They are not research peptides.",
-      },
-    ],
-  },
-  "/longevity/library": {
-    kicker: "Longevity library",
-    title: "A reading path, not a sales funnel",
-    intro:
-      "Essays and explainers on NAD+, mitochondria, senescent cells, and how to read a peptide paper without being sold an unapproved vial.",
-    sections: [
-      {
-        heading: "Also see",
-        body: "The Peptide Encyclopaedia remains the canonical compound database. This library is narrative. The encyclopaedia is reference.",
-      },
-    ],
-  },
   "/skin": {
     kicker: "Skin",
     title: "Advanced skin, within cosmetic law",
     intro:
       "Facial needling, micro-infusion and copper-peptide skincare — designed as a protocol, with hygiene and aftercare treated as seriously as the device.",
+    image: "/images/pathway-skin.png",
     sections: [
       {
         heading: "Peptides on skin",
@@ -116,6 +27,7 @@ export const pages: Record<string, ContentPage> = {
     title: "Cosmetic needling, done carefully",
     intro:
       "Needling is a barrier-disrupting cosmetic technique. Depth, hygiene, and what you put on skin afterwards matter more than marketing frequency claims.",
+    image: "/images/pathway-skin.png",
     sections: [
       {
         heading: "Safety",
@@ -125,9 +37,10 @@ export const pages: Record<string, ContentPage> = {
   },
   "/skin/micro-infusion": {
     kicker: "Micro-infusion",
-    title: "Serum delivery with restraint",
+    title: "Serum delivery",
     intro:
       "Micro-infusion stamps and pens are still cosmetic devices in our range — not medical procedures and not a route for research peptides.",
+    image: "/images/hero-microinfusion.png",
     sections: [
       {
         heading: "What we allow on skin",
@@ -136,21 +49,18 @@ export const pages: Record<string, ContentPage> = {
     ],
   },
   "/skin/peptide-serums": {
-    kicker: "Peptide serums",
-    title: "Topical peptides with honest claims",
+    kicker: "GHK-Cu / peptide serums",
+    title: "Copper peptide skincare and topical serums",
     intro:
-      "Leave-on serums built around GHK-Cu, palmitoyl pentapeptide-4 and related cosmetic peptides.",
-    sections: [{ heading: "Encyclopaedia", body: "Each INCI name has a full scientific entry with status badges." }],
-  },
-  "/skin/ghk-cu": {
-    kicker: "GHK-Cu",
-    title: "Copper peptide skincare",
-    intro:
-      "GHK-Cu is a signature topical in the protocol. It is a cosmetic peptide, not an injectable medicine.",
+      "Leave-on cosmetics built around GHK-Cu, palmitoyl pentapeptide-4 and related peptides. GHK-Cu is a signature topical in the protocol — a cosmetic copper peptide, not an injectable medicine.",
     sections: [
       {
-        heading: "Read the entry",
-        body: "The Peptide Encyclopaedia page for GHK-Cu covers structure, evidence grade, and Australian cosmetic versus therapeutic lines.",
+        heading: "What is in the range",
+        body: "The shop serums are GHK-Cu copper peptide and a matrikine blend. They are leave-on cosmetics, not research vials.",
+      },
+      {
+        heading: "Encyclopaedia",
+        body: "The Peptide Encyclopaedia page for GHK-Cu covers structure, evidence grade, and Australian cosmetic versus therapeutic lines. Other INCI names have matching entries with status badges.",
       },
     ],
   },
@@ -215,7 +125,7 @@ export const pages: Record<string, ContentPage> = {
     kicker: "Energy",
     title: "Energy",
     intro: "Mitochondrial marketing is loud; iron, sleep and thyroid assessment are quieter and more often relevant.",
-    sections: [{ heading: "Longevity overlap", body: "See Mitochondrial Health in the Longevity section." }],
+    sections: [{ heading: "Fundamentals", body: "Iron, sleep and thyroid assessment are quieter and more often relevant than mitochondrial marketing." }],
   },
   "/cognitive/stress-relaxation": {
     kicker: "Stress & relaxation",
@@ -275,7 +185,7 @@ export const pages: Record<string, ContentPage> = {
     kicker: "Guide",
     title: "Pen accessory guide",
     intro: "Cartridges are single-use. Counterfeit needles are a blood-borne virus risk.",
-    sections: [{ heading: "Shop", body: "Pen Accessories." }],
+    sections: [{ heading: "Shop", body: "Needling — stamp heads and the 3 mL cartridge injector." }],
   },
   "/learn/preparation-hygiene": {
     kicker: "Guide",
@@ -326,6 +236,10 @@ export const pages: Record<string, ContentPage> = {
       {
         heading: "Do you sell BPC-157 or similar peptides?",
         body: "No. Research-only peptides are documented for education with Not approved for human use badges. They cannot be purchased from this site.",
+      },
+      {
+        heading: "Do you sell steroid oils or tablets?",
+        body: "No. Anabolic oils, oral steroids, SARMs and related tablets have a separate educational reference at Oils & tablets. They are not in the Peptide Encyclopaedia and cannot be added to the cart.",
       },
       {
         heading: "Is the encyclopaedia medical advice?",
@@ -391,6 +305,62 @@ export const pages: Record<string, ContentPage> = {
       {
         heading: "Corrections",
         body: `If an encyclopaedia status badge is wrong, email ${SCIENCE_EMAIL} with the citation. We will amend faster than we will add a SKU.`,
+      },
+      {
+        heading: "Privacy",
+        body: "A full Privacy Policy is linked from the footer and the About menu.",
+      },
+    ],
+  },
+  "/privacy": {
+    kicker: "Legal",
+    title: "Privacy Policy",
+    intro:
+      "This policy explains how Longevity Protocol (thelongevitycode.shop) handles personal information. It is written for a small Australian retail and education site. It is not legal advice.",
+    sections: [
+      {
+        heading: "Who we are",
+        body: `Longevity Protocol operates ${SITE_URL}. Shop pages offer cosmetic devices, topical peptide serums and permitted consumer products. The encyclopaedia is educational. Research-only compounds are not sold. Privacy questions: ${SCIENCE_EMAIL}.`,
+      },
+      {
+        heading: "What we collect",
+        body: "We may collect your name, email address, delivery details and message content if you contact us or place an order. The site also generates ordinary technical logs (for example IP address, browser type, pages viewed and time of visit) through our hosting provider so the site can run and stay secure. Encyclopaedia search is typed in your browser; we do not use it to build a health file about you.",
+      },
+      {
+        heading: "Cookies and similar tools",
+        body: "We use cookies or similar storage that are needed for the site to function (for example keeping a page working as you move around). We do not claim to run advertising pixels or health-profiling tools on this site. If that changes, this policy will be updated first.",
+      },
+      {
+        heading: "How we use information",
+        body: "We use personal information to reply to you, to fulfil lawful shop orders if you buy a consumer product, to keep the site secure, and to meet Australian legal obligations. We do not use encyclopaedia browsing to sell research-only peptides, and we do not offer those compounds for purchase.",
+      },
+      {
+        heading: "Who we share it with",
+        body: "Hosting, email and (when checkout is used) payment or shipping providers may process information for us, only to provide that service. We do not sell your personal information. We may disclose information if Australian law requires it.",
+      },
+      {
+        heading: "Storage and security",
+        body: "Information may be stored by our infrastructure providers, including outside Australia, which is common for websites hosted on global platforms. We take reasonable steps to protect information, but no website can guarantee complete security.",
+      },
+      {
+        heading: "How long we keep it",
+        body: "We keep contact and order records only as long as needed for the enquiry, the order, or the law (for example tax records). Technical logs are kept for a short operational period unless we must retain them longer for security or legal reasons.",
+      },
+      {
+        heading: "Your rights",
+        body: `Under the Australian Privacy Principles you can ask for access to personal information we hold about you, and ask us to correct it. Email ${SCIENCE_EMAIL}. If you are not satisfied, you may contact the Office of the Australian Information Commissioner (oaic.gov.au).`,
+      },
+      {
+        heading: "Children",
+        body: "This site is intended for adults. We do not knowingly collect personal information from children for shop or encyclopaedia use.",
+      },
+      {
+        heading: "Changes",
+        body: "We may update this policy. The date below is the current version. Continued use of the site after a change means the new version applies to later visits.",
+      },
+      {
+        heading: "Effective date",
+        body: "13 September 2026.",
       },
     ],
   },

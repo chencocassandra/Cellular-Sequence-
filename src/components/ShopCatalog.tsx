@@ -1,23 +1,26 @@
 import Link from "next/link";
-import { products, shopCategories } from "@/lib/products";
+import { ProductPhoto } from "@/components/ProductPhoto";
+import { shopNav } from "@/lib/navigation";
 import type { Product } from "@/lib/types";
 
-export function CategoryNav() {
+export function CategoryNav({ currentHref = "/shop" }: { currentHref?: string }) {
   return (
-    <div className="mx-auto flex max-w-7xl flex-wrap gap-2 px-4 pt-8 lg:px-6">
-      <Link href="/shop" className="border border-line bg-paper px-3 py-2 text-[11px] uppercase tracking-[0.14em]">
-        Shop all
-      </Link>
-      {Object.entries(shopCategories).map(([slug, cat]) => (
-        <Link
-          key={slug}
-          href={`/shop/${slug}`}
-          className="border border-line bg-paper px-3 py-2 text-[11px] uppercase tracking-[0.14em]"
-        >
-          {cat.title}
-        </Link>
-      ))}
-    </div>
+    <nav aria-label="Shop" className="mx-auto flex max-w-7xl flex-wrap gap-2 px-4 pt-8 lg:px-6">
+      {shopNav.map((link) => {
+        const active = currentHref === link.href;
+        return (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={`border px-3 py-2 text-[11px] uppercase tracking-[0.14em] ${
+              active ? "border-ink bg-ink text-paper" : "border-line bg-paper"
+            }`}
+          >
+            {link.label}
+          </Link>
+        );
+      })}
+    </nav>
   );
 }
 
@@ -33,7 +36,13 @@ export function ProductGrid({ items }: { items: Product[] }) {
     <div className="mx-auto grid max-w-7xl gap-4 px-4 py-10 sm:grid-cols-2 lg:grid-cols-3 lg:px-6">
       {items.map((product) => (
         <article key={product.slug} className="border border-line bg-paper p-5">
-          <div className="mb-6 aspect-[4/5] bg-ivory-deep" />
+          <ProductPhoto
+            src={product.image}
+            alt={product.name}
+            labelName={product.name}
+            labelDetail={product.labelDetail}
+            labelFooter={product.labelFooter}
+          />
           {product.badge ? (
             <p className="text-[10px] uppercase tracking-[0.16em] text-bronze">{product.badge}</p>
           ) : null}
