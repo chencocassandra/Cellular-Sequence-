@@ -33,7 +33,7 @@ export function PeptideSearch({
         value={q}
         autoFocus={autoFocus}
         onChange={(e) => setQ(e.target.value)}
-        placeholder="Search a peptide, compound or research area…"
+        placeholder="Search name, alias, receptor, mechanism or topic…"
         className={`w-full border border-line bg-paper text-ink outline-none placeholder:text-ink-soft/70 focus:border-bronze ${
           size === "lg"
             ? "px-5 py-4 text-base md:text-lg"

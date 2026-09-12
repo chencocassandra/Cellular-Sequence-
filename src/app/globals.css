@@ -46,3 +46,8 @@ body {
   background: #d4c4a8;
   color: var(--ink);
 }
+
+.hero-photo-fade {
+  mask-image: radial-gradient(ellipse 88% 84% at 52% 48%, #000 58%, transparent 92%);
+  -webkit-mask-image: radial-gradient(ellipse 88% 84% at 52% 48%, #000 58%, transparent 92%);
+}

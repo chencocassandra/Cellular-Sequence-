@@ -1,12 +1,35 @@
+import { cataloguePeptides } from "./cataloguePeptides";
+import { vendorCataloguePeptides } from "./vendorCataloguePeptides";
+import { encyclopaediaAdditions } from "./encyclopaediaAdditions";
+import { enrichPeptide, searchHaystack } from "./encyclopaedia";
+import { encyclopaediaOverlays } from "./encyclopaediaProfiles";
+import { encyclopaediaOverlaysMore } from "./encyclopaediaProfilesMore";
 import {
-  AREA_LABELS,
-  BADGE_LABELS,
   type Peptide,
   type PeptideArea,
   type RegulatoryBadge,
 } from "./types";
 
-export const peptides: Peptide[] = [
+const overlays: Record<string, Partial<Peptide>> = {
+  ...encyclopaediaOverlays,
+  ...encyclopaediaOverlaysMore,
+};
+
+function unique(values: string[]) {
+  return [...new Set(values.filter(Boolean))];
+}
+
+function applyOverlay(base: Peptide): Peptide {
+  const extra = overlays[base.slug];
+  if (!extra) return enrichPeptide(base);
+  return enrichPeptide(base, {
+    ...extra,
+    alternativeNames: unique([...(extra.alternativeNames ?? []), ...base.alternativeNames]),
+    searchTerms: unique([...(extra.searchTerms ?? []), ...base.searchTerms]),
+  });
+}
+
+const corePeptides: Peptide[] = [
   {
     slug: "semaglutide",
     name: "Semaglutide",
@@ -683,6 +706,50 @@ export const peptides: Peptide[] = [
   },
 ];
 
+const bySlug = new Map<string, Peptide>();
+for (const p of [...corePeptides, ...cataloguePeptides, ...vendorCataloguePeptides, ...encyclopaediaAdditions]) {
+  bySlug.set(p.slug, p);
+}
+
+export const peptides: Peptide[] = [...bySlug.values()].map(applyOverlay);
+
+export function peptideAvailability(p: Peptide): {
+  card: string;
+  banner: string;
+  tone: "shop" | "cosmetic" | "medicine" | "research";
+} {
+  if (p.availableToPurchase) {
+    return {
+      tone: "shop",
+      card: "May appear in topical serums",
+      banner:
+        "Cosmetic / topical context. Some finished serums in the shop use related cosmetic peptides — they are leave-on cosmetics, not injectable medicines.",
+    };
+  }
+  if (p.badges.includes("COSMETIC")) {
+    return {
+      tone: "cosmetic",
+      card: "Cosmetic ingredient — encyclopaedia only",
+      banner:
+        "Cosmetic peptide / protein ingredient for education. Longevity Protocol does not sell this as an injectable. Finished topical products, if any, are labelled as cosmetics.",
+    };
+  }
+  if (p.badges.includes("APPROVED_MEDICINE")) {
+    return {
+      tone: "medicine",
+      card: "Prescription medicine — not sold here",
+      banner:
+        "Approved-medicine listing only. This is not available from the Longevity Protocol shop. Licensed products require a prescriber and an ARTG-registered presentation.",
+    };
+  }
+  return {
+    tone: "research",
+    card: "Not available to purchase",
+    banner:
+      "Research / investigational listing only. This compound is not available for consumer purchase from Longevity Protocol and must not be confused with shop products.",
+  };
+}
+
 export const statusCollections: {
   slug: string;
   badge: RegulatoryBadge;
@@ -701,7 +768,7 @@ export const statusCollections: {
     badge: "COSMETIC",
     title: "Cosmetic peptides",
     intro:
-      "Topical peptide ingredients used in skincare. These may appear in products we sell. They are not injectable medicines.",
+      "Topical peptide and protein ingredients used in skincare education. A few related actives appear in leave-on serums we sell; most listings here are encyclopaedia-only. None are injectable medicines.",
   },
   {
     slug: "investigational",
@@ -719,43 +786,37 @@ export const statusCollections: {
   },
 ];
 
+export function getStatusCollection(slug: string) {
+  return statusCollections.find((c) => c.slug === slug);
+}
+
 export function getPeptide(slug: string) {
   return peptides.find((p) => p.slug === slug);
 }
 
 export function peptidesByStatus(badge: RegulatoryBadge) {
-  return peptides.filter((p) => p.badges.includes(badge));
+  return peptides
+    .filter((p) => p.badges.includes(badge))
+    .sort((a, b) => a.name.localeCompare(b.name));
 }
 
 export function peptidesByArea(area: PeptideArea) {
-  return peptides.filter((p) => p.areas.includes(area));
+  return peptides
+    .filter((p) => p.areas.includes(area))
+    .sort((a, b) => a.name.localeCompare(b.name));
 }
 
 export function searchPeptides(query: string) {
   const q = query.trim().toLowerCase();
   if (!q) return [];
-  return peptides.filter((p) => {
-    const hay = [
-      p.name,
-      p.slug,
-      ...p.alternativeNames,
-      p.peptideClass,
-      ...p.studiedFor,
-      ...p.areas.map((a) => AREA_LABELS[a]),
-      ...p.badges.map((b) => BADGE_LABELS[b]),
-      ...p.searchTerms,
-    ]
-      .join(" ")
-      .toLowerCase();
-    return hay.includes(q);
-  });
+  return peptides.filter((p) => searchHaystack(p).includes(q));
 }
 
 export function azGroups() {
   const sorted = [...peptides].sort((a, b) => a.name.localeCompare(b.name));
   const map = new Map<string, Peptide[]>();
   for (const p of sorted) {
-    const letter = p.name[0].toUpperCase();
+    const letter = /[A-Z]/i.test(p.name[0]) ? p.name[0].toUpperCase() : "#";
     map.set(letter, [...(map.get(letter) ?? []), p]);
   }
   return [...map.entries()];

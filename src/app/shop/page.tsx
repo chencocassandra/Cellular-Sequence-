@@ -1,11 +1,13 @@
 import { CategoryNav, ProductGrid } from "@/components/ShopCatalog";
 import { PageHero } from "@/components/PageHero";
+import { Reviews } from "@/components/Reviews";
+import { shopPeptidesIntro } from "@/lib/navigation";
+import { pageSeo } from "@/lib/marketing";
 import { products } from "@/lib/products";
 
 export const metadata = {
-  title: "Shop",
-  description:
-    "Consumer protocol products — cosmetics, devices and permitted supplements. Research peptides are not sold.",
+  title: pageSeo.shop.title,
+  description: pageSeo.shop.description,
 };
 
 export default function ShopPage() {
@@ -13,11 +15,12 @@ export default function ShopPage() {
     <div>
       <PageHero
         kicker="Shop"
-        title="Shop the protocol"
-        intro="Cosmetic peptide serums, facial needling systems, cooling, hygiene and permitted supplements. Research-only peptides are documented in the encyclopaedia and cannot be added to the cart."
+        title="Shop the Peptides"
+        intro={shopPeptidesIntro}
       />
       <CategoryNav />
       <ProductGrid items={products} />
+      <Reviews />
     </div>
   );
 }
