@@ -1,3 +1,5 @@
+import { SCIENCE_EMAIL } from "./site";
+
 export type ContentPage = {
   title: string;
   kicker?: string;
@@ -388,7 +390,7 @@ export const pages: Record<string, ContentPage> = {
     sections: [
       {
         heading: "Corrections",
-        body: "If an encyclopaedia status badge is wrong, email science@longevityprotocol.example with the citation. We will amend faster than we will add a SKU.",
+        body: `If an encyclopaedia status badge is wrong, email ${SCIENCE_EMAIL} with the citation. We will amend faster than we will add a SKU.`,
       },
     ],
   },
