@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { CategoryNav, ProductGrid } from "@/components/ShopCatalog";
 import { PageHero } from "@/components/PageHero";
+import { Reviews } from "@/components/Reviews";
 import { productsForCategory, shopCategories } from "@/lib/products";
 
 export function generateStaticParams() {
@@ -13,7 +14,11 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  return { title: shopCategories[slug]?.title ?? "Shop" };
+  const cat = shopCategories[slug];
+  return {
+    title: cat?.title ?? "Shop",
+    description: cat ? `PLACEHOLDER SEO: ${cat.intro}` : "Shop",
+  };
 }
 
 export default async function ShopCategoryPage({
@@ -29,6 +34,7 @@ export default async function ShopCategoryPage({
       <PageHero kicker="Shop" title={cat.title} intro={cat.intro} />
       <CategoryNav currentHref={`/shop/${slug}`} />
       <ProductGrid items={productsForCategory(slug)} />
+      <Reviews />
     </div>
   );
 }

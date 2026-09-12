@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Outfit } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { marketing, pageSeo } from "@/lib/marketing";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -18,12 +19,31 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   title: {
-    default: "Longevity Protocol — Peptide Encyclopaedia & Advanced Skin",
+    default: pageSeo.home.title,
     template: "%s · Longevity Protocol",
   },
-  description:
-    "Searchable peptide encyclopaedia covering approved medicines, cosmetic peptides, investigational compounds and research-only entries — plus a consumer protocol shop for advanced skin.",
+  description: pageSeo.home.description,
   metadataBase: new URL(SITE_URL),
+  openGraph: {
+    type: "website",
+    locale: "en_AU",
+    url: SITE_URL,
+    siteName: "Longevity Protocol",
+    title: pageSeo.home.title,
+    description: pageSeo.home.description,
+    images: [
+      {
+        url: marketing.openGraphImage.path,
+        alt: marketing.openGraphImage.alt,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageSeo.home.title,
+    description: pageSeo.home.description,
+    images: [marketing.openGraphImage.path],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

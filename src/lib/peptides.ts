@@ -1,12 +1,33 @@
 import { cataloguePeptides } from "./cataloguePeptides";
 import { vendorCataloguePeptides } from "./vendorCataloguePeptides";
+import { encyclopaediaAdditions } from "./encyclopaediaAdditions";
+import { enrichPeptide, searchHaystack } from "./encyclopaedia";
+import { encyclopaediaOverlays } from "./encyclopaediaProfiles";
+import { encyclopaediaOverlaysMore } from "./encyclopaediaProfilesMore";
 import {
-  AREA_LABELS,
-  BADGE_LABELS,
   type Peptide,
   type PeptideArea,
   type RegulatoryBadge,
 } from "./types";
+
+const overlays: Record<string, Partial<Peptide>> = {
+  ...encyclopaediaOverlays,
+  ...encyclopaediaOverlaysMore,
+};
+
+function unique(values: string[]) {
+  return [...new Set(values.filter(Boolean))];
+}
+
+function applyOverlay(base: Peptide): Peptide {
+  const extra = overlays[base.slug];
+  if (!extra) return enrichPeptide(base);
+  return enrichPeptide(base, {
+    ...extra,
+    alternativeNames: unique([...(extra.alternativeNames ?? []), ...base.alternativeNames]),
+    searchTerms: unique([...(extra.searchTerms ?? []), ...base.searchTerms]),
+  });
+}
 
 const corePeptides: Peptide[] = [
   {
@@ -685,11 +706,12 @@ const corePeptides: Peptide[] = [
   },
 ];
 
-export const peptides: Peptide[] = [
-  ...corePeptides,
-  ...cataloguePeptides,
-  ...vendorCataloguePeptides,
-];
+const bySlug = new Map<string, Peptide>();
+for (const p of [...corePeptides, ...cataloguePeptides, ...vendorCataloguePeptides, ...encyclopaediaAdditions]) {
+  bySlug.set(p.slug, p);
+}
+
+export const peptides: Peptide[] = [...bySlug.values()].map(applyOverlay);
 
 export function peptideAvailability(p: Peptide): {
   card: string;
@@ -787,21 +809,7 @@ export function peptidesByArea(area: PeptideArea) {
 export function searchPeptides(query: string) {
   const q = query.trim().toLowerCase();
   if (!q) return [];
-  return peptides.filter((p) => {
-    const hay = [
-      p.name,
-      p.slug,
-      ...p.alternativeNames,
-      p.peptideClass,
-      ...p.studiedFor,
-      ...p.areas.map((a) => AREA_LABELS[a]),
-      ...p.badges.map((b) => BADGE_LABELS[b]),
-      ...p.searchTerms,
-    ]
-      .join(" ")
-      .toLowerCase();
-    return hay.includes(q);
-  });
+  return peptides.filter((p) => searchHaystack(p).includes(q));
 }
 
 export function azGroups() {

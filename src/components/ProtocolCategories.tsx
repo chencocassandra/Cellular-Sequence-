@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ProtocolCategoryTabs } from "@/components/ProtocolCategoryTabs";
+import { TrustBar } from "@/components/TrustBar";
 
 export function ProtocolLandingHero() {
   return (
@@ -15,6 +16,7 @@ export function ProtocolLandingHero() {
               <li>Research-only compounds kept clearly separate from purchase products</li>
               <li>A searchable encyclopaedia for the science behind the labels</li>
             </ul>
+            <TrustBar />
           </div>
           <div className="relative aspect-[4/3]">
             <Image

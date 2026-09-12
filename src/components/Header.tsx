@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { BrandLogo } from "@/components/BrandLogo";
 import { PeptideSearch } from "@/components/PeptideSearch";
+import { PromoBanner } from "@/components/PromoBanner";
+import { SocialLinks } from "@/components/SocialLinks";
 import { primaryNav } from "@/lib/navigation";
 
 export function Header() {
@@ -15,6 +17,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-ivory/95 backdrop-blur">
+      <PromoBanner />
       <p className="bg-ink px-4 py-2 text-center text-[11px] tracking-[0.12em] text-paper uppercase">
         Research-only peptides are never sold — purchase products stay in the shop
       </p>
@@ -94,7 +97,10 @@ export function Header() {
           })}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
+          <div className="hidden xl:block">
+            <SocialLinks />
+          </div>
           <button
             type="button"
             className="hidden px-2 py-1 text-[11px] uppercase tracking-[0.16em] text-ink hover:text-bronze-deep md:inline"
@@ -167,6 +173,9 @@ export function Header() {
                 : null}
             </div>
           ))}
+          <div className="px-4 py-4">
+            <SocialLinks />
+          </div>
         </div>
       ) : null}
     </header>

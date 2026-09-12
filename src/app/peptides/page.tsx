@@ -2,12 +2,12 @@ import { PeptideSearch } from "@/components/PeptideSearch";
 import { EncyclopaediaFilters } from "@/components/EncyclopaediaNav";
 import { EncyclopaediaHero } from "@/components/EncyclopaediaHero";
 import { PeptideGrid } from "@/components/PeptideGrid";
+import { pageSeo } from "@/lib/marketing";
 import { peptides, searchPeptides } from "@/lib/peptides";
 
 export const metadata = {
-  title: "Peptide Encyclopaedia",
-  description:
-    "Searchable A–Z scientific library of approved peptide medicines, cosmetic peptides, investigational compounds and research-only peptides.",
+  title: pageSeo.peptides.title,
+  description: pageSeo.peptides.description,
 };
 
 export default async function PeptidesPage({
@@ -24,8 +24,8 @@ export default async function PeptidesPage({
       <EncyclopaediaHero
         kicker="Peptide Encyclopaedia"
         library="injectables"
-        title="Injectables"
-        intro="Peptide vials, approved peptide medicines, cosmetic peptide ingredients, and research-only lyophilised compounds. Independent of the shop. Grey-market injectables are never sold here."
+        title="Encyclopaedia"
+        intro="Citation-first scientific library. Search by name, alias, receptor, mechanism or topic. Research-only compounds are never sold here."
       >
         <PeptideSearch autoFocus={!q} />
       </EncyclopaediaHero>

@@ -1,12 +1,13 @@
 import { CategoryNav, ProductGrid } from "@/components/ShopCatalog";
 import { PageHero } from "@/components/PageHero";
+import { Reviews } from "@/components/Reviews";
 import { shopPeptidesIntro } from "@/lib/navigation";
+import { pageSeo } from "@/lib/marketing";
 import { products } from "@/lib/products";
 
 export const metadata = {
-  title: "Shop",
-  description:
-    "Consumer protocol products — cosmetics, devices and permitted supplements. Research peptides are not sold.",
+  title: pageSeo.shop.title,
+  description: pageSeo.shop.description,
 };
 
 export default function ShopPage() {
@@ -19,6 +20,7 @@ export default function ShopPage() {
       />
       <CategoryNav />
       <ProductGrid items={products} />
+      <Reviews />
     </div>
   );
 }

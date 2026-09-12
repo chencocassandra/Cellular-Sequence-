@@ -1,12 +1,20 @@
 import Link from "next/link";
+import { EmailSignup } from "@/components/EmailSignup";
 import { PeptideSearch } from "@/components/PeptideSearch";
 import { ProductPhoto } from "@/components/ProductPhoto";
 import { ProtocolLandingHero } from "@/components/ProtocolCategories";
-import { Reviews } from "@/components/Reviews";
+import { ProductRating, Reviews } from "@/components/Reviews";
 import { StatusBadge } from "@/components/StatusBadge";
 import { homeFeaturedProductSlugs, shopPeptidesIntro } from "@/lib/navigation";
 import { peptides } from "@/lib/peptides";
 import { products } from "@/lib/products";
+import { pageSeo } from "@/lib/marketing";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: { absolute: pageSeo.home.title },
+  description: pageSeo.home.description,
+};
 
 const homeShopProducts = homeFeaturedProductSlugs
   .map((slug) => products.find((p) => p.slug === slug))
@@ -110,6 +118,7 @@ export default function Home() {
                 </p>
               ) : null}
               <h3 className="mt-2 font-serif text-xl">{product.name}</h3>
+              <ProductRating />
               <p className="mt-1 text-sm text-ink-soft">{product.price}</p>
             </Link>
           ))}
@@ -117,6 +126,7 @@ export default function Home() {
       </section>
 
       <Reviews />
+      <EmailSignup />
     </div>
   );
 }

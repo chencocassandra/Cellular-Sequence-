@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ProductPhoto } from "@/components/ProductPhoto";
+import { ProductRating } from "@/components/Reviews";
 import { shopNav } from "@/lib/navigation";
 import type { Product } from "@/lib/types";
 
@@ -47,6 +48,7 @@ export function ProductGrid({ items }: { items: Product[] }) {
             <p className="text-[10px] uppercase tracking-[0.16em] text-bronze">{product.badge}</p>
           ) : null}
           <h2 className="mt-2 font-serif text-2xl">{product.name}</h2>
+          <ProductRating />
           <p className="mt-2 text-sm text-ink-soft">{product.summary}</p>
           <p className="mt-4 text-sm">{product.price}</p>
           <button

@@ -1,3 +1,5 @@
+import { marketing } from "@/lib/marketing";
+
 export type SiteCategoryTone = "purchase" | "research" | "product" | "library";
 
 export type SiteCategory = {
@@ -156,6 +158,7 @@ export const primaryNav: NavItem[] = [
           { label: "Our Standards", href: "/about/standards" },
           { label: "Contact", href: "/about/contact" },
           { label: "Privacy Policy", href: "/privacy" },
+          { label: marketing.referral.navLabel, href: marketing.referral.href },
         ],
       },
     ],

@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { BrandLogo } from "@/components/BrandLogo";
+import { EmailSignup } from "@/components/EmailSignup";
+import { SocialLinks } from "@/components/SocialLinks";
+import { marketing } from "@/lib/marketing";
 import { shopNav, siteCategories } from "@/lib/navigation";
 
 const legalLinks = [
@@ -7,6 +10,7 @@ const legalLinks = [
   { label: "Contact", href: "/about/contact" },
   { label: "Privacy Policy", href: "/privacy" },
   { label: "Our Standards", href: "/about/standards" },
+  { label: marketing.referral.navLabel, href: marketing.referral.href },
 ];
 
 export function Footer() {
@@ -20,6 +24,9 @@ export function Footer() {
           <p className="mt-3 max-w-xs text-sm text-paper/70">
             Peptide literacy as a signature feature. Consumer products stay on the lawful side of the line.
           </p>
+          <div className="mt-5">
+            <SocialLinks inverted />
+          </div>
         </div>
         <div>
           <p className="text-[11px] uppercase tracking-[0.18em] text-[#c4ad7a]">Browse</p>
@@ -56,6 +63,11 @@ export function Footer() {
               </li>
             ))}
           </ul>
+        </div>
+      </div>
+      <div className="border-t border-white/10 px-4 py-12 lg:px-6">
+        <div className="mx-auto max-w-7xl">
+          <EmailSignup variant="footer" />
         </div>
       </div>
       <div className="border-t border-white/10 px-4 py-6 text-center text-xs text-paper/50">
