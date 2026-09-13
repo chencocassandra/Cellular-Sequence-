@@ -1,4 +1,4 @@
-import { SCIENCE_EMAIL, SITE_URL } from "./site";
+import { SCIENCE_EMAIL, SITE_HOST, SITE_URL } from "./site";
 
 export type ContentPage = {
   title: string;
@@ -316,7 +316,7 @@ export const pages: Record<string, ContentPage> = {
     kicker: "Legal",
     title: "Privacy Policy",
     intro:
-      "This policy explains how Longevity Protocol (thelongevitycode.shop) handles personal information. It is written for a small Australian retail and education site. It is not legal advice.",
+      `This policy explains how Longevity Protocol (${SITE_HOST}) handles personal information. It is written for a small Australian retail and education site. It is not legal advice.`,
     sections: [
       {
         heading: "Who we are",
