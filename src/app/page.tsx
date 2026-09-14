@@ -1,10 +1,14 @@
 import Link from "next/link";
+import { AddToCartButton } from "@/components/AddToCartButton";
 import { EmailSignup } from "@/components/EmailSignup";
 import { PeptideSearch } from "@/components/PeptideSearch";
 import { ProductPhoto } from "@/components/ProductPhoto";
 import { ProtocolLandingHero } from "@/components/ProtocolCategories";
 import { ProductRating, Reviews } from "@/components/Reviews";
 import { StatusBadge } from "@/components/StatusBadge";
+import { TgaExplainerLink, TgaStatusBadge } from "@/components/TgaStatusBadge";
+import { TopicalUseLabel } from "@/components/TopicalUseLabel";
+import { tgaMarkForPeptide, tgaMarkForProduct } from "@/lib/compliance";
 import { homeFeaturedProductSlugs, shopPeptidesIntro } from "@/lib/navigation";
 import { peptides } from "@/lib/peptides";
 import { products } from "@/lib/products";
@@ -22,8 +26,8 @@ const homeShopProducts = homeFeaturedProductSlugs
 
 const examplePeptides = [
   peptides.find((p) => p.slug === "semaglutide")!,
+  peptides.find((p) => p.slug === "tirzepatide")!,
   peptides.find((p) => p.slug === "ghk-cu")!,
-  peptides.find((p) => p.slug === "semax")!,
   peptides.find((p) => p.slug === "bpc-157")!,
 ];
 
@@ -37,24 +41,24 @@ export default function Home() {
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-5">
               <p className="text-[11px] uppercase tracking-[0.22em] text-bronze">
-                Signature feature
+                Optional library
               </p>
               <h2 className="mt-3 font-serif text-4xl md:text-5xl">
-                The Peptide Encyclopaedia
+                Cosmetic peptide science
               </h2>
               <p className="mt-2 font-serif text-2xl text-ink-soft">
-                Understand the science.
+                What topical ingredients are — without a research-vial shop.
               </p>
               <p className="mt-6 text-lg leading-relaxed text-ink-soft">
-                Explore a searchable A–Z reference library covering approved peptide
-                medicines, cosmetic peptides, investigational compounds and
-                research-only peptides.
+                Example names below mix TGA-approved medicines (not sold here) with
+                cosmetic and research peptides that are not TGA-approved. Each row
+                carries that mark so the two are never confused.
               </p>
               <Link
                 href="/peptides"
                 className="mt-8 inline-flex bg-ink px-6 py-3 text-[11px] uppercase tracking-[0.18em] text-paper"
               >
-                Explore peptides
+                Open the encyclopaedia
               </Link>
             </div>
             <div className="lg:col-span-7">
@@ -73,7 +77,8 @@ export default function Home() {
                         <span className="block font-medium">{p.name}</span>
                         <span className="text-sm text-ink-soft">{p.peptideClass}</span>
                       </span>
-                      <span className="flex flex-wrap gap-1">
+                      <span className="flex flex-wrap justify-end gap-1">
+                        <TgaStatusBadge mark={tgaMarkForPeptide(p)} />
                         {p.badges.map((b) => (
                           <StatusBadge key={b} badge={b} size="sm" />
                         ))}
@@ -91,8 +96,11 @@ export default function Home() {
         <div className="flex items-end justify-between gap-4">
           <div>
             <p className="text-[11px] uppercase tracking-[0.22em] text-bronze">Shop</p>
-            <h2 className="mt-2 font-serif text-3xl">Shop the Peptides</h2>
+            <h2 className="mt-2 font-serif text-3xl">Shop topical peptides</h2>
             <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink-soft">{shopPeptidesIntro}</p>
+            <p className="mt-3">
+              <TgaExplainerLink />
+            </p>
           </div>
           <Link href="/shop" className="text-[11px] uppercase tracking-[0.16em]">
             Shop all →
@@ -100,11 +108,7 @@ export default function Home() {
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {homeShopProducts.map((product) => (
-            <Link
-              key={product.slug}
-              href="/shop"
-              className="border border-line bg-paper p-5 hover:border-bronze"
-            >
+            <article key={product.slug} className="border border-line bg-paper p-5">
               <ProductPhoto
                 src={product.image}
                 alt={product.name}
@@ -117,10 +121,15 @@ export default function Home() {
                   {product.badge}
                 </p>
               ) : null}
+              <div className="mt-2">
+                <TgaStatusBadge mark={tgaMarkForProduct(product)} />
+              </div>
               <h3 className="mt-2 font-serif text-xl">{product.name}</h3>
               <ProductRating />
+              <TopicalUseLabel className="mt-2" />
               <p className="mt-1 text-sm text-ink-soft">{product.price}</p>
-            </Link>
+              <AddToCartButton slug={product.slug} />
+            </article>
           ))}
         </div>
       </section>

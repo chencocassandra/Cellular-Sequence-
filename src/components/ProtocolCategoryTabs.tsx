@@ -11,14 +11,14 @@ const tabFill = [
 ];
 
 const tabEmoji: Record<string, string> = {
-  purchase: "🧬",
-  research: "🧪",
-  tablets: "💊",
+  purchase: "🛒",
   serums: "🧴",
-  microneedling: "💉",
-  "cooling-storage": "❄️",
-  encyclopaedia: "📖",
-  "shop-all": "🛒",
+  microneedling: "✦",
+  aftercare: "◇",
+  "cooling-storage": "❄",
+  "preparation-hygiene": "▣",
+  learn: "☰",
+  "shop-all": "▦",
 };
 
 function isActive(pathname: string, href: string) {

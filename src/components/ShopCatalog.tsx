@@ -1,6 +1,10 @@
 import Link from "next/link";
+import { AddToCartButton } from "@/components/AddToCartButton";
 import { ProductPhoto } from "@/components/ProductPhoto";
 import { ProductRating } from "@/components/Reviews";
+import { TgaStatusBadge } from "@/components/TgaStatusBadge";
+import { TopicalUseLabel } from "@/components/TopicalUseLabel";
+import { tgaMarkForProduct } from "@/lib/compliance";
 import { shopNav } from "@/lib/navigation";
 import type { Product } from "@/lib/types";
 
@@ -47,16 +51,28 @@ export function ProductGrid({ items }: { items: Product[] }) {
           {product.badge ? (
             <p className="text-[10px] uppercase tracking-[0.16em] text-bronze">{product.badge}</p>
           ) : null}
+          <div className="mt-2">
+            <TgaStatusBadge mark={tgaMarkForProduct(product)} />
+          </div>
           <h2 className="mt-2 font-serif text-2xl">{product.name}</h2>
           <ProductRating />
           <p className="mt-2 text-sm text-ink-soft">{product.summary}</p>
+          <TopicalUseLabel className="mt-3" />
+          {product.ingredientSlugs?.length ? (
+            <p className="mt-2 text-sm text-ink-soft">
+              Ingredients:{" "}
+              {product.ingredientSlugs.map((slug, i) => (
+                <span key={slug}>
+                  {i > 0 ? ", " : ""}
+                  <Link href={`/learn/glossary/${slug}`} className="underline underline-offset-2">
+                    {slug}
+                  </Link>
+                </span>
+              ))}
+            </p>
+          ) : null}
           <p className="mt-4 text-sm">{product.price}</p>
-          <button
-            type="button"
-            className="mt-4 w-full bg-ink py-3 text-[11px] uppercase tracking-[0.16em] text-paper"
-          >
-            Add to cart
-          </button>
+          <AddToCartButton slug={product.slug} />
         </article>
       ))}
     </div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ProtocolCategoryTabs } from "@/components/ProtocolCategoryTabs";
+import { TgaExplainerLink } from "@/components/TgaStatusBadge";
 import { TrustBar } from "@/components/TrustBar";
 
 export function ProtocolLandingHero() {
@@ -9,14 +10,20 @@ export function ProtocolLandingHero() {
         <div className="grid grid-cols-2 items-center gap-4 sm:gap-8 lg:gap-12">
           <div>
             <h1 className="font-serif text-2xl leading-[1.08] sm:text-4xl md:text-5xl">
-              A clinic-inspired peptide protocol, explained simply.
+              Topical peptide skincare, explained simply.
             </h1>
             <ul className="mt-4 space-y-2 text-sm text-ink-soft sm:mt-6 sm:text-base">
-              <li>Peptides and protocols for skin, health, and injury recovery for purchase</li>
-              <li>Research-only compounds kept clearly separate from purchase products</li>
-              <li>A searchable encyclopaedia for the science behind the labels</li>
+              <li>Leave-on serums and cosmetic needling — not injectable research peptides</li>
+              <li>Aftercare treated as part of the protocol, not an afterthought</li>
+              <li>Guides and FAQs in plain language, including TGA vs cosmetic status</li>
             </ul>
             <TrustBar />
+            <p className="mt-3 text-sm text-ink-soft">
+              Each name carries a TGA mark. Approved medicines say so. Research and cosmetic
+              peptides that are not TGA-approved are labelled{" "}
+              <span className="font-medium text-ink">Not TGA approved</span>.{" "}
+              <TgaExplainerLink />
+            </p>
           </div>
           <div className="relative aspect-[4/3]">
             <Image

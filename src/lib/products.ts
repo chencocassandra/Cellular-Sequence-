@@ -36,6 +36,7 @@ export const products: Product[] = [
     image: PRODUCT_VIAL_IMAGE,
     labelName: "GHK-Cu Serum",
     labelDetail: "30 ml · Cosmetic",
+    ingredientSlugs: ["ghk-cu"],
   },
   {
     slug: "matrikine-serum",
@@ -46,6 +47,7 @@ export const products: Product[] = [
     image: PRODUCT_VIAL_IMAGE,
     labelName: "Matrikine Serum",
     labelDetail: "30 ml · Cosmetic",
+    ingredientSlugs: ["palmitoyl-pentapeptide-4", "palmitoyl-tripeptide-1"],
   },
   {
     slug: "cooling-case",
@@ -139,6 +141,7 @@ export const products: Product[] = [
     labelName: "Focus Capsules",
     labelDetail: "Caffeine + L-theanine",
     labelFooter: "Listed supplement",
+    tgaApprovedForSale: true,
   },
   {
     slug: "longevity-antioxidant",
@@ -150,6 +153,7 @@ export const products: Product[] = [
     labelName: "Antioxidant Complex",
     labelDetail: "Permitted nutrients",
     labelFooter: "Listed supplement",
+    tgaApprovedForSale: true,
   },
   {
     slug: "skin-protocol-bundle",

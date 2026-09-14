@@ -228,22 +228,62 @@ export const pages: Record<string, ContentPage> = {
       },
     ],
   },
+  "/learn/tga-status": {
+    kicker: "TGA",
+    title: "What TGA status means here",
+    intro:
+      "Every peptide name and shop item carries a TGA mark: approved for sale, approved but not sold here, or not TGA approved.",
+    sections: [
+      {
+        heading: "Who the TGA is",
+        body: "The Therapeutic Goods Administration (TGA) is Australia’s medicines and medical-devices regulator. “TGA approved for sale” here means a therapeutic good that has been evaluated for a specific use — not a research chemical.",
+      },
+      {
+        heading: "TGA approved for sale",
+        body: "This mark is for items we sell that are permitted therapeutic goods (for example listed-style supplements in the shop). It is never applied to research-only peptides.",
+      },
+      {
+        heading: "TGA approved · not sold here",
+        body: "Some encyclopaedia names (for example registered GLP-1 medicines) are TGA-approved prescription products. We document them for literacy. They cannot be added to this cart. A registered prescriber and pharmacy supply those medicines — not this shop.",
+      },
+      {
+        heading: "Not TGA approved",
+        body: "Cosmetic serums, needling tools, and research-only peptides such as BPC-157 carry this mark. They are not TGA-approved medicines for sale as injectables. Research encyclopaedia entries are educational only and not intended for human use or sale from this site.",
+      },
+      {
+        heading: "How to read the marks",
+        body: "Look next to the product or peptide name. Green-style marks mean TGA-approved medicine status. The red “Not TGA approved” mark is used on purpose so research and cosmetic names cannot be mistaken for approved injectables.",
+      },
+    ],
+  },
   "/learn/faqs": {
     kicker: "FAQs",
     title: "FAQs",
-    intro: "Shop, skin protocol, and encyclopaedia questions.",
+    intro: "Shop, topical use, TGA marks, and how this site is different from injectable-peptide stores.",
     sections: [
       {
-        heading: "Do you sell BPC-157 or similar peptides?",
-        body: "No. Research-only peptides are documented for education with Not approved for human use badges. They cannot be purchased from this site.",
+        heading: "Do you sell injectable research peptides?",
+        body: "No. The shop sells leave-on cosmetics, cosmetic devices, hygiene/storage, and permitted supplements. Nothing is sold for injection. Names such as BPC-157 or TB-500 appear only in the encyclopaedia, marked Not TGA approved, and cannot be added to the cart.",
+      },
+      {
+        heading: "What do the TGA badges mean?",
+        body: "Each shop item and encyclopaedia name has a mark: TGA approved for sale, TGA approved but not sold here (prescription medicines we only document), or Not TGA approved (cosmetics, tools, and research-only compounds). Open Learn → TGA status for the short explainer.",
+      },
+      {
+        heading: "Are shop serums TGA-approved medicines?",
+        body: "Usually no. Cosmetic serums are labelled Not TGA approved as medicines. A few permitted supplements in the shop may be marked TGA approved for sale. We do not pretend a cooling case or GHK-Cu serum is an ARTG injectable.",
       },
       {
         heading: "Do you sell steroid oils or tablets?",
-        body: "No. Anabolic oils, oral steroids, SARMs and related tablets have a separate educational reference at Oils & tablets. They are not in the Peptide Encyclopaedia and cannot be added to the cart.",
+        body: "No. Oils and tablets in the footer library are educational only.",
       },
       {
-        heading: "Is the encyclopaedia medical advice?",
-        body: "No. It is scientific literacy. Approved medicines require a registered prescriber.",
+        heading: "Is any of this medical advice?",
+        body: "No. Hubs for menopause appearance, hair appearance, and aftercare are cosmetic information. See a registered practitioner for medical concerns.",
+      },
+      {
+        heading: "Can I check out?",
+        body: "You can use the demo cart and fake checkout. Nothing is charged until real payments are connected.",
       },
     ],
   },
@@ -300,7 +340,7 @@ export const pages: Record<string, ContentPage> = {
   "/about/contact": {
     kicker: "Contact",
     title: "Contact",
-    intro: "Press, science corrections, and wholesale for cosmetic products — not sourcing requests for research peptides.",
+    intro: "Press, science corrections, and shop questions — not sourcing requests for research peptides.",
     sections: [
       {
         heading: "Corrections",
