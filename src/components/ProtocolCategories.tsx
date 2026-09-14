@@ -19,8 +19,8 @@ export function ProtocolLandingHero() {
             </ul>
             <TrustBar />
             <p className="mt-3 text-sm text-ink-soft">
-              Marks depend on the product: TGA approved, approved medicine, or for research
-              purposes only. <TgaExplainerLink />
+              Each product has a colour mark. It tells you if that item is a cosmetic, an
+              approved medicine, or research only. <TgaExplainerLink />
             </p>
           </div>
           <div className="relative aspect-[4/3]">

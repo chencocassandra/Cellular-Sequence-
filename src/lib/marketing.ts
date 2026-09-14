@@ -27,10 +27,9 @@ export const marketing = {
   },
 
   trustBar: {
-    // PLACEHOLDER: replace X with a real, honest customer count.
-    customerCountLabel: "PLACEHOLDER: Trusted by X customers",
-    supportingLine:
-      "PLACEHOLDER: Short non-medical trust line (cosmetics, devices and permitted products — not a clinic).",
+    // When you have a real count, swap customerCountLabel for “Trusted by X customers”.
+    customerCountLabel: "A shop, not a clinic",
+    supportingLine: "We sell cosmetics, devices, and permitted products.",
   },
 
   social: {
