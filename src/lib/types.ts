@@ -308,4 +308,6 @@ export type Product = {
   /** True only when the SKU is a therapeutic good approved/listed for sale in Australia. */
   tgaApprovedForSale?: boolean;
   ingredientSlugs?: string[];
+  /** Third-party Alibaba listing. Opens in a new tab. */
+  alibabaUrl?: string;
 };
