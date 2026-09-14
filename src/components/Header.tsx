@@ -8,7 +8,7 @@ import { PromoBanner } from "@/components/PromoBanner";
 import { ShopSearch } from "@/components/ShopSearch";
 import { SocialLinks } from "@/components/SocialLinks";
 import { useCart } from "@/components/CartProvider";
-import { primaryNav } from "@/lib/navigation";
+import { navItemIsActive, primaryNav } from "@/lib/navigation";
 
 export function Header() {
   const pathname = usePathname();
@@ -31,13 +31,7 @@ export function Header() {
         <nav className="hidden items-center lg:flex" aria-label="Primary">
           {primaryNav.map((item) => {
             const hasMenu = item.groups.some((g) => g.links.length > 0);
-            const active =
-              item.label === "Shop"
-                ? pathname === "/shop" ||
-                  (pathname.startsWith("/shop/") &&
-                    pathname !== "/shop/peptides" &&
-                    !pathname.startsWith("/shop/peptides/"))
-                : pathname === item.href || pathname.startsWith(`${item.href}/`);
+            const active = navItemIsActive(item, pathname);
             return (
               <div key={`${item.label}-${item.href}`} className="group relative">
                 <Link

@@ -36,7 +36,7 @@ export const siteCategories: SiteCategory[] = [
     href: "/shop/peptides",
     navLabel: "Peptides",
     label: "Peptides",
-    copy: "Leave-on peptide serums and oral NAD+ tablets. Research-only injectables are not sold.",
+    copy: "Peptides, patches, serums, and needling — leave-on cosmetics and devices. Research-only injectables are not sold.",
     tone: "purchase",
   },
   {
@@ -44,7 +44,7 @@ export const siteCategories: SiteCategory[] = [
     href: "/shop/facial-needling",
     navLabel: "Microneedling",
     label: "Microneedling",
-    copy: "Micro-infusion and facial needling for cosmetic protocols.",
+    copy: "Professional facial needling pen, disposable micro-infusion, stamp head pack, and 3 mL cartridge injector.",
     tone: "product",
   },
   {
@@ -57,17 +57,51 @@ export const siteCategories: SiteCategory[] = [
   },
 ];
 
+/** Peptides menu: four shop groups. */
+export const peptidesNav: NavLink[] = [
+  { label: "Peptides", href: "/shop/peptides" },
+  { label: "Patches", href: "/shop/peptide-patches" },
+  { label: "Serums", href: "/shop/peptide-serums" },
+  { label: "Needling", href: "/shop/facial-needling" },
+];
+
+export const microneedlingNav: NavLink[] = [
+  { label: "Professional facial needling pen", href: "/shop/facial-needling#protocol-needling-pen" },
+  { label: "Disposable micro-infusion", href: "/shop/facial-needling#disposable-micro-infusion-stamps" },
+  { label: "Disposable stamp head pack", href: "/shop/facial-needling#pen-cartridge-pack" },
+  { label: "Protocol 3 mL cartridge injector", href: "/shop/facial-needling#cartridge-injector" },
+];
+
 export const shopNav: NavLink[] = [
   { label: "All", href: "/shop" },
-  { label: "Peptides", href: "/shop/peptides" },
-  { label: "Peptide patches", href: "/shop/peptide-patches" },
+  ...peptidesNav,
   { label: "Bundles", href: "/shop/bundles" },
-  { label: "Needling", href: "/shop/facial-needling" },
-  { label: "Serums", href: "/shop/peptide-serums" },
   { label: "Cooling & Storage", href: "/shop/cooling-storage" },
   { label: "Preparation & Hygiene", href: "/shop/preparation-hygiene" },
-  { label: "Accessories", href: "/shop/pen-accessories" },
 ];
+
+const peptideShopHrefs = ["/shop/peptides", "/shop/peptide-patches", "/shop/peptide-serums", "/shop/patches", "/shop/tablets"];
+
+export function isPeptidesShopPath(pathname: string) {
+  return peptideShopHrefs.some((href) => pathname === href || pathname.startsWith(`${href}/`));
+}
+
+export function navItemIsActive(item: NavItem, pathname: string) {
+  if (item.label === "Shop") {
+    if (pathname === "/shop") return true;
+    if (!pathname.startsWith("/shop/")) return false;
+    if (isPeptidesShopPath(pathname)) return false;
+    if (pathname === "/shop/facial-needling" || pathname.startsWith("/shop/pen-accessories")) return false;
+    return true;
+  }
+  if (item.label === "Peptides") {
+    return isPeptidesShopPath(pathname);
+  }
+  if (item.label === "Microneedling") {
+    return pathname === "/shop/facial-needling" || pathname.startsWith("/shop/pen-accessories");
+  }
+  return pathname === item.href || pathname.startsWith(`${item.href}/`);
+}
 
 export const shopConcernNav: NavLink[] = [
   { label: "Menopause skin", href: "/concerns/menopause" },
@@ -133,7 +167,7 @@ export const homeFeaturedProductSlugs = [
 ];
 
 export const shopPeptidesIntro =
-  "Leave-on peptide cosmetics, needling tools, NAD+ tablets, GLP-1 and NAD+ patches, storage and hygiene. Research-only and injectable peptides are not sold.";
+  "Peptides, patches, serums, and needling — plus storage and hygiene. Research-only and injectable peptides are not sold.";
 
 export const primaryNav: NavItem[] = [
   {
@@ -149,13 +183,13 @@ export const primaryNav: NavItem[] = [
     label: "Peptides",
     href: "/shop/peptides",
     description: siteCategories[1].copy,
-    groups: [],
+    groups: [{ heading: "Peptides", links: peptidesNav }],
   },
   {
     label: "Microneedling",
     href: "/shop/facial-needling",
     description: siteCategories[2].copy,
-    groups: [],
+    groups: [{ heading: "Microneedling", links: microneedlingNav }],
   },
   {
     label: "Learn",

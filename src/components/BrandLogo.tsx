@@ -44,8 +44,8 @@ export function ProductPackLabel({
     <div
       className={`pointer-events-none absolute left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 bg-[#152536]/95 text-center ${
         compact
-          ? "top-[54%] w-[22%] max-w-[118px] px-1.5 py-2"
-          : "top-[53%] w-[20%] max-w-[150px] px-2.5 py-3"
+          ? "top-[50%] w-[22%] max-w-[118px] px-1.5 py-2"
+          : "top-[50%] w-[20%] max-w-[150px] px-2.5 py-3"
       }`}
       aria-hidden="true"
     >
