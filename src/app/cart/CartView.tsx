@@ -24,8 +24,8 @@ export function CartView() {
       <h1 className="mt-2 font-serif text-4xl">Your protocol cart</h1>
       <p className="mt-4 text-sm leading-relaxed text-ink-soft">{SHOP_POSITIONING}</p>
       <p className="mt-3 border border-line bg-paper px-4 py-3 text-sm text-ink-soft">
-        Checkout is not live yet. You can add and remove products to test a routine. Nothing will
-        be charged.
+        Shop as you would on this site. Partner stock is fulfilled for you — you stay here, not on
+        a supplier marketplace. Checkout is still a demo and nothing is charged.
       </p>
 
       {count === 0 ? (

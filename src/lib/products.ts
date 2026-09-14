@@ -13,7 +13,7 @@ export const products: Product[] = [
     image: "/images/product-needling-pen-v2.jpg",
     labelName: "Needling Pen",
     labelDetail: "Cosmetic device",
-    alibabaUrl:
+    supplierUrl:
       "https://www.alibaba.com/product-detail/Authentic-Dr-pen-M8-Wireless-Derma_1601720927110.html",
   },
   {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ProductBuyActions } from "@/components/AddToCartButton";
+import { AddToCartButton } from "@/components/AddToCartButton";
 import { ProductPhoto } from "@/components/ProductPhoto";
 import { ProductRating } from "@/components/Reviews";
 import { TgaStatusBadge } from "@/components/TgaStatusBadge";
@@ -72,7 +72,7 @@ export function ProductGrid({ items }: { items: Product[] }) {
             </p>
           ) : null}
           <p className="mt-4 text-sm">{product.price}</p>
-          <ProductBuyActions product={product} />
+          <AddToCartButton slug={product.slug} />
         </article>
       ))}
     </div>

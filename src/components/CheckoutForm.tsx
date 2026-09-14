@@ -39,7 +39,8 @@ export function CheckoutForm() {
   return (
     <form onSubmit={submit} className="mt-8 space-y-5">
       <p className="border border-line bg-ivory px-4 py-3 text-sm text-ink-soft">
-        Fake checkout. No card is charged. No order is sent to a warehouse.
+        You order here. We arrange fulfilment. You are not sent to another marketplace.
+        This checkout is still a demo — no card is charged.
       </p>
       <p className="text-lg">
         Estimated total <span className="font-medium">{formatAud(total)}</span>
