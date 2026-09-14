@@ -10,6 +10,10 @@ const SALON_SERUM_SUPPLIER =
 const PATCH_SUPPLIER =
   "https://www.alibaba.com/product-detail/GLP-1-Patches-for-Weight-Loss_1601742625652.html";
 
+/** Dropship listing behind both the NAD+ tablets and the antioxidant complex. Not shown on the storefront. */
+const NAD_COMPLEX_SUPPLIER =
+  "https://www.alibaba.com/product-detail/NAD-Complex-Adult-Anti-aging-Immune_1601713969082.html";
+
 export const products: Product[] = [
   {
     slug: "protocol-needling-pen",
@@ -127,6 +131,20 @@ export const products: Product[] = [
       "https://www.alibaba.com/product-detail/Professional-Multi-Peptide-Scalp-Serum-Hair_1601935366184.html",
   },
   {
+    slug: "nad-egf-skin-booster",
+    name: "NAD+ EGF Skin Booster Ampoules",
+    category: "peptide-serums",
+    price: "$22.49",
+    summary:
+      "Leave-on NAD+ and EGF ampoules applied with cosmetic needling, for the look of fresh, even skin. Not the injectable skin booster offered in clinics. Not for injection.",
+    badge: "New",
+    image: PRODUCT_VIAL_IMAGE,
+    labelName: "NAD+ EGF Booster",
+    labelDetail: "Ampoules · cosmetic",
+    supplierUrl:
+      "https://www.alibaba.com/product-detail/OEM-Skin-Booster-NAD-Egf-Ampoules_1601705774614.html",
+  },
+  {
     slug: "cooling-case",
     name: "Protocol Cooling Case",
     category: "cooling-storage",
@@ -217,18 +235,23 @@ export const products: Product[] = [
     image: PRODUCT_VIAL_IMAGE,
     labelName: "Barrier Balm",
     labelDetail: "Cosmetic",
+    supplierUrl:
+      "https://www.alibaba.com/product-detail/Private-Label-Post-Procedure-Barrier-Stabilizing_1601910343650.html",
   },
   {
-    slug: "focus-theanine-capsules",
+    slug: "focus-bacopa-capsules",
     name: "Permitted Focus Capsules",
     category: "cognitive",
     price: "$38",
-    summary: "Listed-style caffeine + L-theanine blend for alertness. Not a peptide medicine.",
+    summary:
+      "Listed-style Bacopa monnieri capsules, 60 per bottle. A herbal ingredient, not a peptide medicine and not a nootropic drug.",
     image: PRODUCT_VIAL_IMAGE,
     labelName: "Focus Capsules",
-    labelDetail: "Caffeine + L-theanine",
+    labelDetail: "Bacopa monnieri",
     labelFooter: "Listed supplement",
     tgaApprovedForSale: true,
+    supplierUrl:
+      "https://www.alibaba.com/product-detail/OEM-ODM-60-Capsule-Bacopa-Monnieri_1601663499782.html",
   },
   {
     slug: "longevity-antioxidant",
@@ -241,6 +264,7 @@ export const products: Product[] = [
     labelDetail: "Permitted nutrients",
     labelFooter: "Listed supplement",
     tgaApprovedForSale: true,
+    supplierUrl: NAD_COMPLEX_SUPPLIER,
   },
   {
     slug: "nad-plus-tablets",
@@ -254,8 +278,7 @@ export const products: Product[] = [
     labelName: "NAD+ Tablets",
     labelDetail: "Oral · high purity",
     usageNote: "Not for injection — oral tablets. Not an NAD+ drip.",
-    supplierUrl:
-      "https://www.alibaba.com/product-detail/Best-Price-99-9-High-Purity_1601095740102.html",
+    supplierUrl: NAD_COMPLEX_SUPPLIER,
   },
   {
     slug: "glp-1-support-patches",

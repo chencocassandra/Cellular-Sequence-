@@ -118,6 +118,34 @@ export const serumDetails: Record<string, SerumDetail> = {
     pairsWithSlugs: ["recovery-barrier-balm", "snap-8-serum", "alcohol-prep-pads"],
   },
 
+  "nad-egf-skin-booster": {
+    tagline: "NAD+ and EGF ampoules for the look of fresh, even skin.",
+    useWithSlugs: FACE_DEVICES,
+    depthNote: FACE_DEPTH,
+    maySupport: [
+      "The look of brighter, fresher-looking skin",
+      "The appearance of even tone across the cheeks and forehead",
+      "Skin that photographs as dull or flat",
+    ],
+    howToUse: [
+      "Cleanse and dry the skin, then wipe the area with a fresh prep pad.",
+      "Open one ampoule per session and use it within that session — there is no preservative once opened.",
+      "Work a section at a time at a cosmetic depth with your pen or a single-use stamp.",
+      "Smooth the ampoule over each section as you finish it and leave it on.",
+      "Patch test first, and discard any unused liquid rather than saving it.",
+    ],
+    notThis: [
+      "Not the injectable 'skin booster' or NAD+ drip offered in clinics.",
+      "Not for injection — do not draw an ampoule into a syringe.",
+      "Not a growth-factor medicine. It is a leave-on cosmetic for appearance only.",
+    ],
+    afterSession:
+      "Leave it on and keep the skin bare for the rest of the day. Barrier balm can go over the top if the skin feels tight.",
+    storage:
+      "Store the sealed ampoules cool and out of the sun, and use the cooling case in transit. Once opened, an ampoule is single use.",
+    pairsWithSlugs: ["recovery-barrier-balm", "cooling-case", "alcohol-prep-pads"],
+  },
+
   "ghk-cu-serum": {
     tagline: "Copper tripeptide leave-on serum for the look of firm, even skin.",
     useWithSlugs: FACE_DEVICES,
