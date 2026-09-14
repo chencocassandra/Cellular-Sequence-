@@ -6,6 +6,10 @@ export const PRODUCT_VIAL_IMAGE = "/images/product-vial.jpg";
 const SALON_SERUM_SUPPLIER =
   "https://www.alibaba.com/product-detail/S-Salon-SNAP-8-Peptide-Multi_1601832343667.html";
 
+/** Dropship listing with GLP-1 and NAD+ patch types. Not shown on the storefront. */
+const PATCH_SUPPLIER =
+  "https://www.alibaba.com/product-detail/GLP-1-Patches-for-Weight-Loss_1601742625652.html";
+
 export const products: Product[] = [
   {
     slug: "protocol-needling-pen",
@@ -231,12 +235,55 @@ export const products: Product[] = [
     name: "Antioxidant Longevity Complex",
     category: "longevity",
     price: "$54",
-    summary: "Permitted antioxidant nutrients. Not NMN as an unapproved therapeutic.",
+    summary: "Permitted antioxidant nutrients. Not an injectable NAD+ drip.",
     image: PRODUCT_VIAL_IMAGE,
     labelName: "Antioxidant Complex",
     labelDetail: "Permitted nutrients",
     labelFooter: "Listed supplement",
     tgaApprovedForSale: true,
+  },
+  {
+    slug: "nad-plus-tablets",
+    name: "NAD+ High-Purity Tablets",
+    category: "tablets",
+    price: "$32",
+    summary:
+      "The legal, needle-free NAD+ format: swallowable high-purity tablets instead of boutique NAD+ injections. A stronger everyday oral dose than a clinic drip you cannot lawfully buy here. Not for injection. Not a compounded NAD+ vial.",
+    badge: "New",
+    image: "/images/product-nad-tablets.png",
+    labelName: "NAD+ Tablets",
+    labelDetail: "Oral · high purity",
+    usageNote: "Not for injection — oral tablets. Not an NAD+ drip.",
+    supplierUrl:
+      "https://www.alibaba.com/product-detail/Best-Price-99-9-High-Purity_1601095740102.html",
+  },
+  {
+    slug: "glp-1-support-patches",
+    name: "GLP-1 Support Patches",
+    category: "patches",
+    price: "$24.90",
+    summary:
+      "Transdermal GLP-1 support patches from the same listing as the NAD+ patches. Needle-free. Not Ozempic, Wegovy, Mounjaro, or any prescription GLP-1 medicine. Not for injection.",
+    badge: "New",
+    image: "/images/product-glp1-patches.png",
+    labelName: "GLP-1 Patches",
+    labelDetail: "Transdermal",
+    usageNote: "Not for injection — transdermal patch. Not a prescription GLP-1.",
+    supplierUrl: PATCH_SUPPLIER,
+  },
+  {
+    slug: "nad-plus-patches",
+    name: "NAD+ Support Patches",
+    category: "patches",
+    price: "$24.90",
+    summary:
+      "Transdermal NAD+ patches — the same supplier listing as the GLP-1 patches, NAD+ colour/type. Needle-free support, not an IV NAD+ drip and not stronger than the oral tablets for daily use.",
+    badge: "New",
+    image: "/images/product-nad-patches.png",
+    labelName: "NAD+ Patches",
+    labelDetail: "Transdermal",
+    usageNote: "Not for injection — transdermal patch. Not an NAD+ drip.",
+    supplierUrl: PATCH_SUPPLIER,
   },
   {
     slug: "skin-protocol-bundle",
@@ -286,6 +333,18 @@ export const shopCategories: Record<
     title: "Cognitive",
     intro: "Permitted nootropic products. Investigational neuropeptides are encyclopaedia-only.",
     filter: "cognitive",
+  },
+  tablets: {
+    title: "Tablets",
+    intro:
+      "Swallowable NAD+ tablets — the legal, needle-free alternative to injectable NAD+ drips. Anabolic steroid tablets in the encyclopaedia are not sold.",
+    filter: "tablets",
+  },
+  patches: {
+    title: "Patches",
+    intro:
+      "Two types from one listing: GLP-1 support patches and NAD+ support patches. Transdermal only. Not prescription GLP-1 medicines. Not NAD+ injections.",
+    filter: "patches",
   },
   recovery: {
     title: "Recovery",

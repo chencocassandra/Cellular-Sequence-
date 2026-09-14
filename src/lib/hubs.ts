@@ -34,7 +34,7 @@ export const concernHubs: ConcernHub[] = [
     title: "Hair and scalp",
     kicker: "Concern",
     intro:
-      "Microneedling-compatible topical multi-peptide and copper-peptide serums for the look of scalp and hair density. Cosmetic appearance only."
+      "Microneedling-compatible topical multi-peptide and copper-peptide serums for the look of scalp and hair density. Cosmetic appearance only.",
     disclaimer:
       "This hub is about the appearance of hair and scalp. It is not a treatment for hair loss, alopecia, or any disease. It is not a medicine. Research peptides such as BPC-157 or TB-500 are never sold as scalp actives. Seek a registered practitioner for medical hair concerns.",
     sections: [

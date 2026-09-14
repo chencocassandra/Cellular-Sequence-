@@ -32,7 +32,7 @@ const blocks = [
   },
   {
     heading: "What we will never sell",
-    body: "Grey-market injectables, research-only peptides as cart items, and anabolic oils or tablets. Those libraries stay educational.",
+    body: "Grey-market injectables, research-only peptides as cart items, and anabolic oils or tablets. Those libraries stay educational. Oral NAD+ tablets and GLP-1 / NAD+ support patches in the shop are not those compounds.",
   },
 ];
 

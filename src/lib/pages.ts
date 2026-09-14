@@ -271,7 +271,11 @@ export const pages: Record<string, ContentPage> = {
       },
       {
         heading: "Do you sell steroid oils or tablets?",
-        body: "No. Oils and tablets in the footer library are educational only.",
+        body: "No anabolic steroid oils or tablets. Those stay in the educational oils & tablets library. Shop → Tablets is for oral NAD+ — the legal, needle-free version of NAD+ versus injectable drips, not grey-market steroids.",
+      },
+      {
+        heading: "Do you sell NAD+ injections or Ozempic patches?",
+        body: "No. We sell high-purity NAD+ tablets and transdermal NAD+ patches, plus GLP-1 support patches that are not Ozempic, Wegovy, or Mounjaro. Boutique NAD+ needles and prescription GLP-1 pens are not in the cart.",
       },
       {
         heading: "Is any of this medical advice?",

@@ -73,6 +73,8 @@ export const shopNav: NavLink[] = [
   { label: "Bundles", href: "/shop/bundles" },
   { label: "Needling", href: "/shop/facial-needling" },
   { label: "Serums", href: "/shop/peptide-serums" },
+  { label: "Tablets", href: "/shop/tablets" },
+  { label: "Patches", href: "/shop/patches" },
   { label: "Aftercare", href: "/shop/recovery" },
   { label: "Menopause skin", href: "/concerns/menopause" },
   { label: "Hair & scalp", href: "/concerns/hair-scalp" },
@@ -131,15 +133,16 @@ export const libraryNav: NavLink[] = [
 export const homeFeaturedProductSlugs = [
   "protocol-needling-pen",
   "snap-8-serum",
+  "nad-plus-tablets",
+  "glp-1-support-patches",
+  "nad-plus-patches",
   "multi-peptide-scalp-serum",
   "ghk-cu-ahk-cu-scalp-serum",
-  "pdrn-exo-serum",
-  "pdrn-ha-serum",
   "cooling-case",
 ];
 
 export const shopPeptidesIntro =
-  "Leave-on peptide cosmetics, needling tools, storage and hygiene — topical protocol products only. Research-only and injectable peptides are not sold.";
+  "Leave-on peptide cosmetics, needling tools, NAD+ tablets, GLP-1 and NAD+ patches, storage and hygiene. Research-only and injectable peptides are not sold.";
 
 export const primaryNav: NavItem[] = [
   {
