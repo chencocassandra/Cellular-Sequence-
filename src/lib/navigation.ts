@@ -131,6 +131,7 @@ export const libraryNav: NavLink[] = [
 export const homeFeaturedProductSlugs = [
   "protocol-needling-pen",
   "snap-8-serum",
+  "multi-peptide-scalp-serum",
   "ghk-cu-ahk-cu-scalp-serum",
   "pdrn-exo-serum",
   "pdrn-ha-serum",

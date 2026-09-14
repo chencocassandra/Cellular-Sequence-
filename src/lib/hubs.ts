@@ -34,13 +34,13 @@ export const concernHubs: ConcernHub[] = [
     title: "Hair and scalp",
     kicker: "Concern",
     intro:
-      "Microneedling-compatible topical copper peptides for the look of scalp and hair density. Cosmetic appearance only.",
+      "Microneedling-compatible topical multi-peptide and copper-peptide serums for the look of scalp and hair density. Cosmetic appearance only."
     disclaimer:
       "This hub is about the appearance of hair and scalp. It is not a treatment for hair loss, alopecia, or any disease. It is not a medicine. Research peptides such as BPC-157 or TB-500 are never sold as scalp actives. Seek a registered practitioner for medical hair concerns.",
     sections: [
       {
         heading: "What is in scope",
-        body: "Copper-peptide leave-on serum and cosmetic needling tools already in the shop. There is no grey-market injectable in this collection.",
+        body: "Leave-on scalp serums and cosmetic needling tools already in the shop. There is no grey-market injectable in this collection.",
       },
       {
         heading: "Hard boundary",
@@ -48,6 +48,7 @@ export const concernHubs: ConcernHub[] = [
       },
     ],
     productSlugs: [
+      "multi-peptide-scalp-serum",
       "ghk-cu-ahk-cu-scalp-serum",
       "ghk-cu-serum",
       "protocol-needling-pen",
@@ -71,7 +72,13 @@ export const concernHubs: ConcernHub[] = [
         body: "Use the facial needling tools as cosmetics. Do not share heads. Read the aftercare hub before you start.",
       },
     ],
-    productSlugs: ["snap-8-serum", "protocol-needling-pen", "recovery-barrier-balm", "alcohol-prep-pads"],
+    productSlugs: [
+      "multi-peptide-scalp-serum",
+      "snap-8-serum",
+      "protocol-needling-pen",
+      "recovery-barrier-balm",
+      "alcohol-prep-pads",
+    ],
   },
   {
     slug: "aftercare",

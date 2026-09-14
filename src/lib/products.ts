@@ -109,6 +109,20 @@ export const products: Product[] = [
     supplierUrl: SALON_SERUM_SUPPLIER,
   },
   {
+    slug: "multi-peptide-scalp-serum",
+    name: "Men’s Multi-Peptide Scalp Serum",
+    category: "peptide-serums",
+    price: "$18.90",
+    summary:
+      "Leave-on multi-peptide cosmetic for the look of scalp and hair density. Appearance only — not a hair-loss medicine. Not for injection.",
+    badge: "New",
+    image: "/images/product-multi-peptide-scalp-serum.png",
+    labelName: "Scalp Multi-Peptide",
+    labelDetail: "Men’s · scalp",
+    supplierUrl:
+      "https://www.alibaba.com/product-detail/Professional-Multi-Peptide-Scalp-Serum-Hair_1601935366184.html",
+  },
+  {
     slug: "cooling-case",
     name: "Protocol Cooling Case",
     category: "cooling-storage",
@@ -265,7 +279,7 @@ export const shopCategories: Record<
   "peptide-serums": {
     title: "Peptide serums",
     intro:
-      "Four leave-on types: SNAP-8 anti-ageing, PDRN + EXO recovery, GHK-Cu + AHK-Cu scalp, and PDRN + HA hydrating. Cosmetic only — not for injection.",
+      "Leave-on types including SNAP-8 anti-ageing, PDRN + EXO recovery, copper-peptide and multi-peptide scalp, and PDRN + HA hydrating. Cosmetic only — not for injection.",
     filter: "peptide-serums",
   },
   cognitive: {
