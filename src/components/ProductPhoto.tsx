@@ -35,7 +35,7 @@ export function ProductPhoto({
         className="object-contain"
         sizes={sizes}
       />
-      {overlayLabel ? (
+      {overlayLabel && labelName ? (
         <ProductPackLabel
           name={labelName}
           detail={labelDetail}
