@@ -19,10 +19,8 @@ export function ProtocolLandingHero() {
             </ul>
             <TrustBar />
             <p className="mt-3 text-sm text-ink-soft">
-              Each name carries a TGA mark. Approved medicines say so. Research and cosmetic
-              peptides that are not TGA-approved are labelled{" "}
-              <span className="font-medium text-ink">Not TGA approved</span>.{" "}
-              <TgaExplainerLink />
+              Marks depend on the product: TGA approved, approved medicine, or for research
+              purposes only. <TgaExplainerLink />
             </p>
           </div>
           <div className="relative aspect-[4/3]">

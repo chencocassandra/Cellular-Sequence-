@@ -50,9 +50,8 @@ export default function Home() {
                 What topical ingredients are — without a research-vial shop.
               </p>
               <p className="mt-6 text-lg leading-relaxed text-ink-soft">
-                Example names below mix TGA-approved medicines (not sold here) with
-                cosmetic and research peptides that are not TGA-approved. Each row
-                carries that mark so the two are never confused.
+                Examples mix approved medicines, TGA-approved cosmetic ingredients, and
+                research-only peptides. The mark next to the name tells you which is which.
               </p>
               <Link
                 href="/peptides"

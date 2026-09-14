@@ -44,7 +44,7 @@ export const concernHubs: ConcernHub[] = [
       },
       {
         heading: "Hard boundary",
-        body: "If a peptide is research-only, it stays in the encyclopaedia with a Not TGA approved mark and cannot be added to the cart.",
+        body: "If a peptide is research-only, it stays in the encyclopaedia with a For research purposes only mark and cannot be added to the cart.",
       },
     ],
     productSlugs: ["ghk-cu-serum", "protocol-needling-pen", "disposable-micro-infusion-stamps", "prep-hygiene-kit"],

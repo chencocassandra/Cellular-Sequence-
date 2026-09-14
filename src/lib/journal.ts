@@ -19,7 +19,7 @@ export const journalPosts: JournalPost[] = [
     excerpt: "How this shop talks about serums without sliding into research-vial language.",
     body: [
       "If you searched “peptides,” you have seen injectable marketing. This journal is for leave-on cosmetics and devices we actually sell.",
-      "Encyclopaedia pages may name research compounds. Those names carry a Not TGA approved mark and cannot go in the cart.",
+      "Encyclopaedia pages may name research compounds. Those names carry a For research purposes only mark and cannot go in the cart.",
     ],
     track: "advisor",
     reviewer: "Editorial science desk (internal). Not a named clinician until one is engaged.",

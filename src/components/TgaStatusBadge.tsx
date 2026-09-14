@@ -2,9 +2,9 @@ import Link from "next/link";
 import { TGA_EXPLAINER_HREF, TGA_MARK_LABEL, type TgaMark } from "@/lib/compliance";
 
 const markClass: Record<TgaMark, string> = {
-  "approved-for-sale": "border-sage bg-sage text-paper",
-  "approved-not-sold": "border-sage bg-[#eef3ef] text-sage",
-  "not-approved": "border-danger bg-[#f6ece8] text-danger",
+  "tga-approved": "border-sage bg-sage text-paper",
+  "approved-medicine": "border-ink bg-ink text-paper",
+  "research-only": "border-danger bg-[#f6ece8] text-danger",
 };
 
 export function TgaStatusBadge({

@@ -28,7 +28,7 @@ const blocks = [
   },
   {
     heading: "TGA versus cosmetic rules",
-    body: "A TGA-approved medicine is not the same as a cosmetic serum. Each product and peptide name carries a mark. Research peptides are labelled Not TGA approved.",
+    body: "A TGA-approved cosmetic ingredient is not the same as an approved medicine. Research peptides are labelled For research purposes only.",
   },
   {
     heading: "What we will never sell",

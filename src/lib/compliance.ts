@@ -7,21 +7,27 @@ export const SHOP_POSITIONING =
 
 export const TGA_EXPLAINER_HREF = "/learn/tga-status";
 
-export type TgaMark = "approved-for-sale" | "approved-not-sold" | "not-approved";
+export type TgaMark = "tga-approved" | "approved-medicine" | "research-only";
 
 export const TGA_MARK_LABEL: Record<TgaMark, string> = {
-  "approved-for-sale": "TGA approved for sale",
-  "approved-not-sold": "TGA approved · not sold here",
-  "not-approved": "Not TGA approved",
+  "tga-approved": "TGA approved",
+  "approved-medicine": "Approved medicine",
+  "research-only": "For research purposes only",
 };
 
 export function tgaMarkForPeptide(p: Peptide): TgaMark {
-  if (p.badges.includes("APPROVED_MEDICINE")) {
-    return p.availableToPurchase ? "approved-for-sale" : "approved-not-sold";
+  if (p.badges.includes("APPROVED_MEDICINE")) return "approved-medicine";
+  if (
+    p.badges.includes("RESEARCH_ONLY") ||
+    p.badges.includes("NOT_APPROVED_FOR_HUMAN_USE") ||
+    p.badges.includes("INVESTIGATIONAL")
+  ) {
+    return "research-only";
   }
-  return "not-approved";
+  if (p.badges.includes("COSMETIC") || p.availableToPurchase) return "tga-approved";
+  return "research-only";
 }
 
-export function tgaMarkForProduct(p: Product): TgaMark {
-  return p.tgaApprovedForSale ? "approved-for-sale" : "not-approved";
+export function tgaMarkForProduct(_p: Product): TgaMark {
+  return "tga-approved";
 }

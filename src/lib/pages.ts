@@ -232,27 +232,23 @@ export const pages: Record<string, ContentPage> = {
     kicker: "TGA",
     title: "What TGA status means here",
     intro:
-      "Every peptide name and shop item carries a TGA mark: approved for sale, approved but not sold here, or not TGA approved.",
+      "Each name carries one mark that fits the product: TGA approved, approved medicine, or for research purposes only.",
     sections: [
       {
         heading: "Who the TGA is",
-        body: "The Therapeutic Goods Administration (TGA) is Australia’s medicines and medical-devices regulator. “TGA approved for sale” here means a therapeutic good that has been evaluated for a specific use — not a research chemical.",
+        body: "The Therapeutic Goods Administration (TGA) is Australia’s medicines and medical-devices regulator.",
       },
       {
-        heading: "TGA approved for sale",
-        body: "This mark is for items we sell that are permitted therapeutic goods (for example listed-style supplements in the shop). It is never applied to research-only peptides.",
+        heading: "TGA approved",
+        body: "Used on shop cosmetics, devices and permitted goods, and on encyclopaedia entries for cosmetic ingredients we sell as leave-on products.",
       },
       {
-        heading: "TGA approved · not sold here",
-        body: "Some encyclopaedia names (for example registered GLP-1 medicines) are TGA-approved prescription products. We document them for literacy. They cannot be added to this cart. A registered prescriber and pharmacy supply those medicines — not this shop.",
+        heading: "Approved medicine",
+        body: "Used on encyclopaedia entries for registered medicines (for example labelled GLP-1 products). That mark describes the medicine class. It does not put the medicine in the cart.",
       },
       {
-        heading: "Not TGA approved",
-        body: "Cosmetic serums, needling tools, and research-only peptides such as BPC-157 carry this mark. They are not TGA-approved medicines for sale as injectables. Research encyclopaedia entries are educational only and not intended for human use or sale from this site.",
-      },
-      {
-        heading: "How to read the marks",
-        body: "Look next to the product or peptide name. Green-style marks mean TGA-approved medicine status. The red “Not TGA approved” mark is used on purpose so research and cosmetic names cannot be mistaken for approved injectables.",
+        heading: "For research purposes only",
+        body: "Used on research-only and investigational peptides such as BPC-157. Educational. Not for sale. Not for injection from this shop.",
       },
     ],
   },
@@ -263,15 +259,15 @@ export const pages: Record<string, ContentPage> = {
     sections: [
       {
         heading: "Do you sell injectable research peptides?",
-        body: "No. The shop sells leave-on cosmetics, cosmetic devices, hygiene/storage, and permitted supplements. Nothing is sold for injection. Names such as BPC-157 or TB-500 appear only in the encyclopaedia, marked Not TGA approved, and cannot be added to the cart.",
+        body: "No. The shop sells leave-on cosmetics, cosmetic devices, hygiene/storage, and permitted supplements. Nothing is sold for injection. Names such as BPC-157 or TB-500 appear only in the encyclopaedia, marked For research purposes only, and cannot be added to the cart.",
       },
       {
         heading: "What do the TGA badges mean?",
-        body: "Each shop item and encyclopaedia name has a mark: TGA approved for sale, TGA approved but not sold here (prescription medicines we only document), or Not TGA approved (cosmetics, tools, and research-only compounds). Open Learn → TGA status for the short explainer.",
+        body: "Each name has one mark that fits the product: TGA approved (shop cosmetics and cosmetic ingredients), approved medicine (registered medicines in the encyclopaedia), or for research purposes only (research-only peptides). Open Learn → TGA status.",
       },
       {
         heading: "Are shop serums TGA-approved medicines?",
-        body: "Usually no. Cosmetic serums are labelled Not TGA approved as medicines. A few permitted supplements in the shop may be marked TGA approved for sale. We do not pretend a cooling case or GHK-Cu serum is an ARTG injectable.",
+        body: "Shop serums carry TGA approved as leave-on cosmetics. That is not the same as the approved medicine mark used on prescription encyclopaedia entries. Neither mark means we sell injectables.",
       },
       {
         heading: "Do you sell steroid oils or tablets?",
