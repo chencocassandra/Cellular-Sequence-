@@ -10,7 +10,7 @@ const MAX = 3;
 
 export function ShopCompareTool() {
   const comparables = products.filter((p) => p.category === "peptide-serums" || p.slug === "recovery-barrier-balm");
-  const [selected, setSelected] = useState<string[]>(["ghk-cu-serum", "matrikine-serum"]);
+  const [selected, setSelected] = useState<string[]>(["snap-8-serum", "ghk-cu-ahk-cu-scalp-serum"]);
   const rows = useMemo(
     () => comparables.filter((p) => selected.includes(p.slug)),
     [comparables, selected],

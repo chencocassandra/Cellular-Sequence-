@@ -27,7 +27,7 @@ export const concernHubs: ConcernHub[] = [
         body: "We do not treat menopause, restore oestrogen, or reverse ageing as a medical outcome. Research-only peptides are not part of this collection.",
       },
     ],
-    productSlugs: ["ghk-cu-serum", "matrikine-serum", "recovery-barrier-balm", "prep-hygiene-kit"],
+    productSlugs: ["snap-8-serum", "pdrn-ha-serum", "ghk-cu-serum", "recovery-barrier-balm"],
   },
   {
     slug: "hair-scalp",
@@ -47,7 +47,12 @@ export const concernHubs: ConcernHub[] = [
         body: "If a peptide is research-only, it stays in the encyclopaedia with a For research purposes only mark and cannot be added to the cart.",
       },
     ],
-    productSlugs: ["ghk-cu-serum", "protocol-needling-pen", "disposable-micro-infusion-stamps", "prep-hygiene-kit"],
+    productSlugs: [
+      "ghk-cu-ahk-cu-scalp-serum",
+      "ghk-cu-serum",
+      "protocol-needling-pen",
+      "disposable-micro-infusion-stamps",
+    ],
   },
   {
     slug: "mens-grooming",
@@ -66,7 +71,7 @@ export const concernHubs: ConcernHub[] = [
         body: "Use the facial needling tools as cosmetics. Do not share heads. Read the aftercare hub before you start.",
       },
     ],
-    productSlugs: ["ghk-cu-serum", "protocol-needling-pen", "recovery-barrier-balm", "alcohol-prep-pads"],
+    productSlugs: ["snap-8-serum", "protocol-needling-pen", "recovery-barrier-balm", "alcohol-prep-pads"],
   },
   {
     slug: "aftercare",
@@ -87,11 +92,11 @@ export const concernHubs: ConcernHub[] = [
       },
     ],
     productSlugs: [
+      "pdrn-exo-serum",
       "recovery-barrier-balm",
       "prep-hygiene-kit",
       "alcohol-prep-pads",
       "protocol-needling-pen",
-      "disposable-micro-infusion-stamps",
     ],
   },
 ];
