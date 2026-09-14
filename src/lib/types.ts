@@ -313,4 +313,6 @@ export type Product = {
    * storefront — shoppers stay on this site and use the cart.
    */
   supplierUrl?: string;
+  /** Replaces the default topical-use line on shop cards (oral tablets, patches). */
+  usageNote?: string;
 };

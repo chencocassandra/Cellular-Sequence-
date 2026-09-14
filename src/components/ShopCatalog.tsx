@@ -57,7 +57,11 @@ export function ProductGrid({ items }: { items: Product[] }) {
           <h2 className="mt-2 font-serif text-2xl">{product.name}</h2>
           <ProductRating />
           <p className="mt-2 text-sm text-ink-soft">{product.summary}</p>
-          <TopicalUseLabel className="mt-3" />
+          {product.usageNote ? (
+            <p className="mt-3 text-[10px] uppercase tracking-[0.12em] text-ink-soft">{product.usageNote}</p>
+          ) : (
+            <TopicalUseLabel className="mt-3" />
+          )}
           {product.ingredientSlugs?.length ? (
             <p className="mt-2 text-sm text-ink-soft">
               Ingredients:{" "}

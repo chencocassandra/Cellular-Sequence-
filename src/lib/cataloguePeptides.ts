@@ -31,6 +31,7 @@ function entry(opts: {
   areas: PeptideArea[];
   terms?: string[];
   sell?: boolean;
+  productHref?: string;
 }): Peptide {
   const sell = opts.sell ?? false;
   return {
@@ -54,7 +55,7 @@ function entry(opts: {
     badges: kindBadges[opts.kind],
     areas: opts.areas,
     availableToPurchase: sell,
-    productHref: sell ? "/shop/peptide-serums" : undefined,
+    productHref: opts.productHref ?? (sell ? "/shop/peptide-serums" : undefined),
     searchTerms: opts.terms ?? [],
     references: [
       {
@@ -1213,10 +1214,11 @@ export const cataloguePeptides: Peptide[] = [
     sides: "Infusion reactions reported anecdotally; product quality varies.",
     contra: "Not a peptide-shop product.",
     reg: "Not approved as a compounded anti-ageing injection in this model.",
-    au: "Educational. Shop does not sell NAD+ injectables.",
+    au: "Educational for injectable NAD+. The shop sells oral NAD+ tablets and transdermal NAD+ patches — not NAD+ injections.",
     areas: ["healthy-ageing", "metabolic"],
-    terms: ["nadh", "nad"],
+    terms: ["nadh", "nad", "nmn"],
     sell: false,
+    productHref: "/shop/tablets",
   }),
   entry({
     slug: "oxytocin",
