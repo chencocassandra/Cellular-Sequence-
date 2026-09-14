@@ -31,7 +31,7 @@ export function TgaExplainerLink({ className = "" }: { className?: string }) {
       href={TGA_EXPLAINER_HREF}
       className={`text-[11px] uppercase tracking-[0.14em] text-ink underline decoration-line underline-offset-2 hover:text-bronze-deep ${className}`.trim()}
     >
-      What TGA status means
+      What the marks mean
     </Link>
   );
 }
