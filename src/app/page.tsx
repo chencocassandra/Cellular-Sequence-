@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { AddToCartButton } from "@/components/AddToCartButton";
 import { EmailSignup } from "@/components/EmailSignup";
-import { HomeGuideExample } from "@/components/HomeGuideExample";
+import { HomeStartHere } from "@/components/HomeStartHere";
 import { PeptideSearch } from "@/components/PeptideSearch";
 import { ProductPhoto } from "@/components/ProductPhoto";
 import { ProtocolLandingHero } from "@/components/ProtocolCategories";
@@ -36,7 +36,7 @@ export default function Home() {
   return (
     <div>
       <ProtocolLandingHero />
-      <HomeGuideExample />
+      <HomeStartHere />
 
       <section className="border-y border-line bg-paper">
         <div className="mx-auto max-w-7xl px-4 py-20 lg:px-6">
