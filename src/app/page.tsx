@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AddToCartButton } from "@/components/AddToCartButton";
+import { ProductBuyActions } from "@/components/AddToCartButton";
 import { EmailSignup } from "@/components/EmailSignup";
 import { HomeStartHere } from "@/components/HomeStartHere";
 import { PeptideSearch } from "@/components/PeptideSearch";
@@ -129,7 +129,7 @@ export default function Home() {
               <ProductRating />
               <TopicalUseLabel className="mt-2" />
               <p className="mt-1 text-sm text-ink-soft">{product.price}</p>
-              <AddToCartButton slug={product.slug} />
+              <ProductBuyActions product={product} />
             </article>
           ))}
         </div>
