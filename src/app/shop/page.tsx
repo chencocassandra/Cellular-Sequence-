@@ -1,4 +1,5 @@
 import { CategoryNav, ProductGrid } from "@/components/ShopCatalog";
+import { ShopByConcern } from "@/components/ShopByConcern";
 import { PageHero } from "@/components/PageHero";
 import { Reviews } from "@/components/Reviews";
 import { TgaExplainerLink } from "@/components/TgaStatusBadge";
@@ -23,6 +24,7 @@ export default function ShopPage() {
         <TgaExplainerLink />
       </div>
       <CategoryNav />
+      <ShopByConcern />
       <ProductGrid items={products} />
       <Reviews />
     </div>

@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
       { source: "/longevity", destination: "/peptides/nad-plus", permanent: true },
       { source: "/longevity/:path*", destination: "/peptides", permanent: true },
       { source: "/shop/longevity", destination: "/shop", permanent: true },
-      { source: "/shop/pen-accessories", destination: "/shop/facial-needling", permanent: true },
+      { source: "/shop/patches", destination: "/shop/peptide-patches", permanent: true },
       { source: "/skin/ghk-cu", destination: "/skin/peptide-serums", permanent: true },
     ];
   },

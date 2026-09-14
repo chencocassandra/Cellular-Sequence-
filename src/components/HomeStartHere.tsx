@@ -20,8 +20,8 @@ const steps = [
     n: "03",
     title: "Peptide products",
     body: "Leave-on copper-peptide and matrikine cosmetics. Not for injection.",
-    href: "/shop/peptide-serums",
-    label: "Peptide serums",
+    href: "/shop/peptides",
+    label: "Peptides",
   },
   {
     n: "04",

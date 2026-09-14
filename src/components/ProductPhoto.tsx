@@ -22,9 +22,7 @@ export function ProductPhoto({
   labelDetail?: string;
   labelFooter?: string;
 }) {
-  const overlayLabel =
-    Boolean(labelName) &&
-    (src.includes("product-vial") || src.endsWith("product-ghk-cu.png") || src.endsWith("product-matrikine.png"));
+  const overlayLabel = Boolean(labelName) && src.includes("product-vial");
   return (
     <div className={`relative overflow-hidden ${src.includes("product-vial") ? "bg-black" : "bg-white"} ${className}`}>
       <Image

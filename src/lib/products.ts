@@ -27,7 +27,7 @@ export const products: Product[] = [
   {
     slug: "disposable-micro-infusion-stamps",
     name: "Disposable Micro-Infusion Stamps",
-    category: "facial-needling",
+    category: "pen-accessories",
     price: "$48",
     summary:
       "Single-use hydra stamp heads with a serum chamber and gold needle plate. Offered in 0.25 mm and 0.5 mm cosmetic depths. Do not share. Dispose as sharps.",
@@ -142,7 +142,7 @@ export const products: Product[] = [
   {
     slug: "pen-cartridge-pack",
     name: "Disposable Stamp Head Pack",
-    category: "facial-needling",
+    category: "pen-accessories",
     price: "$39",
     summary:
       "Sealed single-use micro-infusion stamp heads for the protocol. One head, one session. Do not share.",
@@ -199,7 +199,7 @@ export const products: Product[] = [
   {
     slug: "cartridge-injector",
     name: "Protocol 3 mL Cartridge Injector",
-    category: "facial-needling",
+    category: "pen-accessories",
     price: "$54",
     summary: "Disposable multi-dose 3 mL cartridge injector for protocol cosmetic use. Research-only compounds cannot be purchased here.",
     image: "/images/product-cartridge-injector.jpg",
@@ -320,8 +320,19 @@ export const shopCategories: Record<
   },
   "facial-needling": {
     title: "Facial needling",
-    intro: "Cosmetic needling pens, hydra stamp heads, and a 3 mL cartridge injector for protocol cosmetic use.",
+    intro: "Cosmetic facial needling pens for at-home complexion protocols.",
     filter: "facial-needling",
+  },
+  "pen-accessories": {
+    title: "Pen accessories",
+    intro: "Stamp heads, hydra stamps, and a 3 mL cartridge injector for the protocol pen. Dispose as sharps. Do not share.",
+    filter: "pen-accessories",
+  },
+  peptides: {
+    title: "Peptides",
+    intro:
+      "Leave-on peptide serums and oral NAD+ tablets you can add to the cart. Research-only and injectable peptides stay in the encyclopaedia and are not sold.",
+    filter: "peptides",
   },
   "peptide-serums": {
     title: "Peptide serums",
@@ -341,7 +352,13 @@ export const shopCategories: Record<
     filter: "tablets",
   },
   patches: {
-    title: "Patches",
+    title: "Peptide patches",
+    intro:
+      "Two types from one listing: GLP-1 support patches and NAD+ support patches. Transdermal only. Not prescription GLP-1 medicines. Not NAD+ injections.",
+    filter: "patches",
+  },
+  "peptide-patches": {
+    title: "Peptide patches",
     intro:
       "Two types from one listing: GLP-1 support patches and NAD+ support patches. Transdermal only. Not prescription GLP-1 medicines. Not NAD+ injections.",
     filter: "patches",
@@ -370,5 +387,11 @@ export function productsForCategory(slug?: string) {
   }
   if (slug === "new") return products.filter((p) => p.badge === "New");
   if (slug === "bundles") return products.filter((p) => p.category === "bundles");
+  if (slug === "peptides") {
+    return products.filter((p) => p.category === "peptide-serums" || p.category === "tablets");
+  }
+  if (slug === "peptide-patches") {
+    return products.filter((p) => p.category === "patches");
+  }
   return products.filter((p) => p.category === slug);
 }

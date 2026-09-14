@@ -31,7 +31,9 @@ export function Footer() {
         <div>
           <p className="text-[11px] uppercase tracking-[0.18em] text-[#c4ad7a]">Shop</p>
           <ul className="mt-3 space-y-1.5">
-            {siteCategories.map((c) => (
+            {siteCategories
+              .filter((c) => c.id !== "learn")
+              .map((c) => (
               <li key={c.id}>
                 <Link href={c.href} className="text-sm text-paper/75 hover:text-paper">
                   {c.navLabel}
