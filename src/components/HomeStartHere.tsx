@@ -84,15 +84,15 @@ export function HomeStartHere() {
             <p className="text-[11px] uppercase tracking-[0.22em] text-bronze">Quiz</p>
             <h2 className="mt-2 font-serif text-3xl md:text-4xl">Not sure where to start?</h2>
             <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink-soft">
-              A short quiz routes you to a topical hub. It is not a diagnosis and does not recommend
-              injectable research peptides.
+              A short quiz suggests a topical starting point. It is not a diagnosis and does not
+              recommend injectable or research peptides.
             </p>
           </div>
           <Link
             href="/quiz"
             className="inline-flex bg-ink px-6 py-3 text-[11px] uppercase tracking-[0.16em] text-paper"
           >
-            Take the skin quiz
+            Find a topical routine
           </Link>
         </div>
       </section>

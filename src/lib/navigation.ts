@@ -205,7 +205,7 @@ export const primaryNav: NavItem[] = [
           { label: "TGA status", href: "/learn/tga-status" },
           { label: "Documents", href: "/learn/documents" },
           { label: "Journal", href: "/journal" },
-          { label: "Skin quiz", href: "/quiz" },
+          { label: "Find a topical routine", href: "/quiz" },
           { label: "Aftercare hub", href: "/concerns/aftercare" },
         ],
       },

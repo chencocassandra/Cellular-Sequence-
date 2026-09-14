@@ -69,7 +69,7 @@ export function HomeGuideExample() {
             <p className="text-[11px] uppercase tracking-[0.18em] text-bronze">Not sure</p>
             <p className="mt-2 font-serif text-2xl">Find a topical routine</p>
             <p className="mt-2 max-w-xl text-sm text-ink-soft">
-              A short quiz. Not a diagnosis. It will not recommend injectable research peptides.
+              A short quiz. Not a diagnosis. It will not recommend injectable or research peptides.
             </p>
           </div>
           <Link
