@@ -12,18 +12,6 @@ function Stars({ label }: { label: string }) {
   );
 }
 
-export function ProductRating() {
-  return (
-    <div className="mt-3 flex flex-wrap items-center gap-2">
-      {/* PLACEHOLDER: product stars and review count — edit marketing.reviews */}
-      <Stars label={marketing.reviews.averageLabel} />
-      <p className="text-[11px] uppercase tracking-[0.12em] text-ink-soft">
-        {marketing.reviews.averageLabel} · {marketing.reviews.countLabel}
-      </p>
-    </div>
-  );
-}
-
 export function Reviews() {
   return (
     <section className="border-t border-line bg-ivory" aria-labelledby="reviews-heading">
