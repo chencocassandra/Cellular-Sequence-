@@ -10,6 +10,10 @@ const SALON_SERUM_SUPPLIER =
 const PATCH_SUPPLIER =
   "https://www.alibaba.com/product-detail/GLP-1-Patches-for-Weight-Loss_1601742625652.html";
 
+/** Dropship listing behind both the NAD+ tablets and the antioxidant complex. Not shown on the storefront. */
+const NAD_COMPLEX_SUPPLIER =
+  "https://www.alibaba.com/product-detail/NAD-Complex-Adult-Anti-aging-Immune_1601713969082.html";
+
 export const products: Product[] = [
   {
     slug: "protocol-needling-pen",
@@ -65,7 +69,7 @@ export const products: Product[] = [
     slug: "snap-8-serum",
     name: "SNAP-8 Peptide Anti-Ageing Serum",
     category: "peptide-serums",
-    price: "$22.49",
+    price: "$69",
     summary:
       "Leave-on acetyl hexapeptide-8 cosmetic for the look of expression lines. Not botulinum toxin. Not for injection.",
     badge: "New",
@@ -79,7 +83,7 @@ export const products: Product[] = [
     slug: "pdrn-exo-serum",
     name: "PDRN + Exosome Recovery Serum",
     category: "peptide-serums",
-    price: "$22.49",
+    price: "$84",
     summary:
       "Leave-on cosmetic for the look of recovering, comfortable skin. Not a stem-cell medicine. Not for injection.",
     image: "/images/product-pdrn-exo-serum.png",
@@ -91,7 +95,7 @@ export const products: Product[] = [
     slug: "ghk-cu-ahk-cu-scalp-serum",
     name: "GHK-Cu + AHK-Cu Scalp Care Serum",
     category: "peptide-serums",
-    price: "$14.13",
+    price: "$59",
     summary:
       "Leave-on copper-peptide cosmetic for the look of scalp and hair. Appearance only — not a hair-loss medicine.",
     image: "/images/product-ghk-cu-scalp-serum.png",
@@ -104,7 +108,7 @@ export const products: Product[] = [
     slug: "pdrn-ha-serum",
     name: "PDRN + HA Hydrating Serum",
     category: "peptide-serums",
-    price: "$11.19",
+    price: "$49",
     summary:
       "Leave-on hydrating cosmetic with PDRN and hyaluronic acid for the look of a plump, comfortable surface. Not for injection.",
     image: "/images/product-pdrn-ha-serum.png",
@@ -116,7 +120,7 @@ export const products: Product[] = [
     slug: "multi-peptide-scalp-serum",
     name: "Men’s Multi-Peptide Scalp Serum",
     category: "peptide-serums",
-    price: "$18.90",
+    price: "$65",
     summary:
       "Leave-on multi-peptide cosmetic for the look of scalp and hair density. Appearance only — not a hair-loss medicine. Not for injection.",
     badge: "New",
@@ -125,6 +129,20 @@ export const products: Product[] = [
     labelDetail: "Men’s · scalp",
     supplierUrl:
       "https://www.alibaba.com/product-detail/Professional-Multi-Peptide-Scalp-Serum-Hair_1601935366184.html",
+  },
+  {
+    slug: "nad-egf-skin-booster",
+    name: "NAD+ EGF Skin Booster Ampoules",
+    category: "peptide-serums",
+    price: "$89",
+    summary:
+      "Leave-on NAD+ and EGF ampoules applied with cosmetic needling, for the look of fresh, even skin. Not the injectable skin booster offered in clinics. Not for injection.",
+    badge: "New",
+    image: "/images/product-nad-egf-skin-booster.png",
+    labelName: "NAD+ EGF Booster",
+    labelDetail: "Ampoules · cosmetic",
+    supplierUrl:
+      "https://www.alibaba.com/product-detail/OEM-Skin-Booster-NAD-Egf-Ampoules_1601705774614.html",
   },
   {
     slug: "cooling-case",
@@ -217,36 +235,42 @@ export const products: Product[] = [
     image: PRODUCT_VIAL_IMAGE,
     labelName: "Barrier Balm",
     labelDetail: "Cosmetic",
+    supplierUrl:
+      "https://www.alibaba.com/product-detail/Private-Label-Post-Procedure-Barrier-Stabilizing_1601910343650.html",
   },
   {
-    slug: "focus-theanine-capsules",
+    slug: "focus-bacopa-capsules",
     name: "Permitted Focus Capsules",
     category: "cognitive",
     price: "$38",
-    summary: "Listed-style caffeine + L-theanine blend for alertness. Not a peptide medicine.",
+    summary:
+      "Listed-style Bacopa monnieri capsules, 60 per bottle. A herbal ingredient, not a peptide medicine and not a nootropic drug.",
     image: PRODUCT_VIAL_IMAGE,
     labelName: "Focus Capsules",
-    labelDetail: "Caffeine + L-theanine",
+    labelDetail: "Bacopa monnieri",
     labelFooter: "Listed supplement",
     tgaApprovedForSale: true,
+    supplierUrl:
+      "https://www.alibaba.com/product-detail/OEM-ODM-60-Capsule-Bacopa-Monnieri_1601663499782.html",
   },
   {
     slug: "longevity-antioxidant",
     name: "Antioxidant Longevity Complex",
     category: "longevity",
-    price: "$54",
+    price: "$64",
     summary: "Permitted antioxidant nutrients. Not an injectable NAD+ drip.",
     image: PRODUCT_VIAL_IMAGE,
     labelName: "Antioxidant Complex",
     labelDetail: "Permitted nutrients",
     labelFooter: "Listed supplement",
     tgaApprovedForSale: true,
+    supplierUrl: NAD_COMPLEX_SUPPLIER,
   },
   {
     slug: "nad-plus-tablets",
     name: "NAD+ High-Purity Tablets",
     category: "tablets",
-    price: "$32",
+    price: "$69",
     summary:
       "The legal, needle-free NAD+ format: swallowable high-purity tablets instead of boutique NAD+ injections. A stronger everyday oral dose than a clinic drip you cannot lawfully buy here. Not for injection. Not a compounded NAD+ vial.",
     badge: "New",
@@ -254,14 +278,13 @@ export const products: Product[] = [
     labelName: "NAD+ Tablets",
     labelDetail: "Oral · high purity",
     usageNote: "Not for injection — oral tablets. Not an NAD+ drip.",
-    supplierUrl:
-      "https://www.alibaba.com/product-detail/Best-Price-99-9-High-Purity_1601095740102.html",
+    supplierUrl: NAD_COMPLEX_SUPPLIER,
   },
   {
     slug: "glp-1-support-patches",
     name: "GLP-1 Support Patches",
     category: "patches",
-    price: "$24.90",
+    price: "$44.90",
     summary:
       "Transdermal GLP-1 support patches from the same listing as the NAD+ patches. Needle-free. Not Ozempic, Wegovy, Mounjaro, or any prescription GLP-1 medicine. Not for injection.",
     badge: "New",
@@ -275,7 +298,7 @@ export const products: Product[] = [
     slug: "nad-plus-patches",
     name: "NAD+ Support Patches",
     category: "patches",
-    price: "$24.90",
+    price: "$44.90",
     summary:
       "Transdermal NAD+ patches — the same supplier listing as the GLP-1 patches, NAD+ colour/type. Needle-free support, not an IV NAD+ drip and not stronger than the oral tablets for daily use.",
     badge: "New",
@@ -289,7 +312,7 @@ export const products: Product[] = [
     slug: "skin-protocol-bundle",
     name: "Advanced Skin Protocol Bundle",
     category: "bundles",
-    price: "$248",
+    price: "$349",
     summary:
       "Needling pen, disposable micro-infusion stamps, copper peptide serum, hygiene kit and cooling case.",
     badge: "Bundle",

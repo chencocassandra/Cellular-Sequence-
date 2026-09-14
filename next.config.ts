@@ -7,6 +7,11 @@ const nextConfig: NextConfig = {
       { source: "/longevity/:path*", destination: "/peptides", permanent: true },
       { source: "/shop/longevity", destination: "/shop", permanent: true },
       { source: "/shop/patches", destination: "/shop/peptide-patches", permanent: true },
+      {
+        source: "/shop/focus-theanine-capsules",
+        destination: "/shop/focus-bacopa-capsules",
+        permanent: true,
+      },
       { source: "/skin/ghk-cu", destination: "/skin/peptide-serums", permanent: true },
     ];
   },

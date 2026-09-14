@@ -8,6 +8,7 @@ export const QUIZ_DISCLAIMER =
 export const QUIZ_SHOP_ALLOWLIST = [
   "snap-8-serum",
   "pdrn-exo-serum",
+  "nad-egf-skin-booster",
   "ghk-cu-ahk-cu-scalp-serum",
   "pdrn-ha-serum",
   "multi-peptide-scalp-serum",
@@ -102,7 +103,7 @@ function serumForConcern(concern: QuizConcern): string[] {
     case "menopause":
       return ["snap-8-serum", "ghk-cu-serum"];
     case "wellness":
-      return ["pdrn-ha-serum", "ghk-cu-serum"];
+      return ["nad-egf-skin-booster", "pdrn-ha-serum"];
     default:
       return ["snap-8-serum", "matrikine-serum"];
   }
