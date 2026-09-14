@@ -41,7 +41,7 @@ export const products: Product[] = [
     price: "$78",
     summary: "Leave-on cosmetic copper tripeptide serum for the look of firm, even skin.",
     badge: "Cosmetic peptide",
-    image: PRODUCT_VIAL_IMAGE,
+    image: "/images/product-ghk-cu.png",
     labelName: "GHK-Cu Serum",
     labelDetail: "30 ml · Cosmetic",
     ingredientSlugs: ["ghk-cu"],
@@ -52,7 +52,7 @@ export const products: Product[] = [
     category: "peptide-serums",
     price: "$72",
     summary: "Palmitoyl pentapeptide-4 and tripeptide-1 in a barrier-aware base.",
-    image: PRODUCT_VIAL_IMAGE,
+    image: "/images/product-matrikine.png",
     labelName: "Matrikine Serum",
     labelDetail: "30 ml · Cosmetic",
     ingredientSlugs: ["palmitoyl-pentapeptide-4", "palmitoyl-tripeptide-1"],
@@ -65,9 +65,9 @@ export const products: Product[] = [
     summary:
       "Leave-on acetyl hexapeptide-8 cosmetic for the look of expression lines. Not botulinum toxin. Not for injection.",
     badge: "New",
-    image: PRODUCT_VIAL_IMAGE,
+    image: "/images/product-snap-8-serum.png",
     labelName: "SNAP-8 Serum",
-    labelDetail: "Cosmetic peptide",
+    labelDetail: "Type 1 · anti-ageing",
     ingredientSlugs: ["acetyl-hexapeptide-8"],
     supplierUrl: SALON_SERUM_SUPPLIER,
   },
@@ -78,9 +78,9 @@ export const products: Product[] = [
     price: "$22.49",
     summary:
       "Leave-on cosmetic for the look of recovering, comfortable skin. Not a stem-cell medicine. Not for injection.",
-    image: PRODUCT_VIAL_IMAGE,
+    image: "/images/product-pdrn-exo-serum.png",
     labelName: "PDRN + EXO",
-    labelDetail: "Cosmetic",
+    labelDetail: "Type 2 · recovery",
     supplierUrl: SALON_SERUM_SUPPLIER,
   },
   {
@@ -90,9 +90,9 @@ export const products: Product[] = [
     price: "$14.13",
     summary:
       "Leave-on copper-peptide cosmetic for the look of scalp and hair. Appearance only — not a hair-loss medicine.",
-    image: PRODUCT_VIAL_IMAGE,
+    image: "/images/product-ghk-cu-scalp-serum.png",
     labelName: "Scalp GHK-Cu",
-    labelDetail: "AHK-Cu blend",
+    labelDetail: "Type 3 · scalp",
     ingredientSlugs: ["ghk-cu"],
     supplierUrl: SALON_SERUM_SUPPLIER,
   },
@@ -103,9 +103,9 @@ export const products: Product[] = [
     price: "$11.19",
     summary:
       "Leave-on hydrating cosmetic with PDRN and hyaluronic acid for the look of a plump, comfortable surface. Not for injection.",
-    image: PRODUCT_VIAL_IMAGE,
+    image: "/images/product-pdrn-ha-serum.png",
     labelName: "PDRN + HA",
-    labelDetail: "Hydrating",
+    labelDetail: "Type 4 · hydrating",
     supplierUrl: SALON_SERUM_SUPPLIER,
   },
   {
@@ -263,8 +263,9 @@ export const shopCategories: Record<
     filter: "facial-needling",
   },
   "peptide-serums": {
-    title: "GHK-Cu / peptide serums",
-    intro: "Topical copper-peptide and matrikine cosmetics. Injectable research peptides are not sold.",
+    title: "Peptide serums",
+    intro:
+      "Four leave-on types: SNAP-8 anti-ageing, PDRN + EXO recovery, GHK-Cu + AHK-Cu scalp, and PDRN + HA hydrating. Cosmetic only — not for injection.",
     filter: "peptide-serums",
   },
   cognitive: {
