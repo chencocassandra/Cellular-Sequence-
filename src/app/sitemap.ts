@@ -4,7 +4,7 @@ import { glossaryEntries } from "@/lib/glossary";
 import { peptides, statusCollections } from "@/lib/peptides";
 import { oilTabletEntries } from "@/lib/oilsTablets";
 import { pages } from "@/lib/pages";
-import { shopCategories } from "@/lib/products";
+import { products, shopCategories } from "@/lib/products";
 import { SITE_URL } from "@/lib/site";
 import { OIL_TABLET_CATEGORIES, OIL_TABLET_FORMS, PEPTIDE_AREAS, RESEARCH_TOPICS } from "@/lib/types";
 
@@ -40,6 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...OIL_TABLET_CATEGORIES.map((c) => `/oils-tablets/category/${c}`),
     ...oilTabletEntries.map((e) => `/oils-tablets/${e.slug}`),
     ...Object.keys(shopCategories).map((s) => `/shop/${s}`),
+    ...products.map((p) => `/shop/${p.slug}`),
     ...Object.keys(pages),
   ];
   return paths.map((path) => ({

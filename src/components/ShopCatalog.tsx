@@ -57,7 +57,11 @@ export function ProductGrid({ items }: { items: Product[] }) {
           <div className="mt-2">
             <TgaStatusBadge mark={tgaMarkForProduct(product)} />
           </div>
-          <h2 className="mt-2 font-serif text-2xl">{product.name}</h2>
+          <h2 className="mt-2 font-serif text-2xl">
+            <Link href={`/shop/${product.slug}`} className="hover:text-bronze-deep">
+              {product.name}
+            </Link>
+          </h2>
           <p className="mt-2 text-sm text-ink-soft">{product.summary}</p>
           {product.usageNote ? (
             <p className="mt-3 text-[10px] uppercase tracking-[0.12em] text-ink-soft">{product.usageNote}</p>
@@ -79,6 +83,12 @@ export function ProductGrid({ items }: { items: Product[] }) {
           ) : null}
           <p className="mt-4 text-sm">{product.price}</p>
           <AddToCartButton slug={product.slug} />
+          <Link
+            href={`/shop/${product.slug}`}
+            className="mt-3 inline-block text-[11px] uppercase tracking-[0.14em] underline underline-offset-2"
+          >
+            View details
+          </Link>
         </article>
       ))}
     </div>
