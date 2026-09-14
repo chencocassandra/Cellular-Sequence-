@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { StatusBadge } from "@/components/StatusBadge";
+import { TgaStatusBadge } from "@/components/TgaStatusBadge";
+import { tgaMarkForPeptide } from "@/lib/compliance";
 import {
   EDUCATIONAL_DISCLAIMER,
   INSUFFICIENT_EVIDENCE,
@@ -77,6 +79,7 @@ export function PeptideEncyclopaediaArticle({ peptide: p }: { peptide: Peptide }
         <div className="mx-auto max-w-3xl px-4 py-14 lg:px-6">
           <p className="text-[11px] uppercase tracking-[0.22em] text-bronze">Peptide Encyclopaedia</p>
           <div className="mt-4 flex flex-wrap gap-1.5">
+            <TgaStatusBadge mark={tgaMarkForPeptide(p)} size="md" />
             {p.badges.map((b) => (
               <StatusBadge key={b} badge={b} />
             ))}

@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+import { journalPosts } from "@/lib/journal";
+import { glossaryEntries } from "@/lib/glossary";
 import { peptides, statusCollections } from "@/lib/peptides";
 import { oilTabletEntries } from "@/lib/oilsTablets";
 import { pages } from "@/lib/pages";
@@ -11,6 +13,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [
     "",
     "/shop",
+    "/shop/compare",
+    "/quiz",
+    "/journal",
+    "/learn/the-science",
+    "/learn/glossary",
+    "/learn/documents",
+    "/about/packaging",
+    "/concerns/menopause",
+    "/concerns/hair-scalp",
+    "/concerns/mens-grooming",
+    "/concerns/aftercare",
     "/peptides",
     "/rewards",
     "/peptides/a-z",
@@ -19,6 +32,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...PEPTIDE_AREAS.map((a) => `/peptides/area/${a}`),
     ...RESEARCH_TOPICS.map((t) => `/peptides/topic/${t}`),
     ...peptides.map((p) => `/peptides/${p.slug}`),
+    ...journalPosts.map((p) => `/journal/${p.slug}`),
+    ...glossaryEntries.map((e) => `/learn/glossary/${e.slug}`),
     "/oils-tablets",
     "/oils-tablets/a-z",
     ...OIL_TABLET_FORMS.map((f) => `/oils-tablets/form/${f}`),

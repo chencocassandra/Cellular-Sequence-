@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { CategoryNav, ProductGrid } from "@/components/ShopCatalog";
 import { PageHero } from "@/components/PageHero";
 import { Reviews } from "@/components/Reviews";
+import { TgaExplainerLink } from "@/components/TgaStatusBadge";
 import { productsForCategory, shopCategories } from "@/lib/products";
 
 export function generateStaticParams() {
@@ -32,6 +33,9 @@ export default async function ShopCategoryPage({
   return (
     <div>
       <PageHero kicker="Shop" title={cat.title} intro={cat.intro} />
+      <div className="mx-auto max-w-7xl px-4 pt-6 lg:px-6">
+        <TgaExplainerLink />
+      </div>
       <CategoryNav currentHref={`/shop/${slug}`} />
       <ProductGrid items={productsForCategory(slug)} />
       <Reviews />

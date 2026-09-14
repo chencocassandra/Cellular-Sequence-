@@ -305,4 +305,7 @@ export type Product = {
   labelName?: string;
   labelDetail?: string;
   labelFooter?: string;
+  /** True only when the SKU is a therapeutic good approved/listed for sale in Australia. */
+  tgaApprovedForSale?: boolean;
+  ingredientSlugs?: string[];
 };

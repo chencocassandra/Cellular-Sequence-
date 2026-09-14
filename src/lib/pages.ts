@@ -228,22 +228,58 @@ export const pages: Record<string, ContentPage> = {
       },
     ],
   },
+  "/learn/tga-status": {
+    kicker: "TGA",
+    title: "What TGA status means here",
+    intro:
+      "Each name carries one mark that fits the product: TGA approved, approved medicine, or for research purposes only.",
+    sections: [
+      {
+        heading: "Who the TGA is",
+        body: "The Therapeutic Goods Administration (TGA) is Australia’s medicines and medical-devices regulator.",
+      },
+      {
+        heading: "TGA approved",
+        body: "Used on shop cosmetics, devices and permitted goods, and on encyclopaedia entries for cosmetic ingredients we sell as leave-on products.",
+      },
+      {
+        heading: "Approved medicine",
+        body: "Used on encyclopaedia entries for registered medicines (for example labelled GLP-1 products). That mark describes the medicine class. It does not put the medicine in the cart.",
+      },
+      {
+        heading: "For research purposes only",
+        body: "Used on research-only and investigational peptides such as BPC-157. Educational. Not for sale. Not for injection from this shop.",
+      },
+    ],
+  },
   "/learn/faqs": {
     kicker: "FAQs",
     title: "FAQs",
-    intro: "Shop, skin protocol, and encyclopaedia questions.",
+    intro: "Shop, topical use, TGA marks, and how this site is different from injectable-peptide stores.",
     sections: [
       {
-        heading: "Do you sell BPC-157 or similar peptides?",
-        body: "No. Research-only peptides are documented for education with Not approved for human use badges. They cannot be purchased from this site.",
+        heading: "Do you sell injectable research peptides?",
+        body: "No. The shop sells leave-on cosmetics, cosmetic devices, hygiene/storage, and permitted supplements. Nothing is sold for injection. Names such as BPC-157 or TB-500 appear only in the encyclopaedia, marked For research purposes only, and cannot be added to the cart.",
+      },
+      {
+        heading: "What do the TGA badges mean?",
+        body: "Each name has one mark that fits the product: TGA approved (shop cosmetics and cosmetic ingredients), approved medicine (registered medicines in the encyclopaedia), or for research purposes only (research-only peptides). Open Learn → TGA status.",
+      },
+      {
+        heading: "Are shop serums TGA-approved medicines?",
+        body: "Shop serums carry TGA approved as leave-on cosmetics. That is not the same as the approved medicine mark used on prescription encyclopaedia entries. Neither mark means we sell injectables.",
       },
       {
         heading: "Do you sell steroid oils or tablets?",
-        body: "No. Anabolic oils, oral steroids, SARMs and related tablets have a separate educational reference at Oils & tablets. They are not in the Peptide Encyclopaedia and cannot be added to the cart.",
+        body: "No. Oils and tablets in the footer library are educational only.",
       },
       {
-        heading: "Is the encyclopaedia medical advice?",
-        body: "No. It is scientific literacy. Approved medicines require a registered prescriber.",
+        heading: "Is any of this medical advice?",
+        body: "No. Hubs for menopause appearance, hair appearance, and aftercare are cosmetic information. See a registered practitioner for medical concerns.",
+      },
+      {
+        heading: "Can I check out?",
+        body: "You can use the demo cart and fake checkout. Nothing is charged until real payments are connected.",
       },
     ],
   },
@@ -300,7 +336,7 @@ export const pages: Record<string, ContentPage> = {
   "/about/contact": {
     kicker: "Contact",
     title: "Contact",
-    intro: "Press, science corrections, and wholesale for cosmetic products — not sourcing requests for research peptides.",
+    intro: "Press, science corrections, and shop questions — not sourcing requests for research peptides.",
     sections: [
       {
         heading: "Corrections",

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ProtocolCategoryTabs } from "@/components/ProtocolCategoryTabs";
+import { TgaExplainerLink } from "@/components/TgaStatusBadge";
 import { TrustBar } from "@/components/TrustBar";
 
 export function ProtocolLandingHero() {
@@ -17,6 +18,10 @@ export function ProtocolLandingHero() {
               <li>A searchable encyclopaedia for the science behind the labels</li>
             </ul>
             <TrustBar />
+            <p className="mt-3 text-sm text-ink-soft">
+              Marks depend on the product: TGA approved, approved medicine, or for research
+              purposes only. <TgaExplainerLink />
+            </p>
           </div>
           <div className="relative aspect-[4/3]">
             <Image

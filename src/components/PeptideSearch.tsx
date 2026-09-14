@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import { StatusBadge } from "@/components/StatusBadge";
+import { TgaStatusBadge } from "@/components/TgaStatusBadge";
+import { tgaMarkForPeptide } from "@/lib/compliance";
 import { searchPeptides } from "@/lib/peptides";
 
 export function PeptideSearch({
@@ -55,6 +57,7 @@ export function PeptideSearch({
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <span className="font-medium">{p.name}</span>
                       <div className="flex flex-wrap gap-1">
+                        <TgaStatusBadge mark={tgaMarkForPeptide(p)} />
                         {p.badges.map((b) => (
                           <StatusBadge key={b} badge={b} size="sm" />
                         ))}

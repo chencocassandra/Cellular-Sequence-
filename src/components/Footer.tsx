@@ -3,7 +3,7 @@ import { BrandLogo } from "@/components/BrandLogo";
 import { EmailSignup } from "@/components/EmailSignup";
 import { SocialLinks } from "@/components/SocialLinks";
 import { marketing } from "@/lib/marketing";
-import { shopNav, siteCategories } from "@/lib/navigation";
+import { libraryNav, shopNav, siteCategories } from "@/lib/navigation";
 
 const legalLinks = [
   { label: "About", href: "/about" },
@@ -22,14 +22,14 @@ export function Footer() {
             <BrandLogo inverted showTagline={false} />
           </Link>
           <p className="mt-3 max-w-xs text-sm text-paper/70">
-            Peptide literacy as a signature feature. Consumer products stay on the lawful side of the line.
+            Topical peptide cosmetics and at-home protocols. Research compounds are not sold.
           </p>
           <div className="mt-5">
             <SocialLinks inverted />
           </div>
         </div>
         <div>
-          <p className="text-[11px] uppercase tracking-[0.18em] text-[#c4ad7a]">Browse</p>
+          <p className="text-[11px] uppercase tracking-[0.18em] text-[#c4ad7a]">Shop</p>
           <ul className="mt-3 space-y-1.5">
             {siteCategories.map((c) => (
               <li key={c.id}>
@@ -38,6 +38,15 @@ export function Footer() {
                 </Link>
               </li>
             ))}
+            {shopNav
+              .filter((link) => !siteCategories.some((c) => c.href === link.href))
+              .map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-paper/75 hover:text-paper">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
           </ul>
         </div>
         <div>
@@ -53,9 +62,14 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <p className="text-[11px] uppercase tracking-[0.18em] text-[#c4ad7a]">Shop</p>
+          <p className="text-[11px] uppercase tracking-[0.18em] text-[#c4ad7a]">
+            Educational library
+          </p>
+          <p className="mt-2 text-xs text-paper/55">
+            Reference only. Nothing in this library can be added to the cart.
+          </p>
           <ul className="mt-3 space-y-1.5">
-            {shopNav.map((link) => (
+            {libraryNav.map((link) => (
               <li key={link.href}>
                 <Link href={link.href} className="text-sm text-paper/75 hover:text-paper">
                   {link.label}
@@ -71,8 +85,8 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 px-4 py-6 text-center text-xs text-paper/50">
-        Educational information is not medical advice. Approved medicines require a registered prescriber.
-        Research-only compounds are not offered for sale.{" "}
+        Shop products are topical cosmetics and devices, not for injection. Educational information
+        is not medical advice. Research-only compounds are not offered for sale.{" "}
         <Link href="/privacy" className="text-paper/70 underline decoration-white/20 underline-offset-2 hover:text-paper">
           Privacy Policy
         </Link>
