@@ -13,7 +13,7 @@ const PATCH_SUPPLIER =
 export const products: Product[] = [
   {
     slug: "protocol-needling-pen",
-    name: "Protocol Facial Needling Pen",
+    name: "Professional Facial Needling Pen",
     category: "facial-needling",
     price: "$189",
     summary: "Adjustable cosmetic needling system for at-home complexion routines.",
@@ -26,8 +26,8 @@ export const products: Product[] = [
   },
   {
     slug: "disposable-micro-infusion-stamps",
-    name: "Disposable Micro-Infusion Stamps",
-    category: "pen-accessories",
+    name: "Disposable Micro-Infusion",
+    category: "facial-needling",
     price: "$48",
     summary:
       "Single-use hydra stamp heads with a serum chamber and gold needle plate. Offered in 0.25 mm and 0.5 mm cosmetic depths. Do not share. Dispose as sharps.",
@@ -142,7 +142,7 @@ export const products: Product[] = [
   {
     slug: "pen-cartridge-pack",
     name: "Disposable Stamp Head Pack",
-    category: "pen-accessories",
+    category: "facial-needling",
     price: "$39",
     summary:
       "Sealed single-use micro-infusion stamp heads for the protocol. One head, one session. Do not share.",
@@ -199,7 +199,7 @@ export const products: Product[] = [
   {
     slug: "cartridge-injector",
     name: "Protocol 3 mL Cartridge Injector",
-    category: "pen-accessories",
+    category: "facial-needling",
     price: "$54",
     summary: "Disposable multi-dose 3 mL cartridge injector for protocol cosmetic use. Research-only compounds cannot be purchased here.",
     image: "/images/product-cartridge-injector.jpg",
@@ -319,19 +319,20 @@ export const shopCategories: Record<
     filter: "bundles",
   },
   "facial-needling": {
-    title: "Facial needling",
-    intro: "Cosmetic facial needling pens for at-home complexion protocols.",
+    title: "Microneedling",
+    intro:
+      "Professional facial needling pen, disposable micro-infusion, disposable stamp head pack, and the protocol 3 mL cartridge injector. Cosmetic devices only — not for injectable research compounds.",
     filter: "facial-needling",
   },
   "pen-accessories": {
-    title: "Pen accessories",
-    intro: "Stamp heads, hydra stamps, and a 3 mL cartridge injector for the protocol pen. Dispose as sharps. Do not share.",
+    title: "Accessories",
+    intro: "Hygiene kit, nitrile gloves, alcohol prep pads, and the peptide cooling case.",
     filter: "pen-accessories",
   },
   peptides: {
     title: "Peptides",
     intro:
-      "Leave-on peptide serums and oral NAD+ tablets you can add to the cart. Research-only and injectable peptides stay in the encyclopaedia and are not sold.",
+      "Four shop groups: peptides, patches, serums, and needling. Oral NAD+ tablets sit here with the leave-on range. Research-only and injectable peptides stay in the encyclopaedia and are not sold.",
     filter: "peptides",
   },
   "peptide-serums": {
@@ -380,6 +381,20 @@ export const shopCategories: Record<
   },
 };
 
+export const MICRONEEDLING_PRODUCT_SLUGS = [
+  "protocol-needling-pen",
+  "disposable-micro-infusion-stamps",
+  "pen-cartridge-pack",
+  "cartridge-injector",
+] as const;
+
+export const ACCESSORIES_PRODUCT_SLUGS = [
+  "prep-hygiene-kit",
+  "nitrile-gloves",
+  "alcohol-prep-pads",
+  "cooling-case",
+] as const;
+
 export function productsForCategory(slug?: string) {
   if (!slug) return products;
   if (slug === "best-sellers") {
@@ -388,10 +403,26 @@ export function productsForCategory(slug?: string) {
   if (slug === "new") return products.filter((p) => p.badge === "New");
   if (slug === "bundles") return products.filter((p) => p.category === "bundles");
   if (slug === "peptides") {
-    return products.filter((p) => p.category === "peptide-serums" || p.category === "tablets");
+    return products.filter(
+      (p) =>
+        p.category === "peptide-serums" ||
+        p.category === "patches" ||
+        p.category === "tablets" ||
+        MICRONEEDLING_PRODUCT_SLUGS.includes(p.slug as (typeof MICRONEEDLING_PRODUCT_SLUGS)[number]),
+    );
+  }
+  if (slug === "facial-needling") {
+    return MICRONEEDLING_PRODUCT_SLUGS.map((s) => products.find((p) => p.slug === s)).filter(
+      (p): p is Product => Boolean(p),
+    );
   }
   if (slug === "peptide-patches") {
     return products.filter((p) => p.category === "patches");
+  }
+  if (slug === "pen-accessories") {
+    return ACCESSORIES_PRODUCT_SLUGS.map((s) => products.find((p) => p.slug === s)).filter(
+      (p): p is Product => Boolean(p),
+    );
   }
   return products.filter((p) => p.category === slug);
 }

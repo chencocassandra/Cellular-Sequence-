@@ -40,7 +40,11 @@ export function ProductGrid({ items }: { items: Product[] }) {
   return (
     <div className="mx-auto grid max-w-7xl gap-4 px-4 py-10 sm:grid-cols-2 lg:grid-cols-3 lg:px-6">
       {items.map((product) => (
-        <article key={product.slug} className="border border-line bg-paper p-5">
+        <article
+          key={product.slug}
+          id={product.slug}
+          className="scroll-mt-36 border border-line bg-paper p-5"
+        >
           <ProductPhoto
             src={product.image}
             alt={product.name}
