@@ -18,8 +18,15 @@ const steps = [
   },
   {
     n: "03",
-    title: "Serum and aftercare",
-    body: "Leave-on peptide cosmetics, then barrier support. Pause harsh actives if the surface is open.",
+    title: "Peptide products",
+    body: "Leave-on copper-peptide and matrikine cosmetics. Not for injection.",
+    href: "/shop/peptide-serums",
+    label: "Peptide serums",
+  },
+  {
+    n: "04",
+    title: "Aftercare",
+    body: "Barrier support after cosmetic needling. Pause harsh actives if the surface is open.",
     href: "/concerns/aftercare",
     label: "Aftercare hub",
   },
@@ -32,7 +39,7 @@ export function HomeStartHere() {
         <div className="mx-auto max-w-7xl px-4 py-16 lg:px-6">
           <p className="text-[11px] uppercase tracking-[0.22em] text-bronze">The protocol</p>
           <h2 className="mt-2 font-serif text-3xl md:text-4xl">How it works</h2>
-          <ol className="mt-10 grid gap-4 md:grid-cols-3">
+          <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step) => (
               <li key={step.n} className="border border-line bg-paper p-6">
                 <p className="text-[11px] uppercase tracking-[0.16em] text-bronze">{step.n}</p>
