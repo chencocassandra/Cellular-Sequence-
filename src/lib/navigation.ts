@@ -1,5 +1,3 @@
-import { marketing } from "@/lib/marketing";
-
 export type SiteCategoryTone = "purchase" | "research" | "product" | "library";
 
 export type SiteCategory = {
@@ -34,27 +32,19 @@ export const siteCategories: SiteCategory[] = [
     tone: "purchase",
   },
   {
+    id: "peptides",
+    href: "/shop/peptides",
+    navLabel: "Peptides",
+    label: "Peptides",
+    copy: "Leave-on peptide serums and oral NAD+ tablets. Research-only injectables are not sold.",
+    tone: "purchase",
+  },
+  {
     id: "microneedling",
     href: "/shop/facial-needling",
     navLabel: "Microneedling",
     label: "Microneedling",
     copy: "Micro-infusion and facial needling for cosmetic protocols.",
-    tone: "product",
-  },
-  {
-    id: "serums",
-    href: "/shop/peptide-serums",
-    navLabel: "Serums",
-    label: "Serums",
-    copy: "Leave-on copper-peptide and matrikine cosmetics. Not for injection.",
-    tone: "purchase",
-  },
-  {
-    id: "aftercare",
-    href: "/concerns/aftercare",
-    navLabel: "Aftercare",
-    label: "Aftercare",
-    copy: "Barrier-support cosmetics for after cosmetic needling.",
     tone: "product",
   },
   {
@@ -69,18 +59,20 @@ export const siteCategories: SiteCategory[] = [
 
 export const shopNav: NavLink[] = [
   { label: "All", href: "/shop" },
-  { label: "Compare", href: "/shop/compare" },
+  { label: "Peptides", href: "/shop/peptides" },
+  { label: "Peptide patches", href: "/shop/peptide-patches" },
   { label: "Bundles", href: "/shop/bundles" },
   { label: "Needling", href: "/shop/facial-needling" },
   { label: "Serums", href: "/shop/peptide-serums" },
-  { label: "Tablets", href: "/shop/tablets" },
-  { label: "Patches", href: "/shop/patches" },
-  { label: "Aftercare", href: "/shop/recovery" },
+  { label: "Cooling & Storage", href: "/shop/cooling-storage" },
+  { label: "Preparation & Hygiene", href: "/shop/preparation-hygiene" },
+  { label: "Accessories", href: "/shop/pen-accessories" },
+];
+
+export const shopConcernNav: NavLink[] = [
   { label: "Menopause skin", href: "/concerns/menopause" },
   { label: "Hair & scalp", href: "/concerns/hair-scalp" },
   { label: "Men’s grooming", href: "/concerns/mens-grooming" },
-  { label: "Cooling & Storage", href: "/shop/cooling-storage" },
-  { label: "Preparation & Hygiene", href: "/shop/preparation-hygiene" },
 ];
 
 export const homeShopCategories: SiteCategory[] = [
@@ -113,12 +105,11 @@ export const homeShopCategories: SiteCategory[] = [
 /** Homepage category tabs — shop and education only. */
 export const heroCategories: SiteCategory[] = [
   siteCategories[0],
-  siteCategories[2],
   siteCategories[1],
-  siteCategories[3],
+  siteCategories[2],
   homeShopCategories[0],
   homeShopCategories[1],
-  siteCategories[4],
+  siteCategories[3],
   homeShopCategories[2],
 ];
 
@@ -149,24 +140,27 @@ export const primaryNav: NavItem[] = [
     label: "Shop",
     href: "/shop",
     description: shopPeptidesIntro,
-    groups: [{ heading: "Shop", links: shopNav }],
+    groups: [
+      { heading: "Shop", links: shopNav },
+      { heading: "Shop by concern", links: shopConcernNav },
+    ],
   },
   {
-    label: "Microneedling",
-    href: "/shop/facial-needling",
+    label: "Peptides",
+    href: "/shop/peptides",
     description: siteCategories[1].copy,
     groups: [],
   },
   {
-    label: "Aftercare",
-    href: "/concerns/aftercare",
-    description: siteCategories[3].copy,
+    label: "Microneedling",
+    href: "/shop/facial-needling",
+    description: siteCategories[2].copy,
     groups: [],
   },
   {
     label: "Learn",
     href: "/learn",
-    description: siteCategories[4].copy,
+    description: siteCategories[3].copy,
     groups: [
       {
         links: [
@@ -179,22 +173,6 @@ export const primaryNav: NavItem[] = [
           { label: "Journal", href: "/journal" },
           { label: "Skin quiz", href: "/quiz" },
           { label: "Aftercare hub", href: "/concerns/aftercare" },
-        ],
-      },
-    ],
-  },
-  {
-    label: "About",
-    href: "/about",
-    groups: [
-      {
-        links: [
-          { label: "Our Story", href: "/about" },
-          { label: "Our Standards", href: "/about/standards" },
-          { label: "Packaging", href: "/about/packaging" },
-          { label: "Contact", href: "/about/contact" },
-          { label: "Privacy Policy", href: "/privacy" },
-          { label: marketing.referral.navLabel, href: marketing.referral.href },
         ],
       },
     ],

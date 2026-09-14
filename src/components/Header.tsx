@@ -33,7 +33,10 @@ export function Header() {
             const hasMenu = item.groups.some((g) => g.links.length > 0);
             const active =
               item.label === "Shop"
-                ? pathname === "/shop" || pathname.startsWith("/shop/")
+                ? pathname === "/shop" ||
+                  (pathname.startsWith("/shop/") &&
+                    pathname !== "/shop/peptides" &&
+                    !pathname.startsWith("/shop/peptides/"))
                 : pathname === item.href || pathname.startsWith(`${item.href}/`);
             return (
               <div key={`${item.label}-${item.href}`} className="group relative">

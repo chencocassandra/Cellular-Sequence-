@@ -12,9 +12,8 @@ const tabFill = [
 
 const tabEmoji: Record<string, string> = {
   purchase: "🛒",
-  serums: "🧴",
+  peptides: "🧴",
   microneedling: "✦",
-  aftercare: "◇",
   "cooling-storage": "❄",
   "preparation-hygiene": "▣",
   learn: "☰",
