@@ -22,9 +22,11 @@ export function ProductPhoto({
   labelDetail?: string;
   labelFooter?: string;
 }) {
-  const vial = src.includes("product-vial");
+  const overlayLabel =
+    Boolean(labelName) &&
+    (src.includes("product-vial") || src.endsWith("product-ghk-cu.png") || src.endsWith("product-matrikine.png"));
   return (
-    <div className={`relative overflow-hidden ${vial ? "bg-black" : "bg-white"} ${className}`}>
+    <div className={`relative overflow-hidden ${src.includes("product-vial") ? "bg-black" : "bg-white"} ${className}`}>
       <Image
         src={src}
         alt={alt}
@@ -33,7 +35,7 @@ export function ProductPhoto({
         className="object-contain"
         sizes={sizes}
       />
-      {vial && labelName ? (
+      {overlayLabel ? (
         <ProductPackLabel
           name={labelName}
           detail={labelDetail}

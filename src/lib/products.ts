@@ -2,6 +2,10 @@ import type { Product } from "./types";
 
 export const PRODUCT_VIAL_IMAGE = "/images/product-vial.jpg";
 
+/** Dropship listing for the SNAP-8 salon serum colour variants. Not shown on the storefront. */
+const SALON_SERUM_SUPPLIER =
+  "https://www.alibaba.com/product-detail/S-Salon-SNAP-8-Peptide-Multi_1601832343667.html";
+
 export const products: Product[] = [
   {
     slug: "protocol-needling-pen",
@@ -13,7 +17,7 @@ export const products: Product[] = [
     image: "/images/product-needling-pen-v2.jpg",
     labelName: "Needling Pen",
     labelDetail: "Cosmetic device",
-    alibabaUrl:
+    supplierUrl:
       "https://www.alibaba.com/product-detail/Authentic-Dr-pen-M8-Wireless-Derma_1601720927110.html",
   },
   {
@@ -27,6 +31,8 @@ export const products: Product[] = [
     image: "/images/product-micro-infusion-stamps-v2.jpg",
     labelName: "Hydra Stamps",
     labelDetail: "0.25–0.5 mm",
+    supplierUrl:
+      "https://www.alibaba.com/product-detail/20-Pins-Hydra-Needle-Titanium-Derma_1601813026786.html",
   },
   {
     slug: "ghk-cu-serum",
@@ -35,7 +41,7 @@ export const products: Product[] = [
     price: "$78",
     summary: "Leave-on cosmetic copper tripeptide serum for the look of firm, even skin.",
     badge: "Cosmetic peptide",
-    image: PRODUCT_VIAL_IMAGE,
+    image: "/images/product-ghk-cu.png",
     labelName: "GHK-Cu Serum",
     labelDetail: "30 ml · Cosmetic",
     ingredientSlugs: ["ghk-cu"],
@@ -46,10 +52,61 @@ export const products: Product[] = [
     category: "peptide-serums",
     price: "$72",
     summary: "Palmitoyl pentapeptide-4 and tripeptide-1 in a barrier-aware base.",
-    image: PRODUCT_VIAL_IMAGE,
+    image: "/images/product-matrikine.png",
     labelName: "Matrikine Serum",
     labelDetail: "30 ml · Cosmetic",
     ingredientSlugs: ["palmitoyl-pentapeptide-4", "palmitoyl-tripeptide-1"],
+  },
+  {
+    slug: "snap-8-serum",
+    name: "SNAP-8 Peptide Anti-Ageing Serum",
+    category: "peptide-serums",
+    price: "$22.49",
+    summary:
+      "Leave-on acetyl hexapeptide-8 cosmetic for the look of expression lines. Not botulinum toxin. Not for injection.",
+    badge: "New",
+    image: "/images/product-snap-8-serum.png",
+    labelName: "SNAP-8 Serum",
+    labelDetail: "Type 1 · anti-ageing",
+    ingredientSlugs: ["acetyl-hexapeptide-8"],
+    supplierUrl: SALON_SERUM_SUPPLIER,
+  },
+  {
+    slug: "pdrn-exo-serum",
+    name: "PDRN + Exosome Recovery Serum",
+    category: "peptide-serums",
+    price: "$22.49",
+    summary:
+      "Leave-on cosmetic for the look of recovering, comfortable skin. Not a stem-cell medicine. Not for injection.",
+    image: "/images/product-pdrn-exo-serum.png",
+    labelName: "PDRN + EXO",
+    labelDetail: "Type 2 · recovery",
+    supplierUrl: SALON_SERUM_SUPPLIER,
+  },
+  {
+    slug: "ghk-cu-ahk-cu-scalp-serum",
+    name: "GHK-Cu + AHK-Cu Scalp Care Serum",
+    category: "peptide-serums",
+    price: "$14.13",
+    summary:
+      "Leave-on copper-peptide cosmetic for the look of scalp and hair. Appearance only — not a hair-loss medicine.",
+    image: "/images/product-ghk-cu-scalp-serum.png",
+    labelName: "Scalp GHK-Cu",
+    labelDetail: "Type 3 · scalp",
+    ingredientSlugs: ["ghk-cu"],
+    supplierUrl: SALON_SERUM_SUPPLIER,
+  },
+  {
+    slug: "pdrn-ha-serum",
+    name: "PDRN + HA Hydrating Serum",
+    category: "peptide-serums",
+    price: "$11.19",
+    summary:
+      "Leave-on hydrating cosmetic with PDRN and hyaluronic acid for the look of a plump, comfortable surface. Not for injection.",
+    image: "/images/product-pdrn-ha-serum.png",
+    labelName: "PDRN + HA",
+    labelDetail: "Type 4 · hydrating",
+    supplierUrl: SALON_SERUM_SUPPLIER,
   },
   {
     slug: "cooling-case",
@@ -61,6 +118,8 @@ export const products: Product[] = [
     image: "/images/product-cooling-case.jpg",
     labelName: "Cooling Case",
     labelDetail: "Travel storage",
+    supplierUrl:
+      "https://www.alibaba.com/product-detail/Peptide-Cooler-Storage-Case-with-Temperature_1601928842825.html",
   },
   {
     slug: "pen-cartridge-pack",
@@ -72,6 +131,8 @@ export const products: Product[] = [
     image: "/images/product-micro-infusion-stamps-v2.jpg",
     labelName: "Stamp Heads",
     labelDetail: "Single use",
+    supplierUrl:
+      "https://www.alibaba.com/product-detail/20-Pins-Hydra-Needle-Titanium-Derma_1601813026786.html",
   },
   {
     slug: "prep-hygiene-kit",
@@ -92,6 +153,8 @@ export const products: Product[] = [
     image: "/images/product-alcohol-prep-pads.jpg",
     labelName: "Prep Pads",
     labelDetail: "Single use",
+    supplierUrl:
+      "https://www.alibaba.com/product-detail/Portable-Home-Use-Medical-Alcohol-Swabs_1600614224234.html",
   },
   {
     slug: "nitrile-gloves",
@@ -102,6 +165,8 @@ export const products: Product[] = [
     image: "/images/product-nitrile-gloves.jpg",
     labelName: "Nitrile Gloves",
     labelDetail: "Cosmetic prep",
+    supplierUrl:
+      "https://www.alibaba.com/product-detail/100-Box-Wholesale-Black-Disposable-Nitrile_1601521362443.html",
   },
   {
     slug: "disposable-syringes",
@@ -122,6 +187,8 @@ export const products: Product[] = [
     image: "/images/product-cartridge-injector.jpg",
     labelName: "3 mL Injector",
     labelDetail: "Cartridge system",
+    supplierUrl:
+      "https://www.alibaba.com/product-detail/Best-selling-Medical-Automatic-Injection-Pen_1601904218231.html",
   },
   {
     slug: "recovery-barrier-balm",
@@ -196,8 +263,9 @@ export const shopCategories: Record<
     filter: "facial-needling",
   },
   "peptide-serums": {
-    title: "GHK-Cu / peptide serums",
-    intro: "Topical copper-peptide and matrikine cosmetics. Injectable research peptides are not sold.",
+    title: "Peptide serums",
+    intro:
+      "Four leave-on types: SNAP-8 anti-ageing, PDRN + EXO recovery, GHK-Cu + AHK-Cu scalp, and PDRN + HA hydrating. Cosmetic only — not for injection.",
     filter: "peptide-serums",
   },
   cognitive: {

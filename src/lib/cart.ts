@@ -9,6 +9,6 @@ export function formatAud(amount: number): string {
   return new Intl.NumberFormat("en-AU", {
     style: "currency",
     currency: "AUD",
-    maximumFractionDigits: 0,
+    maximumFractionDigits: 2,
   }).format(amount);
 }
