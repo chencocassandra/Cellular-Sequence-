@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { AddToCartButton } from "@/components/AddToCartButton";
 import { ProductPhoto } from "@/components/ProductPhoto";
-import { ProductRating } from "@/components/Reviews";
 import { TgaStatusBadge } from "@/components/TgaStatusBadge";
 import { TopicalUseLabel } from "@/components/TopicalUseLabel";
 import { tgaMarkForProduct } from "@/lib/compliance";
@@ -59,7 +58,6 @@ export function ProductGrid({ items }: { items: Product[] }) {
             <TgaStatusBadge mark={tgaMarkForProduct(product)} />
           </div>
           <h2 className="mt-2 font-serif text-2xl">{product.name}</h2>
-          <ProductRating />
           <p className="mt-2 text-sm text-ink-soft">{product.summary}</p>
           {product.usageNote ? (
             <p className="mt-3 text-[10px] uppercase tracking-[0.12em] text-ink-soft">{product.usageNote}</p>

@@ -5,7 +5,7 @@ import { HomeStartHere } from "@/components/HomeStartHere";
 import { PeptideSearch } from "@/components/PeptideSearch";
 import { ProductPhoto } from "@/components/ProductPhoto";
 import { ProtocolLandingHero } from "@/components/ProtocolCategories";
-import { ProductRating, Reviews } from "@/components/Reviews";
+import { Reviews } from "@/components/Reviews";
 import { StatusBadge } from "@/components/StatusBadge";
 import { TgaExplainerLink, TgaStatusBadge } from "@/components/TgaStatusBadge";
 import { TopicalUseLabel } from "@/components/TopicalUseLabel";
@@ -126,7 +126,6 @@ export default function Home() {
                 <TgaStatusBadge mark={tgaMarkForProduct(product)} />
               </div>
               <h3 className="mt-2 font-serif text-xl">{product.name}</h3>
-              <ProductRating />
               <TopicalUseLabel className="mt-2" />
               <p className="mt-1 text-sm text-ink-soft">{product.price}</p>
               <AddToCartButton slug={product.slug} />
