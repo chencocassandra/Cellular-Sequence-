@@ -61,7 +61,7 @@ function entry(opts: {
       {
         title: "Encyclopaedia note",
         citation:
-          "Educational summary compiled for Longevity Protocol. Not a product COA, not medical advice, and not an offer to sell unapproved medicines.",
+          "Educational summary compiled for Cellular Sequence. Not a product COA, not medical advice, and not an offer to sell unapproved medicines.",
       },
     ],
   };
@@ -74,7 +74,7 @@ const cosmeticStd = {
   sides: "Topical irritation is possible. Do not inject cosmetic ingredients.",
   contra: "Hypersensitivity to the ingredient or formulation. Not for broken skin unless a clinician directs.",
   reg: "Cosmetic ingredient / branded cosmetic active. Not an approved systemic medicine.",
-  au: "Permitted in cosmetics when formulated and advertised within cosmetic rules. Longevity Protocol does not sell research-chemical injectables of these actives.",
+  au: "Permitted in cosmetics when formulated and advertised within cosmetic rules. Cellular Sequence does not sell research-chemical injectables of these actives.",
 };
 
 /** Cosmetic / hair-skin proteins and peptides from typical Australian raw-material catalogues (educational INCI names). */
@@ -395,7 +395,7 @@ export const cataloguePeptides: Peptide[] = [
     kind: "approved",
     peptideClass: "GHRH analogue (prescription medicine in labelled indications)",
     structure: "Stabilised 44-amino-acid GHRH analogue.",
-    what: "A prescription peptide medicine for HIV-associated lipodystrophy in some markets. Grey-market ‘tesamorelin 5 mg vials’ are not that product. Longevity Protocol does not sell tesamorelin.",
+    what: "A prescription peptide medicine for HIV-associated lipodystrophy in some markets. Grey-market ‘tesamorelin 5 mg vials’ are not that product. Cellular Sequence does not sell tesamorelin.",
     how: "Stimulates pituitary GH release via GHRH receptors.",
     body: "Raises GH/IGF-1 under medical supervision in labelled disease.",
     studied: ["HIV-associated visceral adiposity (labelled)"],
@@ -844,7 +844,7 @@ export const cataloguePeptides: Peptide[] = [
     sides: "As per labelled product; unregulated vials unsafe.",
     contra: "Not for self-injection.",
     reg: "Approved in some markets (e.g. thymalfasin) for specified uses.",
-    au: "Not a Longevity Protocol shop product. Check ARTG.",
+    au: "Not a Cellular Sequence shop product. Check ARTG.",
     areas: ["recovery"],
     terms: ["zadaxin", "thymalfasin"],
     sell: false,

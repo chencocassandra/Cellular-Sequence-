@@ -172,7 +172,7 @@ export const encyclopaediaOverlays: Record<string, Partial<Peptide>> = {
       unknowns: "Safety of unregulated research-chemical injectables is not characterised and is not implied by approved-product data.",
     },
     regulatoryDetail: {
-      tga: "Registered prescription medicine in specific brands and indications on the ARTG. Not a listed complementary medicine. Not sold by Longevity Protocol.",
+      tga: "Registered prescription medicine in specific brands and indications on the ARTG. Not a listed complementary medicine. Not sold by Cellular Sequence.",
       fda: "Approved (distinct NDAs/brands) for type 2 diabetes and for chronic weight management, among other labelled uses that must be read from the current USPI.",
       ema: "Centralised authorisations exist for diabetes and obesity products (brand-specific). Confirm SmPC for the exact product.",
     },

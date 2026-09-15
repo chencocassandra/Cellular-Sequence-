@@ -7,13 +7,13 @@ import type {
 import { OIL_TABLET_CATEGORY_LABELS, OIL_TABLET_FORM_LABELS } from "./types";
 
 const auSteroid =
-  "Anabolic–androgenic steroids are prescription-only (typically Schedule 4) in Australia. Unlicensed importation, supply or advertising as a bodybuilding product is unlawful. Longevity Protocol does not sell oils, tablets, or blends of this class.";
+  "Anabolic–androgenic steroids are prescription-only (typically Schedule 4) in Australia. Unlicensed importation, supply or advertising as a bodybuilding product is unlawful. Cellular Sequence does not sell oils, tablets, or blends of this class.";
 
 const auResearch =
   "Not a registered sports or anti-ageing medicine in this presentation. Research-chemical and grey-market tablets are not sold here.";
 
 const auMedicine =
-  "Licensed brands exist for specific medical indications. Unlabelled catalogue tablets are not those products and are not sold by Longevity Protocol.";
+  "Licensed brands exist for specific medical indications. Unlabelled catalogue tablets are not those products and are not sold by Cellular Sequence.";
 
 function item(opts: {
   slug: string;
@@ -890,7 +890,7 @@ export const oilTabletEntries: OilTabletEntry[] = [
     what: "An industrial chemical that uncouples oxidative phosphorylation. It has killed people who used it for fat loss. This is not a supplement and not a peptide.",
     risks: "Uncontrolled hyperthermia, multi-organ failure, death. There is no safe bodybuilding dose.",
     reg: "Not a medicine. Industrial poison. Possession and supply for human consumption is a public-health emergency.",
-    au: "Not a therapeutic good for weight loss. Longevity Protocol will not sell, source, or advise use.",
+    au: "Not a therapeutic good for weight loss. Cellular Sequence will not sell, source, or advise use.",
     kind: "poison",
     terms: ["dnp", "2,4-dnp"],
   }),

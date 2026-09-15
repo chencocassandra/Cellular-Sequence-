@@ -289,7 +289,7 @@ export const pages: Record<string, ContentPage> = {
   },
   "/about": {
     kicker: "Our story",
-    title: "Longevity Protocol",
+    title: "Cellular Sequence",
     intro:
       "An Australian house for advanced skin protocols and scientific peptide literacy — with a bright line between cosmetics you can buy and compounds you should only read about.",
     sections: [
@@ -300,7 +300,7 @@ export const pages: Record<string, ContentPage> = {
     ],
   },
   "/about/the-longevity-protocol": {
-    kicker: "The Longevity Protocol",
+    kicker: "Cellular Sequence",
     title: "A method, not a miracle",
     intro:
       "Skin barrier, cosmetic peptides, metabolic literacy, and refusal to medicalise the checkout.",
@@ -356,11 +356,11 @@ export const pages: Record<string, ContentPage> = {
     kicker: "Legal",
     title: "Privacy Policy",
     intro:
-      `This policy explains how Longevity Protocol (${SITE_HOST}) handles personal information. It is written for a small Australian retail and education site. It is not legal advice.`,
+      `This policy explains how Cellular Sequence (${SITE_HOST}) handles personal information. It is written for a small Australian retail and education site. It is not legal advice.`,
     sections: [
       {
         heading: "Who we are",
-        body: `Longevity Protocol operates ${SITE_URL}. Shop pages offer cosmetic devices, topical peptide serums and permitted consumer products. The encyclopaedia is educational. Research-only compounds are not sold. Privacy questions: ${SCIENCE_EMAIL}.`,
+        body: `Cellular Sequence operates ${SITE_URL}. Shop pages offer cosmetic devices, topical peptide serums and permitted consumer products. The encyclopaedia is educational. Research-only compounds are not sold. Privacy questions: ${SCIENCE_EMAIL}.`,
       },
       {
         heading: "What we collect",

@@ -3,6 +3,7 @@ import { BrandLogo } from "@/components/BrandLogo";
 import { EmailSignup } from "@/components/EmailSignup";
 import { SocialLinks } from "@/components/SocialLinks";
 import { marketing } from "@/lib/marketing";
+import { SITE_NAME } from "@/lib/site";
 import { libraryNav, shopNav, siteCategories } from "@/lib/navigation";
 
 const legalLinks = [
@@ -18,7 +19,7 @@ export function Footer() {
     <footer className="mt-20 border-t border-line bg-ink text-paper">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-2 lg:grid-cols-4 lg:px-6">
         <div>
-          <Link href="/" aria-label="Longevity Protocol home">
+          <Link href="/" aria-label={`${SITE_NAME} home`}>
             <BrandLogo inverted showTagline={false} />
           </Link>
           <p className="mt-3 max-w-xs text-sm text-paper/70">
@@ -92,7 +93,7 @@ export function Footer() {
         <Link href="/privacy" className="text-paper/70 underline decoration-white/20 underline-offset-2 hover:text-paper">
           Privacy Policy
         </Link>
-        . © {new Date().getFullYear()} Longevity Protocol.
+        . © {new Date().getFullYear()} {SITE_NAME}.
       </div>
     </footer>
   );

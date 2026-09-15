@@ -3,7 +3,7 @@ import { TgaExplainerLink } from "@/components/TgaStatusBadge";
 
 export const metadata = {
   title: "Compare shop peptides",
-  description: "Compare Longevity Protocol topical serums and aftercare. Not a competitor table.",
+  description: "Compare Cellular Sequence topical serums and aftercare. Not a competitor table.",
 };
 
 export default function ShopComparePage() {

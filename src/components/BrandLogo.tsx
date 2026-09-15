@@ -1,3 +1,5 @@
+import { SITE_NAME } from "@/lib/site";
+
 type BrandLogoProps = {
   inverted?: boolean;
   showTagline?: boolean;
@@ -55,7 +57,7 @@ export function ProductPackLabel({
           compact ? "text-[6px]" : "text-[8px]"
         }`}
       >
-        Longevity Protocol
+        {SITE_NAME}
       </p>
       <p
         className={`mt-1.5 line-clamp-3 font-serif leading-[1.15] text-[#faf7f1] ${
@@ -88,7 +90,7 @@ export function BrandLogo({ inverted = false, showTagline = true }: BrandLogoPro
             inverted ? "text-paper" : "text-ink"
           }`}
         >
-          Longevity Protocol
+          {SITE_NAME}
         </span>
         {showTagline ? (
           <span

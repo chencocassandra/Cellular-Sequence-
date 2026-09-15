@@ -64,7 +64,7 @@ function entry(opts: {
 }
 
 const noAu =
-  "Longevity Protocol does not sell this as a vial, tablet, oil, or injectable. Educational encyclopaedia listing only.";
+  "Cellular Sequence does not sell this as a vial, tablet, oil, or injectable. Educational encyclopaedia listing only.";
 
 const researchStd = {
   human: "No registration-quality human programme as a consumer peptide product.",

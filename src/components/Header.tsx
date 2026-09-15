@@ -8,6 +8,7 @@ import { PromoBanner } from "@/components/PromoBanner";
 import { ShopSearch } from "@/components/ShopSearch";
 import { SocialLinks } from "@/components/SocialLinks";
 import { useCart } from "@/components/CartProvider";
+import { SITE_NAME } from "@/lib/site";
 import { navItemIsActive, primaryNav } from "@/lib/navigation";
 
 export function Header() {
@@ -24,7 +25,7 @@ export function Header() {
         Topical cosmetics and devices only — not for injection
       </p>
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 lg:px-6">
-        <Link href="/" className="shrink-0" aria-label="Longevity Protocol home">
+        <Link href="/" className="shrink-0" aria-label={`${SITE_NAME} home`}>
           <BrandLogo showTagline={false} />
         </Link>
 

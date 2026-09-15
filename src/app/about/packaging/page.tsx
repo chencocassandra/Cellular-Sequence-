@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Packaging and materials",
-  description: "A short note on recyclability and packing for Longevity Protocol shop products.",
+  description: "A short note on recyclability and packing for Cellular Sequence shop products.",
 };
 
 export default function PackagingPage() {

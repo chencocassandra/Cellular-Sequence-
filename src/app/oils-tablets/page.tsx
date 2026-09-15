@@ -34,7 +34,7 @@ export default async function OilsTabletsPage({
 
       <div className="mx-auto max-w-7xl px-4 py-10 lg:px-6">
         <p className="border border-danger/30 bg-[#f6ece8] px-4 py-3 text-sm text-danger">
-          Longevity Protocol does not sell anabolic steroids, SARMs, unlicensed hormones, or research tablets.
+          Cellular Sequence does not sell anabolic steroids, SARMs, unlicensed hormones, or research tablets.
           Many of these substances are prescription-only or illegal to supply in Australia. We do not publish
           prices, SKUs, or cycling advice.
         </p>

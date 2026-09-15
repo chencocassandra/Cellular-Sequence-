@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Providers } from "@/components/Providers";
 import { marketing, pageSeo } from "@/lib/marketing";
-import { SITE_URL } from "@/lib/site";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -22,7 +22,7 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: {
     default: pageSeo.home.title,
-    template: "%s · Longevity Protocol",
+    template: `%s · ${SITE_NAME}`,
   },
   description: pageSeo.home.description,
   metadataBase: new URL(SITE_URL),
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_AU",
     url: SITE_URL,
-    siteName: "Longevity Protocol",
+    siteName: SITE_NAME,
     title: pageSeo.home.title,
     description: pageSeo.home.description,
     images: [

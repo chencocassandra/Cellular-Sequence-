@@ -69,7 +69,7 @@ const corePeptides: Peptide[] = [
     regulatoryStatus:
       "Approved prescription medicine in multiple jurisdictions (including FDA and EMA) for defined diabetes and/or weight-management indications, depending on brand and dose.",
     australianRegulatoryStatus:
-      "Registered on the Australian Register of Therapeutic Goods (ARTG) as a prescription-only medicine in specific brands and indications. Not a listed complementary medicine. Not supplied by Longevity Protocol.",
+      "Registered on the Australian Register of Therapeutic Goods (ARTG) as a prescription-only medicine in specific brands and indications. Not a listed complementary medicine. Not supplied by Cellular Sequence.",
     badges: ["APPROVED_MEDICINE"],
     areas: ["metabolic", "healthy-ageing"],
     availableToPurchase: false,
@@ -173,7 +173,7 @@ const corePeptides: Peptide[] = [
       "As per Product Information; prescription-only medicine.",
     regulatoryStatus: "Approved prescription medicine internationally.",
     australianRegulatoryStatus:
-      "ARTG-registered prescription medicine in approved presentations. Not sold by Longevity Protocol.",
+      "ARTG-registered prescription medicine in approved presentations. Not sold by Cellular Sequence.",
     badges: ["APPROVED_MEDICINE"],
     areas: ["metabolic"],
     availableToPurchase: false,
@@ -198,7 +198,7 @@ const corePeptides: Peptide[] = [
     structure:
       "Tripeptide GHK (glycyl-L-histidyl-L-lysine) complexed with a copper(II) ion. Sequence: Gly-His-Lys.",
     whatItIs:
-      "A small copper-binding peptide found in human plasma and used widely in cosmetic skincare. Topical GHK-Cu is a cosmetic ingredient in Longevity Protocol serums. It is not an approved systemic medicine.",
+      "A small copper-binding peptide found in human plasma and used widely in cosmetic skincare. Topical GHK-Cu is a cosmetic ingredient in Cellular Sequence serums. It is not an approved systemic medicine.",
     howItWorks:
       "GHK has a high affinity for copper(II). In skin-care research, the complex is studied for signalling related to extracellular-matrix remodelling, antioxidant gene expression and wound-biology pathways — mostly in cell and tissue models, with more limited clinical cosmetic studies.",
     whatItDoesInBody:
@@ -227,7 +227,7 @@ const corePeptides: Peptide[] = [
     regulatoryStatus:
       "Used as a cosmetic ingredient in many markets. Not an FDA- or TGA-approved drug for anti-ageing injection.",
     australianRegulatoryStatus:
-      "Permitted in cosmetic (and some listed) topical products when formulated and advertised within cosmetic/listed-medicine rules. Injectable GHK-Cu is not an approved medicine for consumer supply. Longevity Protocol sells topical cosmetic serums only.",
+      "Permitted in cosmetic (and some listed) topical products when formulated and advertised within cosmetic/listed-medicine rules. Injectable GHK-Cu is not an approved medicine for consumer supply. Cellular Sequence sells topical cosmetic serums only.",
     badges: ["COSMETIC"],
     areas: ["skin-hair", "healthy-ageing"],
     availableToPurchase: true,
@@ -267,7 +267,7 @@ const corePeptides: Peptide[] = [
     contraindications: "Allergy to formulation components.",
     regulatoryStatus: "Cosmetic ingredient.",
     australianRegulatoryStatus:
-      "Used in cosmetics. Therapeutic claims would push a product toward therapeutic-goods regulation — Longevity Protocol keeps claims cosmetic.",
+      "Used in cosmetics. Therapeutic claims would push a product toward therapeutic-goods regulation — Cellular Sequence keeps claims cosmetic.",
     badges: ["COSMETIC"],
     areas: ["skin-hair"],
     availableToPurchase: true,
@@ -458,7 +458,7 @@ const corePeptides: Peptide[] = [
     structure:
       "15-amino-acid partial sequence derived from human gastric juice protein BPC. Sequence commonly given as: Gly-Glu-Pro-Pro-Pro-Gly-Lys-Pro-Ala-Asp-Asp-Ala-Gly-Leu-Val.",
     whatItIs:
-      "A laboratory peptide with extensive preclinical injury-model literature and very limited high-quality human trials. It is not an approved medicine. Longevity Protocol does not sell BPC-157.",
+      "A laboratory peptide with extensive preclinical injury-model literature and very limited high-quality human trials. It is not an approved medicine. Cellular Sequence does not sell BPC-157.",
     howItWorks:
       "Preclinical papers propose angiogenic, nitric-oxide and growth-factor pathway effects. Mechanism in humans is not established to a registration standard.",
     whatItDoesInBody:
@@ -691,7 +691,7 @@ const corePeptides: Peptide[] = [
     sideEffects: "Irritation possible.",
     contraindications: "Ingredient allergy.",
     regulatoryStatus: "Cosmetic ingredient.",
-    australianRegulatoryStatus: "Cosmetic use. Longevity Protocol offers topical serums, not injectables.",
+    australianRegulatoryStatus: "Cosmetic use. Cellular Sequence offers topical serums, not injectables.",
     badges: ["COSMETIC"],
     areas: ["skin-hair"],
     availableToPurchase: true,
@@ -731,7 +731,7 @@ export function peptideAvailability(p: Peptide): {
       tone: "cosmetic",
       card: "Cosmetic ingredient — encyclopaedia only",
       banner:
-        "Cosmetic peptide / protein ingredient for education. Longevity Protocol does not sell this as an injectable. Finished topical products, if any, are labelled as cosmetics.",
+        "Cosmetic peptide / protein ingredient for education. Cellular Sequence does not sell this as an injectable. Finished topical products, if any, are labelled as cosmetics.",
     };
   }
   if (p.badges.includes("APPROVED_MEDICINE")) {
@@ -739,14 +739,14 @@ export function peptideAvailability(p: Peptide): {
       tone: "medicine",
       card: "Prescription medicine — not sold here",
       banner:
-        "Approved-medicine listing only. This is not available from the Longevity Protocol shop. Licensed products require a prescriber and an ARTG-registered presentation.",
+        "Approved-medicine listing only. This is not available from the Cellular Sequence shop. Licensed products require a prescriber and an ARTG-registered presentation.",
     };
   }
   return {
     tone: "research",
     card: "Not available to purchase",
     banner:
-      "Research / investigational listing only. This compound is not available for consumer purchase from Longevity Protocol and must not be confused with shop products.",
+      "Research / investigational listing only. This compound is not available for consumer purchase from Cellular Sequence and must not be confused with shop products.",
   };
 }
 
@@ -761,7 +761,7 @@ export const statusCollections: {
     badge: "APPROVED_MEDICINE",
     title: "Approved peptide medicines",
     intro:
-      "Peptide drugs evaluated and registered for defined medical indications. They are prescription-only where listed and are never sold in the Longevity Protocol shop.",
+      "Peptide drugs evaluated and registered for defined medical indications. They are prescription-only where listed and are never sold in the Cellular Sequence shop.",
   },
   {
     slug: "cosmetic",
@@ -782,7 +782,7 @@ export const statusCollections: {
     badge: "RESEARCH_ONLY",
     title: "Research-only peptides",
     intro:
-      "Educational entries for compounds that are not approved for human use and are not available to purchase from Longevity Protocol. They are kept strictly separate from the store.",
+      "Educational entries for compounds that are not approved for human use and are not available to purchase from Cellular Sequence. They are kept strictly separate from the store.",
   },
 ];
 

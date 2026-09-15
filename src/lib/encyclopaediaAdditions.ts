@@ -26,7 +26,7 @@ export const encyclopaediaAdditions: Peptide[] = [
     sideEffects: "GI symptoms, gallstones, glucose dysregulation, injection-site reactions — see PI.",
     contraindications: "See product information (hypersensitivity; caution in diabetes and biliary disease).",
     regulatoryStatus: "Approved prescription medicine, brand- and indication-specific (FDA/EMA).",
-    australianRegulatoryStatus: "ARTG-registered presentations exist; verify current PI. Not sold by Longevity Protocol.",
+    australianRegulatoryStatus: "ARTG-registered presentations exist; verify current PI. Not sold by Cellular Sequence.",
     badges: ["APPROVED_MEDICINE"],
     areas: ["metabolic", "healthy-ageing"],
     ...notSold,

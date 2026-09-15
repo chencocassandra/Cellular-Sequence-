@@ -16,14 +16,14 @@ export const marketing = {
   },
 
   emailCapture: {
-    headline: "Join the protocol list",
+    headline: "Join the Cellular Sequence list",
     // PLACEHOLDER: confirm discount percentage and code before launch.
     offerLine: "PLACEHOLDER: Get 10% off your first shop order — confirm offer",
     discountCode: "PLACEHOLDER-CODE",
     buttonLabel: "Sign up",
     successLine: "Thanks. If this list is live, you will hear from us about shop news only.",
     finePrint:
-      "Shop and protocol notes only. Not medical advice. Research-only compounds are never sold and are not part of this list.",
+      "Shop and Cellular Sequence notes only. Not medical advice. Research-only compounds are never sold and are not part of this list.",
   },
 
   trustBar: {
@@ -78,13 +78,13 @@ export const marketing = {
   openGraphImage: {
     // PLACEHOLDER: dedicated square/landscape share image when you have one.
     path: "/images/hero-protocol-kit.jpg",
-    alt: "PLACEHOLDER: Open Graph image — swap for a dedicated share graphic",
+    alt: "PLACEHOLDER: Cellular Sequence share graphic — swap when a dedicated image is ready",
   },
 } as const;
 
 export const pageSeo = {
   home: {
-    title: "Longevity Protocol — Peptide Encyclopaedia & Shop",
+    title: "Cellular Sequence — Peptide Encyclopaedia & Shop",
     description:
       "PLACEHOLDER SEO: Refine this. Cosmetic protocol shop plus a citation-first peptide encyclopaedia. Research-only compounds are not sold.",
   },
@@ -109,10 +109,10 @@ export const pageSeo = {
   },
   about: {
     title: "About",
-    description: "PLACEHOLDER SEO: Longevity Protocol — encyclopaedia and cosmetic shop.",
+    description: "PLACEHOLDER SEO: Cellular Sequence — encyclopaedia and cosmetic shop.",
   },
   privacy: {
     title: "Privacy Policy",
-    description: "PLACEHOLDER SEO: How Longevity Protocol handles personal information.",
+    description: "PLACEHOLDER SEO: How Cellular Sequence handles personal information.",
   },
 } as const;

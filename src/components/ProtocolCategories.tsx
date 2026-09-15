@@ -26,7 +26,7 @@ export function ProtocolLandingHero() {
           <div className="relative aspect-[4/3]">
             <Image
               src="/images/hero-protocol-kit.jpg"
-              alt="Longevity Protocol kit: cosmetic peptide serums, needling pen, hydra stamps, cooling case, prep pads, gloves, syringes and cartridge injector"
+              alt="Cellular Sequence kit: cosmetic peptide serums, needling pen, hydra stamps, cooling case, prep pads, gloves, syringes and cartridge injector"
               fill
               priority
               sizes="50vw"
