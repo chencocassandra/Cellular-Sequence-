@@ -10,7 +10,7 @@ export function ProtocolLandingHero() {
         <div className="grid grid-cols-2 items-center gap-4 sm:gap-8 lg:gap-12">
           <div>
             <h1 className="font-serif text-2xl leading-[1.08] sm:text-4xl md:text-5xl">
-              A clinic-inspired peptide protocol, explained simply.
+              One stop for clinical-grade peptides, microneedling, and patches.
             </h1>
             <ul className="mt-4 space-y-2 text-sm text-ink-soft sm:mt-6 sm:text-base">
               <li>Peptides and protocols for skin, health and injury recovery, available to buy</li>

@@ -179,7 +179,7 @@ export const pages: Record<string, ContentPage> = {
     kicker: "Guide",
     title: "Cooling case guide",
     intro: "Travel storage for cosmetic serums — not a medical cold chain for unapproved injectables.",
-    sections: [{ heading: "Shop", body: "Protocol Cooling Case." }],
+    sections: [{ heading: "Shop", body: "Cooling Case." }],
   },
   "/learn/pen-accessory-guide": {
     kicker: "Guide",

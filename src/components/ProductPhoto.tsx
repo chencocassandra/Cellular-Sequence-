@@ -1,5 +1,17 @@
 import Image from "next/image";
-import { ProductPackLabel } from "@/components/BrandLogo";
+import { LogoMark, ProductPackLabel } from "@/components/BrandLogo";
+import { SITE_NAME } from "@/lib/site";
+
+function ProductBrandChip() {
+  return (
+    <div className="pointer-events-none absolute left-2 top-2 z-10 flex items-center gap-1.5 bg-[#12345c] px-1.5 py-1">
+      <LogoMark className="h-5 w-5" />
+      <span className="text-[8px] font-medium uppercase tracking-[0.14em] text-[#c9a227]">
+        {SITE_NAME}
+      </span>
+    </div>
+  );
+}
 
 export function ProductPhoto({
   src,
@@ -22,14 +34,16 @@ export function ProductPhoto({
   labelDetail?: string;
   labelFooter?: string;
 }) {
-  const overlayLabel = Boolean(labelName) && src.includes("product-vial");
+  const isVial = src.includes("product-vial");
+  const overlayLabel = Boolean(labelName) && isVial;
   return (
-    <div className={`relative overflow-hidden ${src.includes("product-vial") ? "bg-black" : "bg-white"} ${className}`}>
+    <div className={`relative overflow-hidden ${isVial ? "bg-black" : "bg-[#f3eee4]"} ${className}`}>
       <Image
         src={src}
         alt={alt}
         fill
         priority={priority}
+        unoptimized
         className="object-contain"
         sizes={sizes}
       />
@@ -40,7 +54,9 @@ export function ProductPhoto({
           footer={labelFooter}
           size={brandSize}
         />
-      ) : null}
+      ) : (
+        <ProductBrandChip />
+      )}
     </div>
   );
 }

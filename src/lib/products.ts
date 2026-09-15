@@ -146,7 +146,7 @@ export const products: Product[] = [
   },
   {
     slug: "cooling-case",
-    name: "Protocol Cooling Case",
+    name: "Cooling Case",
     category: "cooling-storage",
     price: "$64",
     summary: "Insulated storage for temperature-sensitive cosmetic serums while travelling.",
@@ -182,7 +182,7 @@ export const products: Product[] = [
   },
   {
     slug: "alcohol-prep-pads",
-    name: "Protocol Alcohol Prep Pads",
+    name: "Alcohol Prep Pads",
     category: "preparation-hygiene",
     price: "$12",
     summary: "Individually wrapped prep pads for cleansing skin before cosmetic needling. Not for injectable research compounds.",
@@ -194,7 +194,7 @@ export const products: Product[] = [
   },
   {
     slug: "nitrile-gloves",
-    name: "Protocol Nitrile Gloves",
+    name: "Nitrile Gloves",
     category: "preparation-hygiene",
     price: "$18",
     summary: "Disposable black nitrile gloves for a clean cosmetic needling setup.",
@@ -206,7 +206,7 @@ export const products: Product[] = [
   },
   {
     slug: "disposable-syringes",
-    name: "Protocol Disposable Syringes",
+    name: "Disposable Syringes",
     category: "preparation-hygiene",
     price: "$16",
     summary: "Single-use 1 ml syringes for measuring cosmetic serums in the protocol kit. Dispose as sharps. Research-only peptides are not sold.",
@@ -216,7 +216,7 @@ export const products: Product[] = [
   },
   {
     slug: "cartridge-injector",
-    name: "Protocol 3 mL Cartridge Injector",
+    name: "3 mL Cartridge Injector",
     category: "facial-needling",
     price: "$54",
     summary: "Disposable multi-dose 3 mL cartridge injector for protocol cosmetic use. Research-only compounds cannot be purchased here.",

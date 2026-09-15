@@ -69,7 +69,7 @@ export const microneedlingNav: NavLink[] = [
   { label: "Professional facial needling pen", href: "/shop/facial-needling#protocol-needling-pen" },
   { label: "Disposable micro-infusion", href: "/shop/facial-needling#disposable-micro-infusion-stamps" },
   { label: "Disposable stamp head pack", href: "/shop/facial-needling#pen-cartridge-pack" },
-  { label: "Protocol 3 mL cartridge injector", href: "/shop/facial-needling#cartridge-injector" },
+  { label: "3 mL cartridge injector", href: "/shop/facial-needling#cartridge-injector" },
 ];
 
 export const shopNav: NavLink[] = [
