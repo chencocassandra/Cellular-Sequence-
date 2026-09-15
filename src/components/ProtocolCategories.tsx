@@ -13,8 +13,8 @@ export function ProtocolLandingHero() {
               A clinic-inspired peptide protocol, explained simply.
             </h1>
             <ul className="mt-4 space-y-2 text-sm text-ink-soft sm:mt-6 sm:text-base">
-              <li>Peptides and protocols for skin, health, and injury recovery for purchase</li>
-              <li>Research-only compounds kept clearly separate from purchase products</li>
+              <li>Peptides and protocols for skin, health and injury recovery, available to buy</li>
+              <li>Research-only compounds kept clearly separate from products you can buy</li>
               <li>A searchable encyclopaedia for the science behind the labels</li>
             </ul>
             <TrustBar />

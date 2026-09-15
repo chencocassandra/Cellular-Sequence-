@@ -53,7 +53,7 @@ export const quizConcerns: { id: QuizConcern; label: string }[] = [
   { id: "menopause", label: "Midlife / menopause-look skin" },
   { id: "wellness", label: "Skin and wellness" },
   { id: "hair", label: "Hair and scalp appearance" },
-  { id: "mens", label: "Simple men's routine" },
+  { id: "mens", label: "Simple men’s routine" },
   { id: "aftercare", label: "After cosmetic needling" },
   { id: "general", label: "General appearance / anti-ageing look" },
 ];
@@ -180,7 +180,7 @@ export function quizResultCopy(answers: QuizAnswers) {
     heading: "A topical starting point",
     body: `${route}${stepNote} Chosen for ${concern.toLowerCase()}. Not a diagnosis and not a guaranteed timeline.`,
     timelineNote:
-      "How soon appearance looks different, if it does, varies. Products may support the look of skin or hair with consistent use.",
+      "How soon appearance looks different — if it does at all — varies from person to person. Products may support the look of skin or hair with consistent use.",
   };
 }
 

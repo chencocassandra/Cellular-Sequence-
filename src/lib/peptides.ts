@@ -267,7 +267,7 @@ const corePeptides: Peptide[] = [
     contraindications: "Allergy to formulation components.",
     regulatoryStatus: "Cosmetic ingredient.",
     australianRegulatoryStatus:
-      "Used in cosmetics. Therapeutic claims would push a product toward therapeutic-goods regulation — Cellular Sequence keeps claims cosmetic.",
+      "Used in cosmetics. Therapeutic claims would push a product towards therapeutic-goods regulation — Cellular Sequence keeps claims cosmetic.",
     badges: ["COSMETIC"],
     areas: ["skin-hair"],
     availableToPurchase: true,

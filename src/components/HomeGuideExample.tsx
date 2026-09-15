@@ -17,7 +17,7 @@ const steps = [
   {
     n: "03",
     title: "Leave-on serum and aftercare",
-    body: "Copper-peptide or matrikine serum on intact or recovering skin, then barrier balm when you have needled.",
+    body: "Copper-peptide or matrikine serum on intact or recovering skin, then barrier balm if you have used a needle.",
     href: "/concerns/aftercare",
   },
 ];

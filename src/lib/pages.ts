@@ -26,7 +26,7 @@ export const pages: Record<string, ContentPage> = {
     kicker: "Facial needling",
     title: "Cosmetic needling, done carefully",
     intro:
-      "Needling is a barrier-disrupting cosmetic technique. Depth, hygiene, and what you put on skin afterwards matter more than marketing frequency claims.",
+      "Needling is a barrier-disrupting cosmetic technique. Depth, hygiene and what you put on skin afterwards matter more than marketing frequency claims.",
     image: "/images/pathway-skin.png",
     sections: [
       {
@@ -74,7 +74,7 @@ export const pages: Record<string, ContentPage> = {
     kicker: "Aftercare",
     title: "After the barrier is open",
     intro:
-      "Aftercare determines whether needling looks like a protocol or a complication. Occlusion, actives pause, and sun are the three non-negotiables.",
+      "Aftercare is what keeps cosmetic needling looking like a protocol, not a complication. Occlusion, a pause on actives, and sun care are the three non-negotiables.",
     sections: [{ heading: "Products", body: "Recovery Barrier Balm is formulated as a cosmetic aftercare step." }],
   },
   "/skin/numbing": {
@@ -111,7 +111,7 @@ export const pages: Record<string, ContentPage> = {
   "/cognitive/focus": {
     kicker: "Focus",
     title: "Focus",
-    intro: "Caffeine, L-theanine and environment design — not research chemicals.",
+    intro: "Sleep, Bacopa where appropriate, and environment design — not research chemicals.",
     sections: [{ heading: "Library", body: "See the Cognitive Ingredient Library for compound-by-compound notes." }],
   },
   "/cognitive/memory": {
@@ -125,7 +125,7 @@ export const pages: Record<string, ContentPage> = {
     kicker: "Energy",
     title: "Energy",
     intro: "Mitochondrial marketing is loud; iron, sleep and thyroid assessment are quieter and more often relevant.",
-    sections: [{ heading: "Fundamentals", body: "Iron, sleep and thyroid assessment are quieter and more often relevant than mitochondrial marketing." }],
+    sections: [{ heading: "Fundamentals", body: "Start with what a clinician can test, not with unapproved mitochondrial peptides." }],
   },
   "/cognitive/stress-relaxation": {
     kicker: "Stress & relaxation",
@@ -141,7 +141,7 @@ export const pages: Record<string, ContentPage> = {
     sections: [
       {
         heading: "Not in this library",
-        body: "Racemet, unapproved racetams if scheduled, and all research neuropeptides. Those, if discussed, are encyclopaedia entries with Not approved for human use badges.",
+        body: "Scheduled racetams, and all research neuropeptides. Those, if discussed, are encyclopaedia entries with Not approved for human use badges.",
       },
     ],
   },
@@ -197,11 +197,11 @@ export const pages: Record<string, ContentPage> = {
     kicker: "Safety",
     title: "Disposal & sharps safety",
     intro:
-      "Used cartridges are sharps. Place them in an approved container. Do not throw loose needles in household waste.",
+      "Used cartridges are sharps. Place them in an approved container. Do not put loose needles in household rubbish.",
     sections: [
       {
         heading: "Community rules",
-        body: "Follow your local council or pharmacy take-back. This is non-negotiable brand standards, not optional copy.",
+        body: "Follow your local council or pharmacy take-back. These are non-negotiable brand standards, not optional copy.",
       },
     ],
   },

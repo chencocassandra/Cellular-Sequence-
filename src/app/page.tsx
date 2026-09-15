@@ -49,7 +49,7 @@ export default function Home() {
                 Cosmetic peptide science
               </h2>
               <p className="mt-2 font-serif text-2xl text-ink-soft">
-                What topical ingredients are — without a research-vial shop.
+                What topical ingredients actually are — without a research-vial shop.
               </p>
               <p className="mt-6 text-lg leading-relaxed text-ink-soft">
                 Examples mix approved medicines, TGA-approved cosmetic ingredients, and
