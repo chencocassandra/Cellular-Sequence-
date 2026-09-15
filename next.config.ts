@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
         destination: "/shop/focus-bacopa-capsules",
         permanent: true,
       },
+      {
+        source: "/about/the-longevity-protocol",
+        destination: "/about/cellular-sequence",
+        permanent: true,
+      },
       { source: "/skin/ghk-cu", destination: "/skin/peptide-serums", permanent: true },
     ];
   },

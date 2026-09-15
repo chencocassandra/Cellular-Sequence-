@@ -299,7 +299,7 @@ export const pages: Record<string, ContentPage> = {
       },
     ],
   },
-  "/about/the-longevity-protocol": {
+  "/about/cellular-sequence": {
     kicker: "Cellular Sequence",
     title: "A method, not a miracle",
     intro:
