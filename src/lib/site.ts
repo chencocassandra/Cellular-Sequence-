@@ -1,7 +1,7 @@
-/** Display name. Domain stays on the Vercel host until cellularsequence.com is attached. */
+/** Display name. */
 export const SITE_NAME = "Cellular Sequence";
-/** Temporary public host until a custom domain is attached and resolving. */
-export const SITE_HOST = "the-longevity-code-store.vercel.app";
+/** Canonical public host. Attach this domain on the Vercel project (apex + www). */
+export const SITE_HOST = "www.cellularsequence.com";
 export const SITE_URL = `https://${SITE_HOST}`;
-/** Contact address — not derived from the vercel.app host. */
-export const SCIENCE_EMAIL = "science@thelongevitycode.store";
+/** Contact address on the same domain. */
+export const SCIENCE_EMAIL = "science@cellularsequence.com";

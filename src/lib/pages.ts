@@ -40,7 +40,7 @@ export const pages: Record<string, ContentPage> = {
     title: "Serum delivery",
     intro:
       "Micro-infusion stamps and pens are still cosmetic devices in our range — not medical procedures and not a route for research peptides.",
-    image: "/images/hero-microinfusion.png",
+    image: "/images/hero-cellular-sequence-microinfusion.png",
     sections: [
       {
         heading: "What we allow on skin",

@@ -77,8 +77,8 @@ export const marketing = {
 
   openGraphImage: {
     // PLACEHOLDER: dedicated square/landscape share image when you have one.
-    path: "/images/hero-protocol-kit.jpg",
-    alt: "PLACEHOLDER: Cellular Sequence share graphic — swap when a dedicated image is ready",
+    path: "/images/logo-cs-wordmark.png",
+    alt: "Cellular Sequence — science, peptides, longevity",
   },
 } as const;
 

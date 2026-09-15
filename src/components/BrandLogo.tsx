@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SITE_NAME } from "@/lib/site";
 
 type BrandLogoProps = {
@@ -5,28 +6,35 @@ type BrandLogoProps = {
   showTagline?: boolean;
 };
 
-export function LogoMark({ inverted = false, className = "h-9 w-9" }: { inverted?: boolean; className?: string }) {
-  const bronze = inverted ? "#c4ad7a" : "#8c6a3d";
-  const ink = inverted ? "#faf7f1" : "#1c1915";
-
+/** Circular CS + helix mark supplied for the brand. */
+export function LogoMark({ className = "h-9 w-9" }: { inverted?: boolean; className?: string }) {
   return (
-    <svg viewBox="0 0 48 48" className={className} aria-hidden="true">
-      <circle cx="24" cy="24" r="18" fill="none" stroke={bronze} strokeWidth="1.15" />
-      <path
-        d="M19 13.5v21h11"
-        fill="none"
-        stroke={ink}
-        strokeWidth="1.45"
-        strokeLinecap="square"
+    <span className={`relative inline-block shrink-0 overflow-hidden rounded-full ${className}`}>
+      <Image
+        src="/images/logo-cs-monogram.png"
+        alt=""
+        fill
+        sizes="48px"
+        className="object-cover"
       />
-      <path
-        d="M24.5 16c4.2 2.1 4.2 5.6 0 7.7s-4.2 5.6 0 7.7"
-        fill="none"
-        stroke={bronze}
-        strokeWidth="1.1"
-        strokeLinecap="round"
-      />
-    </svg>
+    </span>
+  );
+}
+
+/** Horizontal lockup: helix + Cellular Sequence + tagline. */
+export function BrandWordmark({
+  className = "h-12 w-auto max-w-[260px]",
+}: {
+  className?: string;
+}) {
+  return (
+    <Image
+      src="/images/logo-cs-wordmark.png"
+      alt={SITE_NAME}
+      width={680}
+      height={260}
+      className={`object-contain object-left ${className}`}
+    />
   );
 }
 
@@ -51,7 +59,7 @@ export function ProductPackLabel({
       }`}
       aria-hidden="true"
     >
-      <LogoMark inverted className={compact ? "mx-auto h-5 w-5" : "mx-auto h-7 w-7"} />
+      <LogoMark className={compact ? "mx-auto h-5 w-5" : "mx-auto h-7 w-7"} />
       <p
         className={`mt-1 font-medium uppercase tracking-[0.16em] text-[#c4ad7a] ${
           compact ? "text-[6px]" : "text-[8px]"
@@ -81,23 +89,19 @@ export function ProductPackLabel({
 }
 
 export function BrandLogo({ inverted = false, showTagline = true }: BrandLogoProps) {
+  if (inverted) {
+    return <BrandWordmark className="h-14 w-auto max-w-[280px]" />;
+  }
+
   return (
     <span className="flex items-center gap-2.5">
-      <LogoMark inverted={inverted} className="h-9 w-9 shrink-0 md:h-10 md:w-10" />
+      <LogoMark className="h-9 w-9 md:h-11 md:w-11" />
       <span className="leading-tight">
-        <span
-          className={`block font-serif text-xl tracking-tight md:text-2xl ${
-            inverted ? "text-paper" : "text-ink"
-          }`}
-        >
+        <span className="block font-serif text-xl tracking-tight text-ink md:text-2xl">
           {SITE_NAME}
         </span>
         {showTagline ? (
-          <span
-            className={`text-[10px] uppercase tracking-[0.18em] sm:text-[10px] ${
-              inverted ? "text-paper/55" : "text-ink-soft"
-            }`}
-          >
+          <span className="text-[10px] uppercase tracking-[0.18em] text-bronze">
             SCIENCE · PEPTIDES · LONGEVITY
           </span>
         ) : null}
