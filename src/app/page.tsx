@@ -10,6 +10,7 @@ import { StatusBadge } from "@/components/StatusBadge";
 import { TgaExplainerLink, TgaStatusBadge } from "@/components/TgaStatusBadge";
 import { TopicalUseLabel } from "@/components/TopicalUseLabel";
 import { tgaMarkForPeptide, tgaMarkForProduct } from "@/lib/compliance";
+import { displayAud } from "@/lib/cart";
 import { homeFeaturedProductSlugs, shopPeptidesIntro } from "@/lib/navigation";
 import { peptides } from "@/lib/peptides";
 import { products } from "@/lib/products";
@@ -127,7 +128,7 @@ export default function Home() {
               </div>
               <h3 className="mt-2 font-serif text-xl">{product.name}</h3>
               <TopicalUseLabel className="mt-2" />
-              <p className="mt-1 text-sm text-ink-soft">{product.price}</p>
+              <p className="mt-1 text-sm text-ink-soft">{displayAud(product.price)}</p>
               <AddToCartButton slug={product.slug} />
             </article>
           ))}

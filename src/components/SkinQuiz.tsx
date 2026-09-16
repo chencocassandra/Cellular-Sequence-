@@ -7,6 +7,7 @@ import { ProductPhoto } from "@/components/ProductPhoto";
 import { TgaStatusBadge } from "@/components/TgaStatusBadge";
 import { TopicalUseLabel } from "@/components/TopicalUseLabel";
 import { tgaMarkForProduct } from "@/lib/compliance";
+import { displayAud } from "@/lib/cart";
 import {
   QUIZ_DISCLAIMER,
   quizConcerns,
@@ -99,7 +100,7 @@ export function SkinQuiz() {
               ) : (
                 <TopicalUseLabel className="mt-3" />
               )}
-              <p className="mt-4 text-sm">{product.price}</p>
+              <p className="mt-4 text-sm">{displayAud(product.price)}</p>
               <AddToCartButton slug={product.slug} />
               <Link
                 href={`/shop/${product.slug}`}

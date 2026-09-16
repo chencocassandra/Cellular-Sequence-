@@ -4,6 +4,7 @@ import { ProductPhoto } from "@/components/ProductPhoto";
 import { TgaStatusBadge } from "@/components/TgaStatusBadge";
 import { TopicalUseLabel } from "@/components/TopicalUseLabel";
 import { tgaMarkForProduct } from "@/lib/compliance";
+import { displayAud } from "@/lib/cart";
 import { shopNav } from "@/lib/navigation";
 import type { Product } from "@/lib/types";
 
@@ -81,7 +82,7 @@ export function ProductGrid({ items }: { items: Product[] }) {
               ))}
             </p>
           ) : null}
-          <p className="mt-4 text-sm">{product.price}</p>
+          <p className="mt-4 text-sm">{displayAud(product.price)}</p>
           <AddToCartButton slug={product.slug} />
           <Link
             href={`/shop/${product.slug}`}

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { TgaStatusBadge } from "@/components/TgaStatusBadge";
+import { displayAud } from "@/lib/cart";
 import { tgaMarkForProduct } from "@/lib/compliance";
 import { products } from "@/lib/products";
 
@@ -60,7 +61,7 @@ export function ShopCompareTool() {
                 <th className="border border-line px-3 py-2">Price</th>
                 {rows.map((p) => (
                   <td key={p.slug} className="border border-line px-3 py-2">
-                    {p.price}
+                    {displayAud(p.price)}
                   </td>
                 ))}
               </tr>

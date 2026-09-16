@@ -19,9 +19,10 @@ export const products: Product[] = [
     slug: "protocol-needling-pen",
     name: "Professional Facial Needling Pen",
     category: "facial-needling",
-    price: "$189",
-    summary: "Adjustable cosmetic needling system for at-home complexion routines.",
-    badge: "Best seller",
+    price: "$349",
+    summary:
+      "Premium at-home microneedling designed to support a considered skin-renewal routine.",
+    badge: "Introductory price",
     image: "/images/product-needling-pen-v2.jpg",
     labelName: "Needling Pen",
     labelDetail: "Cosmetic device",
@@ -32,7 +33,7 @@ export const products: Product[] = [
     slug: "disposable-micro-infusion-stamps",
     name: "Disposable Micro-Infusion",
     category: "facial-needling",
-    price: "$48",
+    price: "$49.95",
     summary:
       "Single-use hydra stamp heads with a serum chamber and gold needle plate. Offered in 0.25 mm and 0.5 mm cosmetic depths. Do not share. Dispose as sharps.",
     badge: "Disposable",
@@ -46,7 +47,7 @@ export const products: Product[] = [
     slug: "ghk-cu-serum",
     name: "GHK-Cu Copper Peptide Serum",
     category: "peptide-serums",
-    price: "$78",
+    price: "$79",
     summary: "Leave-on cosmetic copper tripeptide serum for the look of firm, even skin.",
     badge: "Cosmetic peptide",
     image: "/images/product-ghk-cu.png",
@@ -58,7 +59,7 @@ export const products: Product[] = [
     slug: "matrikine-serum",
     name: "Matrikine Peptide Serum",
     category: "peptide-serums",
-    price: "$72",
+    price: "$79",
     summary: "Palmitoyl pentapeptide-4 and tripeptide-1 in a barrier-aware base.",
     image: "/images/product-matrikine.png",
     labelName: "Matrikine Serum",
@@ -69,7 +70,7 @@ export const products: Product[] = [
     slug: "snap-8-serum",
     name: "SNAP-8 Peptide Anti-Ageing Serum",
     category: "peptide-serums",
-    price: "$69",
+    price: "$79",
     summary:
       "Leave-on acetyl hexapeptide-8 cosmetic for the look of expression lines. Not botulinum toxin. Not for injection.",
     badge: "New",
@@ -83,7 +84,7 @@ export const products: Product[] = [
     slug: "pdrn-exo-serum",
     name: "PDRN + Exosome Recovery Serum",
     category: "peptide-serums",
-    price: "$84",
+    price: "$89",
     summary:
       "Leave-on cosmetic for the look of recovering, comfortable skin. Not a stem-cell medicine. Not for injection.",
     image: "/images/product-pdrn-exo-serum.png",
@@ -95,7 +96,7 @@ export const products: Product[] = [
     slug: "ghk-cu-ahk-cu-scalp-serum",
     name: "GHK-Cu + AHK-Cu Scalp Care Serum",
     category: "peptide-serums",
-    price: "$59",
+    price: "$69",
     summary:
       "Leave-on copper-peptide cosmetic for the look of scalp and hair. Appearance only — not a hair-loss medicine.",
     image: "/images/product-ghk-cu-scalp-serum.png",
@@ -108,7 +109,7 @@ export const products: Product[] = [
     slug: "pdrn-ha-serum",
     name: "PDRN + HA Hydrating Serum",
     category: "peptide-serums",
-    price: "$49",
+    price: "$59",
     summary:
       "Leave-on hydrating cosmetic with PDRN and hyaluronic acid for the look of a plump, comfortable surface. Not for injection.",
     image: "/images/product-pdrn-ha-serum.png",
@@ -120,7 +121,7 @@ export const products: Product[] = [
     slug: "multi-peptide-scalp-serum",
     name: "Men’s Multi-Peptide Scalp Serum",
     category: "peptide-serums",
-    price: "$65",
+    price: "$79",
     summary:
       "Leave-on multi-peptide cosmetic for the look of scalp and hair density. Appearance only — not a hair-loss medicine. Not for injection.",
     badge: "New",
@@ -161,7 +162,7 @@ export const products: Product[] = [
     slug: "pen-cartridge-pack",
     name: "Disposable Stamp Head Pack",
     category: "facial-needling",
-    price: "$39",
+    price: "$49.95",
     summary:
       "Sealed single-use micro-infusion stamp heads for the protocol. One head, one session. Do not share.",
     image: "/images/product-micro-infusion-stamps-v2.jpg",
@@ -172,9 +173,9 @@ export const products: Product[] = [
   },
   {
     slug: "prep-hygiene-kit",
-    name: "Preparation & Hygiene Kit",
+    name: "Needling Preparation Kit",
     category: "preparation-hygiene",
-    price: "$34",
+    price: "$39.95",
     summary: "Cleansing, barrier wipes and aftercare essentials for cosmetic needling.",
     image: "/images/product-hygiene.png",
     labelName: "Hygiene Kit",
@@ -184,7 +185,7 @@ export const products: Product[] = [
     slug: "alcohol-prep-pads",
     name: "Alcohol Prep Pads",
     category: "preparation-hygiene",
-    price: "$12",
+    price: "$12.95",
     summary: "Individually wrapped prep pads for cleansing skin before cosmetic needling. Not for injectable research compounds.",
     image: "/images/product-alcohol-prep-pads.jpg",
     labelName: "Prep Pads",
@@ -196,7 +197,7 @@ export const products: Product[] = [
     slug: "nitrile-gloves",
     name: "Nitrile Gloves",
     category: "preparation-hygiene",
-    price: "$18",
+    price: "$19.95",
     summary: "Disposable black nitrile gloves for a clean cosmetic needling setup.",
     image: "/images/product-nitrile-gloves.jpg",
     labelName: "Nitrile Gloves",
@@ -208,7 +209,7 @@ export const products: Product[] = [
     slug: "disposable-syringes",
     name: "Disposable Syringes",
     category: "preparation-hygiene",
-    price: "$16",
+    price: "$14.95",
     summary: "Single-use 1 ml syringes for measuring cosmetic serums in the protocol kit. Dispose as sharps. Research-only peptides are not sold.",
     image: "/images/product-disposable-syringes.jpg",
     labelName: "Syringes 1 ml",
@@ -230,7 +231,7 @@ export const products: Product[] = [
     slug: "recovery-barrier-balm",
     name: "Recovery Barrier Balm",
     category: "recovery",
-    price: "$42",
+    price: "$49",
     summary: "Post-needling cosmetic balm to support the look of a calm barrier.",
     image: PRODUCT_VIAL_IMAGE,
     labelName: "Barrier Balm",
@@ -284,7 +285,7 @@ export const products: Product[] = [
     slug: "glp-1-support-patches",
     name: "GLP-1 Support Patches",
     category: "patches",
-    price: "$44.90",
+    price: "$39.95",
     summary:
       "Transdermal GLP-1 support patches from the same listing as the NAD+ patches. Needle-free. Not Ozempic, Wegovy, Mounjaro, or any prescription GLP-1 medicine. Not for injection.",
     badge: "New",
@@ -298,7 +299,7 @@ export const products: Product[] = [
     slug: "nad-plus-patches",
     name: "NAD+ Support Patches",
     category: "patches",
-    price: "$44.90",
+    price: "$39.95",
     summary:
       "Transdermal NAD+ patches — the same supplier listing as the GLP-1 patches, NAD+ colour/type. Needle-free support, not an IV NAD+ drip and not stronger than the oral tablets for daily use.",
     badge: "New",
@@ -310,15 +311,60 @@ export const products: Product[] = [
   },
   {
     slug: "skin-protocol-bundle",
-    name: "Advanced Skin Protocol Bundle",
+    name: "Complete Needling Protocol",
     category: "bundles",
-    price: "$349",
+    price: "$479",
     summary:
-      "Needling pen, disposable micro-infusion stamps, copper peptide serum, hygiene kit and cooling case.",
+      "Professional facial needling pen, stamp-head pack, GHK-Cu serum, needling preparation kit and barrier balm.",
     badge: "Bundle",
     image: PRODUCT_VIAL_IMAGE,
-    labelName: "Skin Protocol",
+    labelName: "Needling Protocol",
     labelDetail: "Complete kit",
+  },
+  {
+    slug: "needling-starter-protocol",
+    name: "Needling Starter Protocol",
+    category: "bundles",
+    price: "$419",
+    summary:
+      "Professional facial needling pen, stamp-head pack, alcohol prep pads and nitrile gloves.",
+    badge: "Bundle",
+    image: "/images/product-needling-pen-v2.jpg",
+    labelName: "Starter Protocol",
+    labelDetail: "Pen + prep",
+  },
+  {
+    slug: "peptide-skin-protocol",
+    name: "Peptide Skin Protocol",
+    category: "bundles",
+    price: "$229",
+    summary: "GHK-Cu serum, SNAP-8 serum, PDRN + HA serum and barrier balm.",
+    badge: "Bundle",
+    image: "/images/product-ghk-cu.png",
+    labelName: "Peptide Protocol",
+    labelDetail: "Leave-on set",
+  },
+  {
+    slug: "cellular-hair-protocol",
+    name: "Cellular Hair Protocol",
+    category: "bundles",
+    price: "$189",
+    summary: "GHK-Cu + AHK-Cu scalp serum, men’s multi-peptide scalp serum and stamp-head pack.",
+    badge: "Bundle",
+    image: "/images/product-ghk-cu-scalp-serum.png",
+    labelName: "Hair Protocol",
+    labelDetail: "Scalp set",
+  },
+  {
+    slug: "longevity-protocol",
+    name: "Longevity Protocol",
+    category: "bundles",
+    price: "$149",
+    summary: "NAD+ tablets, NAD+ support patches and antioxidant longevity complex.",
+    badge: "Bundle",
+    image: "/images/product-nad-tablets.png",
+    labelName: "Longevity Protocol",
+    labelDetail: "Oral + patch",
   },
 ];
 
@@ -338,7 +384,7 @@ export const shopCategories: Record<
   },
   bundles: {
     title: "Bundles",
-    intro: "Complete cosmetic protocol kits — never research chemicals.",
+    intro: "Protocol kits priced below buying the pieces separately. Cosmetic products only — never research chemicals.",
     filter: "bundles",
   },
   "facial-needling": {
@@ -421,7 +467,12 @@ export const ACCESSORIES_PRODUCT_SLUGS = [
 export function productsForCategory(slug?: string) {
   if (!slug) return products;
   if (slug === "best-sellers") {
-    return products.filter((p) => p.badge === "Best seller" || p.slug === "ghk-cu-serum");
+    return products.filter(
+      (p) =>
+        p.badge === "Best seller" ||
+        p.slug === "ghk-cu-serum" ||
+        p.slug === "protocol-needling-pen",
+    );
   }
   if (slug === "new") return products.filter((p) => p.badge === "New");
   if (slug === "bundles") return products.filter((p) => p.category === "bundles");

@@ -12,3 +12,7 @@ export function formatAud(amount: number): string {
     maximumFractionDigits: 2,
   }).format(amount);
 }
+
+export function displayAud(price: string): string {
+  return `${price} AUD`;
+}

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { displayAud } from "@/lib/cart";
 import { products } from "@/lib/products";
 
 export function ShopSearch({
@@ -53,7 +54,7 @@ export function ShopSearch({
                     className="block border-b border-line px-4 py-3 last:border-0 hover:bg-ivory"
                   >
                     <span className="font-medium">{p.name}</span>
-                    <span className="mt-0.5 block text-sm text-ink-soft">{p.price}</span>
+                    <span className="mt-0.5 block text-sm text-ink-soft">{displayAud(p.price)}</span>
                   </Link>
                 </li>
               ))}

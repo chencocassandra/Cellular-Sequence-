@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCart } from "@/components/CartProvider";
-import { formatAud, parsePrice } from "@/lib/cart";
+import { displayAud, formatAud, parsePrice } from "@/lib/cart";
 import { SHOP_POSITIONING } from "@/lib/compliance";
 import { products } from "@/lib/products";
 
@@ -46,7 +46,7 @@ export function CartView() {
               >
                 <div>
                   <p className="font-serif text-xl">{product.name}</p>
-                  <p className="text-sm text-ink-soft">{product.price} each</p>
+                  <p className="text-sm text-ink-soft">{displayAud(product.price)} each</p>
                 </div>
                 <div className="flex items-center gap-3">
                   <label className="sr-only" htmlFor={`qty-${line.slug}`}>

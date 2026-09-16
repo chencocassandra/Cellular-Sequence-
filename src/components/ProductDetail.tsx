@@ -3,13 +3,19 @@ import { AddToCartButton } from "@/components/AddToCartButton";
 import { ProductPhoto } from "@/components/ProductPhoto";
 import { TgaExplainerLink, TgaStatusBadge } from "@/components/TgaStatusBadge";
 import { TopicalUseLabel } from "@/components/TopicalUseLabel";
+import { displayAud } from "@/lib/cart";
 import { tgaMarkForProduct } from "@/lib/compliance";
+import { NEEDLING_PEN_PAGE, sequenceSlugsFor } from "@/lib/merchandising";
 import { products, shopCategories } from "@/lib/products";
 import { NEEDLING_SERUM_INTRO, serumDetailFor } from "@/lib/serumDetails";
 import type { Product } from "@/lib/types";
 
 function bySlug(slug: string) {
   return products.find((p) => p.slug === slug);
+}
+
+function priceLabel(product: Product) {
+  return displayAud(product.price);
 }
 
 function Breadcrumbs({ product }: { product: Product }) {
@@ -46,7 +52,7 @@ function MiniProductCard({ product }: { product: Product }) {
         labelFooter={product.labelFooter}
       />
       <p className="font-serif text-lg leading-snug">{product.name}</p>
-      <p className="mt-1 text-sm text-ink-soft">{product.price}</p>
+      <p className="mt-1 text-sm text-ink-soft">{priceLabel(product)}</p>
     </Link>
   );
 }
@@ -75,10 +81,151 @@ function Bullets({ items }: { items: string[] }) {
   );
 }
 
+function SequenceRow({ slugs }: { slugs: string[] }) {
+  const items = slugs.map(bySlug).filter((p): p is Product => Boolean(p));
+  if (items.length === 0) return null;
+  return (
+    <section>
+      <h2 className="font-serif text-2xl">Complete your sequence</h2>
+      <p className="mt-2 text-sm text-ink-soft">Related products for a considered routine — optional, not a hard sell.</p>
+      <div className="mt-4 grid gap-4 sm:grid-cols-3">
+        {items.slice(0, 6).map((p) => (
+          <MiniProductCard key={p.slug} product={p} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function NeedlingPenDetail({ product }: { product: Product }) {
+  const upgrade = bySlug(NEEDLING_PEN_PAGE.upgradeSlug);
+  const sequence = sequenceSlugsFor(product.slug);
+  const related = sequence
+    .filter((slug) => slug !== NEEDLING_PEN_PAGE.upgradeSlug)
+    .map(bySlug)
+    .filter((p): p is Product => Boolean(p));
+
+  return (
+    <div>
+      <div className="border-b border-line bg-paper">
+        <div className="mx-auto grid max-w-7xl items-start gap-10 px-4 py-10 lg:grid-cols-2 lg:px-6">
+          <div>
+            <ProductPhoto
+              src={product.image}
+              alt={product.name}
+              className="aspect-[4/5]"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              priority
+              brandSize="md"
+              labelName={product.name}
+              labelDetail={product.labelDetail}
+              labelFooter={product.labelFooter}
+            />
+          </div>
+          <div>
+            <Breadcrumbs product={product} />
+            <h1 className="mt-5 font-serif text-4xl leading-tight">{product.name}</h1>
+            <p className="mt-5 font-serif text-3xl">{priceLabel(product)}</p>
+            {product.badge ? (
+              <p className="mt-3 text-[10px] uppercase tracking-[0.16em] text-bronze">{product.badge}</p>
+            ) : null}
+            <p className="mt-3 text-lg leading-relaxed text-ink-soft">{NEEDLING_PEN_PAGE.tagline}</p>
+            <div className="mt-5 flex flex-wrap items-center gap-3">
+              <TgaStatusBadge mark={tgaMarkForProduct(product)} size="md" />
+              <TgaExplainerLink />
+            </div>
+            <AddToCartButton slug={product.slug} />
+            <TopicalUseLabel className="mt-3" />
+            {upgrade ? (
+              <p className="mt-5 text-sm">
+                <Link href={`/shop/${upgrade.slug}`} className="underline underline-offset-2">
+                  Upgrade to {upgrade.name} — {priceLabel(upgrade)}
+                </Link>
+              </p>
+            ) : null}
+          </div>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-4xl space-y-10 px-4 py-12 lg:px-6">
+        <Section heading="What's included">
+          <Bullets items={NEEDLING_PEN_PAGE.included} />
+        </Section>
+        <Section heading="Key features">
+          <Bullets items={NEEDLING_PEN_PAGE.features} />
+        </Section>
+        <Section heading="How it works">
+          <Bullets items={NEEDLING_PEN_PAGE.howItWorks} />
+        </Section>
+        <Section heading="How to use">
+          <ol className="space-y-2">
+            {NEEDLING_PEN_PAGE.howToUse.map((step, i) => (
+              <li key={step} className="flex gap-3">
+                <span aria-hidden="true" className="text-bronze">
+                  {i + 1}.
+                </span>
+                <span>{step}</span>
+              </li>
+            ))}
+          </ol>
+        </Section>
+        <Section heading="Cartridge information">
+          <Bullets items={NEEDLING_PEN_PAGE.cartridges} />
+        </Section>
+        <Section heading="Preparation">
+          <Bullets items={NEEDLING_PEN_PAGE.preparation} />
+        </Section>
+        <Section heading="Aftercare">
+          <Bullets items={NEEDLING_PEN_PAGE.aftercare} />
+          <p className="text-sm">
+            <Link href="/concerns/aftercare" className="underline underline-offset-2">
+              Aftercare hub
+            </Link>{" "}
+            ·{" "}
+            <Link href="/learn/preparation-hygiene" className="underline underline-offset-2">
+              Preparation and hygiene
+            </Link>
+          </p>
+        </Section>
+        <Section heading="FAQs">
+          <dl className="space-y-5">
+            {NEEDLING_PEN_PAGE.faqs.map((item) => (
+              <div key={item.q}>
+                <dt className="font-medium text-ink">{item.q}</dt>
+                <dd className="mt-1">{item.a}</dd>
+              </div>
+            ))}
+          </dl>
+        </Section>
+        <SequenceRow slugs={sequence} />
+        {related.length ? (
+          <section>
+            <h2 className="font-serif text-2xl">Related products</h2>
+            <div className="mt-4 grid gap-4 sm:grid-cols-3">
+              {related.slice(0, 3).map((p) => (
+                <MiniProductCard key={p.slug} product={p} />
+              ))}
+            </div>
+          </section>
+        ) : null}
+        <p className="text-sm text-ink-soft">
+          <Link href="/learn/facial-needling-guide" className="underline underline-offset-2">
+            Read the cosmetic facial needling guide
+          </Link>
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export function ProductDetail({ product }: { product: Product }) {
+  if (product.slug === "protocol-needling-pen") {
+    return <NeedlingPenDetail product={product} />;
+  }
+
   const detail = serumDetailFor(product.slug);
   const devices = detail?.useWithSlugs.map(bySlug).filter((p): p is Product => Boolean(p)) ?? [];
-  const pairsWith = detail?.pairsWithSlugs.map(bySlug).filter((p): p is Product => Boolean(p)) ?? [];
+  const sequence = sequenceSlugsFor(product.slug, detail?.pairsWithSlugs ?? []);
 
   return (
     <div>
@@ -115,7 +262,7 @@ export function ProductDetail({ product }: { product: Product }) {
               <TgaExplainerLink />
             </div>
 
-            <p className="mt-5 font-serif text-3xl">{product.price}</p>
+            <p className="mt-5 font-serif text-3xl">{priceLabel(product)}</p>
             <AddToCartButton slug={product.slug} />
 
             {product.usageNote ? (
@@ -217,16 +364,7 @@ export function ProductDetail({ product }: { product: Product }) {
             </p>
           </Section>
 
-          {pairsWith.length ? (
-            <section>
-              <h2 className="font-serif text-2xl">Pairs with</h2>
-              <div className="mt-4 grid gap-4 sm:grid-cols-3">
-                {pairsWith.map((p) => (
-                  <MiniProductCard key={p.slug} product={p} />
-                ))}
-              </div>
-            </section>
-          ) : null}
+          <SequenceRow slugs={sequence} />
 
           <p className="text-sm text-ink-soft">
             <Link href="/learn/facial-needling-guide" className="underline underline-offset-2">
@@ -239,6 +377,7 @@ export function ProductDetail({ product }: { product: Product }) {
           <Section heading="About this product">
             <p>{product.summary}</p>
           </Section>
+          <SequenceRow slugs={sequence} />
           <p className="text-sm text-ink-soft">
             <Link href="/shop" className="underline underline-offset-2">
               Back to the shop
