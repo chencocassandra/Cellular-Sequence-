@@ -902,7 +902,7 @@ export const oilTabletPointers: {
   href: string;
   forms: OilTabletForm[];
 }[] = [
-  { name: "NAD+", note: "Injectable NAD+ is encyclopaedia-only. Oral NAD+ tablets and NAD+ patches are in the shop.", href: "/peptides/nad-plus", forms: ["oil"] },
+  { name: "NAD+", note: "Injectable NAD+ is encyclopaedia-only. NAD+ patches are in the shop.", href: "/peptides/nad-plus", forms: ["oil"] },
   { name: "Lipo-C / MIC blends", note: "Lipotropic oils are documented with the peptide-adjacent catalogue, not as AAS.", href: "/peptides/lipo-c", forms: ["oil"] },
   { name: "L-carnitine", note: "Amino-acid derivative, not a steroid oil.", href: "/peptides/l-carnitine", forms: ["oil"] },
   { name: "Lemon Bottle", note: "Unlicensed fat-dissolve solution, not AAS.", href: "/peptides/lemon-bottle", forms: ["oil"] },

@@ -80,7 +80,7 @@ export const shopNav: NavLink[] = [
   { label: "Preparation & Hygiene", href: "/shop/preparation-hygiene" },
 ];
 
-const peptideShopHrefs = ["/shop/peptides", "/shop/peptide-patches", "/shop/peptide-serums", "/shop/patches", "/shop/tablets"];
+const peptideShopHrefs = ["/shop/peptides", "/shop/peptide-patches", "/shop/peptide-serums", "/shop/patches"];
 
 export function isPeptidesShopPath(pathname: string) {
   return peptideShopHrefs.some((href) => pathname === href || pathname.startsWith(`${href}/`));
@@ -158,7 +158,6 @@ export const libraryNav: NavLink[] = [
 export const homeFeaturedProductSlugs = [
   "protocol-needling-pen",
   "snap-8-serum",
-  "nad-plus-tablets",
   "glp-1-support-patches",
   "nad-plus-patches",
   "multi-peptide-scalp-serum",

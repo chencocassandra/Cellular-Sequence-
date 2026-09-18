@@ -14,7 +14,7 @@ export const QUIZ_SHOP_ALLOWLIST = [
   "multi-peptide-scalp-serum",
   "ghk-cu-serum",
   "matrikine-serum",
-  "nad-plus-tablets",
+  "nad-plus-patches",
   "longevity-antioxidant",
   "recovery-barrier-balm",
   "prep-hygiene-kit",
@@ -38,7 +38,7 @@ export type QuizConcern =
 
 export type QuizNeedling = "yes" | "no" | "not_yet";
 
-/** Faster window → pen + serum, then disposable + serum. Tablets and barrier cream are the needle-free options. */
+/** Faster window → pen + serum, then disposable + serum. Patches, permitted nutrients, and barrier cream are the needle-free options. */
 export type QuizTimeline = "pen" | "disposable" | "tablet" | "barrier";
 
 export type QuizAnswers = {
@@ -67,7 +67,7 @@ export const quizNeedlingOptions: { id: QuizNeedling; label: string }[] = [
 export const quizTimelineOptions: { id: QuizTimeline; label: string }[] = [
   { id: "pen", label: "As soon as possible — facial needling pen with serum" },
   { id: "disposable", label: "Sooner — disposable stamps with serum" },
-  { id: "tablet", label: "A few weeks — tablets only (no pen, no serum)" },
+  { id: "tablet", label: "A few weeks — patches and permitted nutrients (no pen, no serum)" },
   { id: "barrier", label: "No rush — barrier cream only (no pen, no serum)" },
 ];
 
@@ -169,11 +169,11 @@ export function quizResultCopy(answers: QuizAnswers) {
       : rung === "disposable"
         ? "This route pairs disposable stamps with a serum. Serums are not used on their own. Nothing here is for injection."
         : rung === "tablet"
-          ? "This route is swallowable tablets only — no pen and no serum."
+          ? "This route is needle-free — NAD+ support patches and the antioxidant complex. No pen and no serum."
           : "This route is barrier cream only — no pen and no serum.";
 
   const stepNote = steppedDown
-    ? " You said you do not needle, so this skips the pen, stamps, and serum and starts at tablets."
+    ? " You said you do not needle, so this skips the pen, stamps, and serum and starts with needle-free products."
     : "";
 
   return {
@@ -201,7 +201,7 @@ export function recommendQuizProducts(answers: QuizAnswers): Product[] {
     );
   }
   if (rung === "tablet") {
-    return take(["nad-plus-tablets", "longevity-antioxidant"], 2);
+    return take(["nad-plus-patches", "longevity-antioxidant"], 2);
   }
   return take(["recovery-barrier-balm"], 1);
 }

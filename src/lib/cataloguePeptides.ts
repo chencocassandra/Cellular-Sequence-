@@ -1214,11 +1214,11 @@ export const cataloguePeptides: Peptide[] = [
     sides: "Infusion reactions reported anecdotally; product quality varies.",
     contra: "Not a peptide-shop product.",
     reg: "Not approved as a compounded anti-ageing injection in this model.",
-    au: "Educational for injectable NAD+. The shop sells oral NAD+ tablets and transdermal NAD+ patches — not NAD+ injections.",
+    au: "Educational for injectable NAD+. The shop sells transdermal NAD+ patches — not NAD+ injections.",
     areas: ["healthy-ageing", "metabolic"],
     terms: ["nadh", "nad", "nmn"],
     sell: false,
-    productHref: "/shop/tablets",
+    productHref: "/shop/nad-plus-patches",
   }),
   entry({
     slug: "oxytocin",

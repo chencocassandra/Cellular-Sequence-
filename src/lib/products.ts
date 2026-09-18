@@ -10,7 +10,7 @@ const SALON_SERUM_SUPPLIER =
 const PATCH_SUPPLIER =
   "https://www.alibaba.com/product-detail/GLP-1-Patches-for-Weight-Loss_1601742625652.html";
 
-/** Dropship listing behind both the NAD+ tablets and the antioxidant complex. Not shown on the storefront. */
+/** Dropship listing behind the antioxidant complex. Not shown on the storefront. */
 const NAD_COMPLEX_SUPPLIER =
   "https://www.alibaba.com/product-detail/NAD-Complex-Adult-Anti-aging-Immune_1601713969082.html";
 
@@ -240,21 +240,6 @@ export const products: Product[] = [
       "https://www.alibaba.com/product-detail/Private-Label-Post-Procedure-Barrier-Stabilizing_1601910343650.html",
   },
   {
-    slug: "focus-bacopa-capsules",
-    name: "Permitted Focus Capsules",
-    category: "cognitive",
-    price: "$38",
-    summary:
-      "Listed-style Bacopa monnieri capsules, 60 per bottle. A herbal ingredient, not a peptide medicine and not a nootropic drug.",
-    image: PRODUCT_VIAL_IMAGE,
-    labelName: "Focus Capsules",
-    labelDetail: "Bacopa monnieri",
-    labelFooter: "Listed supplement",
-    tgaApprovedForSale: true,
-    supplierUrl:
-      "https://www.alibaba.com/product-detail/OEM-ODM-60-Capsule-Bacopa-Monnieri_1601663499782.html",
-  },
-  {
     slug: "longevity-antioxidant",
     name: "Antioxidant Longevity Complex",
     category: "longevity",
@@ -265,20 +250,6 @@ export const products: Product[] = [
     labelDetail: "Permitted nutrients",
     labelFooter: "Listed supplement",
     tgaApprovedForSale: true,
-    supplierUrl: NAD_COMPLEX_SUPPLIER,
-  },
-  {
-    slug: "nad-plus-tablets",
-    name: "NAD+ High-Purity Tablets",
-    category: "tablets",
-    price: "$69",
-    summary:
-      "The legal, needle-free NAD+ format: swallowable high-purity tablets instead of boutique NAD+ injections. A stronger everyday oral dose than a clinic drip you cannot lawfully buy here. Not for injection. Not a compounded NAD+ vial.",
-    badge: "New",
-    image: "/images/product-nad-tablets.png",
-    labelName: "NAD+ Tablets",
-    labelDetail: "Oral · high purity",
-    usageNote: "Not for injection — oral tablets. Not an NAD+ drip.",
     supplierUrl: NAD_COMPLEX_SUPPLIER,
   },
   {
@@ -301,7 +272,7 @@ export const products: Product[] = [
     category: "patches",
     price: "$39.95",
     summary:
-      "Transdermal NAD+ patches — the same supplier listing as the GLP-1 patches, NAD+ colour/type. Needle-free support, not an IV NAD+ drip and not stronger than the oral tablets for daily use.",
+      "Transdermal NAD+ patches — the same supplier listing as the GLP-1 patches, NAD+ colour/type. Needle-free support, not an IV NAD+ drip.",
     badge: "New",
     image: "/images/product-nad-patches.png",
     labelName: "NAD+ Patches",
@@ -359,12 +330,12 @@ export const products: Product[] = [
     slug: "longevity-protocol",
     name: "Longevity Protocol",
     category: "bundles",
-    price: "$149",
-    summary: "NAD+ tablets, NAD+ support patches and antioxidant longevity complex.",
+    price: "$89",
+    summary: "NAD+ support patches and antioxidant longevity complex.",
     badge: "Bundle",
-    image: "/images/product-nad-tablets.png",
+    image: "/images/product-nad-patches.png",
     labelName: "Longevity Protocol",
-    labelDetail: "Oral + patch",
+    labelDetail: "Patch + nutrients",
   },
 ];
 
@@ -401,7 +372,7 @@ export const shopCategories: Record<
   peptides: {
     title: "Peptides",
     intro:
-      "Four shop groups: peptides, patches, serums, and needling. Oral NAD+ tablets sit here with the leave-on range. Research-only and injectable peptides stay in the encyclopaedia and are not sold.",
+      "Four shop groups: peptides, patches, serums, and needling. Research-only and injectable peptides stay in the encyclopaedia and are not sold.",
     filter: "peptides",
   },
   "peptide-serums": {
@@ -409,17 +380,6 @@ export const shopCategories: Record<
     intro:
       "Leave-on types including SNAP-8 anti-ageing, PDRN + EXO recovery, copper-peptide and multi-peptide scalp, and PDRN + HA hydrating. Cosmetic only — not for injection.",
     filter: "peptide-serums",
-  },
-  cognitive: {
-    title: "Cognitive",
-    intro: "Permitted nootropic products. Investigational neuropeptides are encyclopaedia-only.",
-    filter: "cognitive",
-  },
-  tablets: {
-    title: "Tablets",
-    intro:
-      "Swallowable NAD+ tablets — the legal, needle-free alternative to injectable NAD+ drips. Anabolic steroid tablets in the encyclopaedia are not sold.",
-    filter: "tablets",
   },
   patches: {
     title: "Peptide patches",
@@ -481,7 +441,6 @@ export function productsForCategory(slug?: string) {
       (p) =>
         p.category === "peptide-serums" ||
         p.category === "patches" ||
-        p.category === "tablets" ||
         MICRONEEDLING_PRODUCT_SLUGS.includes(p.slug as (typeof MICRONEEDLING_PRODUCT_SLUGS)[number]),
     );
   }
