@@ -10,8 +10,7 @@ export const marketing = {
   promoBanner: {
     /** Set to false to hide the top promo strip. */
     enabled: true,
-    // PLACEHOLDER: confirm shipping threshold or replace with a real announcement.
-    text: "PLACEHOLDER: Free shipping over $XX — confirm threshold",
+    text: "Free Express Shipping Australia-Wide — No Minimum Spend.",
     href: "/shop",
   },
 

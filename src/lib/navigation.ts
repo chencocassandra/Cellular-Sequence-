@@ -60,7 +60,7 @@ export const siteCategories: SiteCategory[] = [
 /** Peptides menu: four shop groups. */
 export const peptidesNav: NavLink[] = [
   { label: "Peptides", href: "/shop/peptides" },
-  { label: "Patches", href: "/shop/peptide-patches" },
+  { label: "Peptide Patches", href: "/shop/peptide-patches" },
   { label: "Serums", href: "/shop/peptide-serums" },
   { label: "Needling", href: "/shop/facial-needling" },
 ];
@@ -74,10 +74,14 @@ export const microneedlingNav: NavLink[] = [
 
 export const shopNav: NavLink[] = [
   { label: "All", href: "/shop" },
-  ...peptidesNav,
+  { label: "Peptides", href: "/shop/peptides" },
+  { label: "Peptide Patches", href: "/shop/peptide-patches" },
   { label: "Bundles", href: "/shop/bundles" },
+  { label: "Needling", href: "/shop/facial-needling" },
+  { label: "Serums", href: "/shop/peptide-serums" },
   { label: "Cooling & Storage", href: "/shop/cooling-storage" },
   { label: "Preparation & Hygiene", href: "/shop/preparation-hygiene" },
+  { label: "Accessories", href: "/shop/pen-accessories" },
 ];
 
 const peptideShopHrefs = ["/shop/peptides", "/shop/peptide-patches", "/shop/peptide-serums", "/shop/patches"];
@@ -91,14 +95,14 @@ export function navItemIsActive(item: NavItem, pathname: string) {
     if (pathname === "/shop") return true;
     if (!pathname.startsWith("/shop/")) return false;
     if (isPeptidesShopPath(pathname)) return false;
-    if (pathname === "/shop/facial-needling" || pathname.startsWith("/shop/pen-accessories")) return false;
+    if (pathname === "/shop/facial-needling") return false;
     return true;
   }
   if (item.label === "Peptides") {
     return isPeptidesShopPath(pathname);
   }
   if (item.label === "Microneedling") {
-    return pathname === "/shop/facial-needling" || pathname.startsWith("/shop/pen-accessories");
+    return pathname === "/shop/facial-needling";
   }
   return pathname === item.href || pathname.startsWith(`${item.href}/`);
 }
@@ -157,11 +161,12 @@ export const libraryNav: NavLink[] = [
 
 export const homeFeaturedProductSlugs = [
   "protocol-needling-pen",
+  "ghk-cu-serum",
   "snap-8-serum",
   "glp-1-support-patches",
   "nad-plus-patches",
   "multi-peptide-scalp-serum",
-  "ghk-cu-ahk-cu-scalp-serum",
+  "pdrn-ha-serum",
   "cooling-case",
 ];
 
@@ -173,10 +178,7 @@ export const primaryNav: NavItem[] = [
     label: "Shop",
     href: "/shop",
     description: shopPeptidesIntro,
-    groups: [
-      { heading: "Shop", links: shopNav },
-      { heading: "Shop by concern", links: shopConcernNav },
-    ],
+    groups: [{ heading: "Shop", links: shopNav }],
   },
   {
     label: "Peptides",

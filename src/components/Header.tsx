@@ -44,14 +44,16 @@ export function Header() {
                   {item.label}
                 </Link>
                 {hasMenu ? (
-                  <div className="invisible absolute left-1/2 top-full z-40 w-[min(90vw,720px)] -translate-x-1/2 pt-2 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                    <div className="border border-line bg-paper p-6 shadow-[0_24px_60px_rgba(28,25,21,0.12)]">
+                  <div className="invisible absolute left-0 top-full z-40 w-[min(90vw,520px)] pt-2 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                    <div className="border border-line bg-paper p-5 shadow-[0_24px_60px_rgba(28,25,21,0.12)]">
                       {item.description ? (
                         <p className="mb-4 max-w-xl text-sm text-ink-soft">{item.description}</p>
                       ) : null}
                       <div
-                        className={`grid gap-6 ${
-                          item.groups.length > 1 ? "sm:grid-cols-3" : "sm:grid-cols-2"
+                        className={`grid gap-2 ${
+                          item.groups.length > 1 || item.groups[0]?.links.length > 5
+                            ? "sm:grid-cols-2"
+                            : "sm:grid-cols-1"
                         }`}
                       >
                         {item.groups.map((group) => (

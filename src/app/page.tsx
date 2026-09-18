@@ -1,19 +1,16 @@
 import Link from "next/link";
-import { AddToCartButton } from "@/components/AddToCartButton";
 import { EmailSignup } from "@/components/EmailSignup";
+import { HomeCategoryCards } from "@/components/HomeCategoryCards";
+import { HomeFeaturedCarousel } from "@/components/HomeFeaturedCarousel";
+import { HomeHero } from "@/components/HomeHero";
 import { HomeStartHere } from "@/components/HomeStartHere";
+import { HomeTrustRow } from "@/components/HomeTrustRow";
 import { PeptideSearch } from "@/components/PeptideSearch";
-import { ProductPhoto } from "@/components/ProductPhoto";
-import { ProtocolLandingHero } from "@/components/ProtocolCategories";
 import { Reviews } from "@/components/Reviews";
 import { StatusBadge } from "@/components/StatusBadge";
-import { TgaExplainerLink, TgaStatusBadge } from "@/components/TgaStatusBadge";
-import { TopicalUseLabel } from "@/components/TopicalUseLabel";
-import { tgaMarkForPeptide, tgaMarkForProduct } from "@/lib/compliance";
-import { displayAud } from "@/lib/cart";
-import { homeFeaturedProductSlugs, shopPeptidesIntro } from "@/lib/navigation";
+import { TgaStatusBadge } from "@/components/TgaStatusBadge";
+import { tgaMarkForPeptide } from "@/lib/compliance";
 import { peptides } from "@/lib/peptides";
-import { products } from "@/lib/products";
 import { pageSeo } from "@/lib/marketing";
 import type { Metadata } from "next";
 
@@ -21,10 +18,6 @@ export const metadata: Metadata = {
   title: { absolute: pageSeo.home.title },
   description: pageSeo.home.description,
 };
-
-const homeShopProducts = homeFeaturedProductSlugs
-  .map((slug) => products.find((p) => p.slug === slug))
-  .filter((p): p is (typeof products)[number] => Boolean(p));
 
 const examplePeptides = [
   peptides.find((p) => p.slug === "semaglutide")!,
@@ -36,7 +29,10 @@ const examplePeptides = [
 export default function Home() {
   return (
     <div>
-      <ProtocolLandingHero />
+      <HomeHero />
+      <HomeTrustRow />
+      <HomeCategoryCards />
+      <HomeFeaturedCarousel />
       <HomeStartHere />
 
       <section className="border-y border-line bg-paper">
@@ -91,47 +87,6 @@ export default function Home() {
               </ul>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-16 lg:px-6">
-        <div className="flex items-end justify-between gap-4">
-          <div>
-            <p className="text-[11px] uppercase tracking-[0.22em] text-bronze">Shop</p>
-            <h2 className="mt-2 font-serif text-3xl">Shop topical peptides</h2>
-            <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink-soft">{shopPeptidesIntro}</p>
-            <p className="mt-3">
-              <TgaExplainerLink />
-            </p>
-          </div>
-          <Link href="/shop" className="text-[11px] uppercase tracking-[0.16em]">
-            Shop all →
-          </Link>
-        </div>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {homeShopProducts.map((product) => (
-            <article key={product.slug} className="border border-line bg-paper p-5">
-              <ProductPhoto
-                src={product.image}
-                alt={product.name}
-                labelName={product.name}
-                labelDetail={product.labelDetail}
-                labelFooter={product.labelFooter}
-              />
-              {product.badge ? (
-                <p className="text-[10px] uppercase tracking-[0.16em] text-bronze">
-                  {product.badge}
-                </p>
-              ) : null}
-              <div className="mt-2">
-                <TgaStatusBadge mark={tgaMarkForProduct(product)} />
-              </div>
-              <h3 className="mt-2 font-serif text-xl">{product.name}</h3>
-              <TopicalUseLabel className="mt-2" />
-              <p className="mt-1 text-sm text-ink-soft">{displayAud(product.price)}</p>
-              <AddToCartButton slug={product.slug} />
-            </article>
-          ))}
         </div>
       </section>
 
