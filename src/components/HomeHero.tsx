@@ -63,7 +63,7 @@ export function HomeHeroVisual() {
 export function HomeHero() {
   return (
     <section className="border-b border-line bg-paper">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:py-16 lg:grid-cols-2 lg:gap-16 lg:px-6 lg:py-20">
+      <div className="mx-auto grid max-w-7xl items-center gap-6 px-4 py-8 sm:py-10 lg:grid-cols-2 lg:gap-8 lg:px-6 lg:py-12">
         <div>
           <p className="text-[11px] uppercase tracking-[0.22em] text-bronze">Cellular Sequence</p>
           <h1 className="mt-3 font-serif text-4xl leading-[1.08] sm:text-5xl md:text-6xl">
@@ -73,7 +73,7 @@ export function HomeHero() {
             Leave-on peptide cosmetics, cosmetic needling tools, and transdermal patches — with
             research-only compounds kept in the encyclopaedia, never in the cart.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-6 flex flex-wrap gap-3">
             <Link
               href="/shop"
               className="inline-flex bg-ink px-6 py-3 text-[11px] uppercase tracking-[0.18em] text-paper"

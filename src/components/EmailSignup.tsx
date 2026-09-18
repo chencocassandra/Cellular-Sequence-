@@ -39,7 +39,14 @@ export function EmailSignup({ variant = "page" }: { variant?: "page" | "footer" 
       className={footer ? "" : "border-t border-line bg-paper"}
       aria-labelledby={footer ? "footer-signup-heading" : "signup-heading"}
     >
-      <div className={footer ? "" : "mx-auto max-w-7xl px-4 py-16 lg:px-6"}>
+      <div
+        className={
+          footer
+            ? ""
+            : "mx-auto flex max-w-7xl flex-col gap-6 px-4 py-10 md:flex-row md:items-end md:justify-between lg:px-6 lg:py-12"
+        }
+      >
+        <div className={footer ? "" : "max-w-xl"}>
         <p className={`text-[11px] uppercase tracking-[0.22em] ${footer ? "text-[#c4ad7a]" : "text-bronze"}`}>
           Email list
         </p>
@@ -56,7 +63,9 @@ export function EmailSignup({ variant = "page" }: { variant?: "page" | "footer" 
         <p className={`mt-1 text-[11px] uppercase tracking-[0.14em] ${footer ? "text-paper/50" : "text-bronze"}`}>
           Code: {marketing.emailCapture.discountCode}
         </p>
-        <form onSubmit={onSubmit} className="mt-6 flex max-w-md flex-col gap-2 sm:flex-row">
+        </div>
+        <div className={footer ? "" : "w-full md:max-w-md"}>
+        <form onSubmit={onSubmit} className="mt-6 flex max-w-md flex-col gap-2 sm:flex-row md:mt-0">
           <label className="sr-only" htmlFor={footer ? "footer-email" : "signup-email"}>
             Email address
           </label>
@@ -92,6 +101,7 @@ export function EmailSignup({ variant = "page" }: { variant?: "page" | "footer" 
         <p className={`mt-3 max-w-lg text-xs ${footer ? "text-paper/50" : "text-ink-soft"}`}>
           {marketing.emailCapture.finePrint}
         </p>
+        </div>
       </div>
     </section>
   );

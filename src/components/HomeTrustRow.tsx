@@ -58,7 +58,7 @@ export function HomeTrustRow() {
       <ul className="mx-auto grid max-w-7xl gap-px bg-line sm:grid-cols-2 lg:grid-cols-4">
         {points.map((point) => (
           <li key={point.title} className="bg-ivory">
-            <Link href={point.href} className="flex gap-3 px-4 py-5 lg:px-6 hover:bg-paper">
+            <Link href={point.href} className="flex gap-3 px-4 py-4 lg:px-5 hover:bg-paper">
               <span className="mt-0.5 text-bronze">{point.icon}</span>
               <span>
                 <span className="block text-[11px] font-medium uppercase tracking-[0.14em]">{point.title}</span>

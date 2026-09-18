@@ -36,8 +36,8 @@ export default function Home() {
       <HomeStartHere />
 
       <section className="border-y border-line bg-paper">
-        <div className="mx-auto max-w-7xl px-4 py-20 lg:px-6">
-          <div className="grid gap-12 lg:grid-cols-12">
+        <div className="mx-auto max-w-7xl px-4 py-10 lg:px-6 lg:py-12">
+          <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
             <div className="lg:col-span-5">
               <p className="text-[11px] uppercase tracking-[0.22em] text-bronze">
                 Optional library
@@ -54,14 +54,14 @@ export default function Home() {
               </p>
               <Link
                 href="/peptides"
-                className="mt-8 inline-flex bg-ink px-6 py-3 text-[11px] uppercase tracking-[0.18em] text-paper"
+                className="mt-5 inline-flex bg-ink px-6 py-3 text-[11px] uppercase tracking-[0.18em] text-paper"
               >
                 Open the encyclopaedia
               </Link>
             </div>
             <div className="lg:col-span-7">
               <PeptideSearch />
-              <p className="mt-6 text-[11px] uppercase tracking-[0.18em] text-ink-soft">
+              <p className="mt-4 text-[11px] uppercase tracking-[0.18em] text-ink-soft">
                 Example results — status first
               </p>
               <ul className="mt-3 divide-y divide-line border border-line">

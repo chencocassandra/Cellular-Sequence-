@@ -55,27 +55,27 @@ const categories = [
 export function HomeCategoryCards() {
   return (
     <section className="border-b border-line bg-paper">
-      <div className="mx-auto max-w-7xl px-4 py-16 lg:px-6">
+      <div className="mx-auto max-w-7xl px-4 py-10 lg:px-6 lg:py-12">
         <p className="text-[11px] uppercase tracking-[0.22em] text-bronze">Browse</p>
         <h2 className="mt-2 font-serif text-3xl md:text-4xl">Shop by category</h2>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:mt-8 lg:grid-cols-4">
           {categories.map((category) => (
             <Link
               key={category.href}
               href={category.href}
               className="group border border-line bg-ivory hover:border-bronze"
             >
-              <div className="relative aspect-[4/5] overflow-hidden bg-[#f3eee4]">
+              <div className="relative aspect-square overflow-hidden bg-[#f3eee4]">
                 <Image
                   src={category.image}
                   alt={category.alt}
                   fill
                   unoptimized
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-contain p-4 transition duration-500 group-hover:scale-[1.03]"
+                  className="object-contain p-3 transition duration-500 group-hover:scale-[1.03]"
                 />
               </div>
-              <div className="flex items-end justify-between gap-3 px-4 py-4">
+              <div className="flex items-end justify-between gap-3 px-3 py-3">
                 <h3 className="font-serif text-2xl">{category.name}</h3>
                 <span className="text-[11px] uppercase tracking-[0.16em] text-bronze-deep">Shop</span>
               </div>

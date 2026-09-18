@@ -15,7 +15,7 @@ function Stars({ label }: { label: string }) {
 export function Reviews() {
   return (
     <section className="border-t border-line bg-ivory" aria-labelledby="reviews-heading">
-      <div className="mx-auto max-w-7xl px-4 py-16 lg:px-6">
+      <div className="mx-auto max-w-7xl px-4 py-10 lg:px-6 lg:py-12">
         <p className="text-[11px] uppercase tracking-[0.22em] text-bronze">Customer reviews</p>
         <div className="mt-2">
           <h2 id="reviews-heading" className="font-serif text-3xl">
@@ -29,7 +29,7 @@ export function Reviews() {
             {marketing.reviews.countLabel}
           </p>
         </div>
-        <ul className="mt-10 grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-6 grid list-none gap-3 p-0 sm:grid-cols-2 lg:mt-8 lg:grid-cols-3">
           {marketing.reviews.items.map((review, i) => (
             <li key={`${review.title}-${i}`} className="border border-line bg-paper p-5">
               <Stars label={marketing.reviews.averageLabel} />

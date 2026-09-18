@@ -14,7 +14,7 @@ const featured = homeFeaturedProductSlugs
 export function HomeFeaturedCarousel() {
   return (
     <section className="border-b border-line bg-ivory">
-      <div className="mx-auto max-w-7xl px-4 py-16 lg:px-6">
+      <div className="mx-auto max-w-7xl px-4 py-10 lg:px-6 lg:py-12">
         <div className="flex items-end justify-between gap-4">
           <div>
             <p className="text-[11px] uppercase tracking-[0.22em] text-bronze">Featured</p>
@@ -24,7 +24,7 @@ export function HomeFeaturedCarousel() {
             Shop all →
           </Link>
         </div>
-        <div className="-mx-4 mt-10 overflow-x-auto px-4 pb-2 [scrollbar-width:thin]">
+        <div className="-mx-4 mt-6 overflow-x-auto px-4 pb-2 lg:mt-8 [scrollbar-width:thin]">
           <ul className="flex snap-x snap-mandatory gap-4">
             {featured.map((product) => (
               <li

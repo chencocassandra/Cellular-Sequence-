@@ -36,12 +36,12 @@ export function HomeStartHere() {
   return (
     <>
       <section className="border-b border-line bg-ivory">
-        <div className="mx-auto max-w-7xl px-4 py-16 lg:px-6">
+        <div className="mx-auto max-w-7xl px-4 py-10 lg:px-6 lg:py-12">
           <p className="text-[11px] uppercase tracking-[0.22em] text-bronze">The protocol</p>
           <h2 className="mt-2 font-serif text-3xl md:text-4xl">How it works</h2>
-          <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-6 grid gap-3 sm:grid-cols-2 lg:mt-8 lg:grid-cols-4">
             {steps.map((step) => (
-              <li key={step.n} className="border border-line bg-paper p-6">
+              <li key={step.n} className="border border-line bg-paper p-4 sm:p-5">
                 <p className="text-[11px] uppercase tracking-[0.16em] text-bronze">{step.n}</p>
                 <h3 className="mt-3 font-serif text-2xl">{step.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-ink-soft">{step.body}</p>
@@ -58,10 +58,10 @@ export function HomeStartHere() {
       </section>
 
       <section className="border-b border-line bg-paper">
-        <div className="mx-auto max-w-7xl px-4 py-16 lg:px-6">
+        <div className="mx-auto max-w-7xl px-4 py-10 lg:px-6 lg:py-12">
           <p className="text-[11px] uppercase tracking-[0.22em] text-bronze">Start here</p>
           <h2 className="mt-2 font-serif text-3xl md:text-4xl">Shop by concern</h2>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:mt-8 lg:grid-cols-4">
             {concernHubs.map((hub) => (
               <Link
                 key={hub.slug}
@@ -79,7 +79,7 @@ export function HomeStartHere() {
       </section>
 
       <section className="border-b border-line bg-ivory">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-4 py-16 md:flex-row md:items-center lg:px-6">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-5 px-4 py-8 md:flex-row md:items-center lg:px-6 lg:py-10">
           <div>
             <p className="text-[11px] uppercase tracking-[0.22em] text-bronze">Quiz</p>
             <h2 className="mt-2 font-serif text-3xl md:text-4xl">Not sure where to start?</h2>

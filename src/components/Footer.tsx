@@ -16,8 +16,8 @@ const legalLinks = [
 
 export function Footer() {
   return (
-    <footer className="mt-20 border-t border-line bg-ink text-paper">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-2 lg:grid-cols-4 lg:px-6">
+    <footer className="border-t border-line bg-ink text-paper">
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 md:grid-cols-2 lg:grid-cols-4 lg:px-6 lg:py-12">
         <div>
           <Link href="/" aria-label={`${SITE_NAME} home`}>
             <BrandLogo inverted showTagline={false} />
@@ -82,7 +82,7 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-white/10 px-4 py-12 lg:px-6">
+      <div className="border-t border-white/10 px-4 py-8 lg:px-6 lg:py-10">
         <div className="mx-auto max-w-7xl">
           <EmailSignup variant="footer" />
         </div>
