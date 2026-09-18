@@ -36,6 +36,8 @@ export function ProductPhoto({
 }) {
   const isVial = src.includes("product-vial");
   const overlayLabel = Boolean(labelName) && isVial;
+  const hasPrintedLogo =
+    /product-(ghk-cu|matrikine|snap-8|pdrn-|multi-peptide|nad-egf)/.test(src);
   return (
     <div className={`relative overflow-hidden ${isVial ? "bg-black" : "bg-[#f3eee4]"} ${className}`}>
       <Image
@@ -54,7 +56,7 @@ export function ProductPhoto({
           footer={labelFooter}
           size={brandSize}
         />
-      ) : (
+      ) : hasPrintedLogo ? null : (
         <ProductBrandChip />
       )}
     </div>
