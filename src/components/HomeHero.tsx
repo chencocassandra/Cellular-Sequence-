@@ -2,42 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, type CSSProperties } from "react";
-
-const floaters = [
-  {
-    src: "/images/product-ghk-cu.png",
-    alt: "GHK-Cu copper peptide serum vial",
-    className: "left-[8%] top-[12%] w-[38%] sm:w-[32%]",
-    duration: "4.6s",
-    delay: "0s",
-    speed: 0.035,
-  },
-  {
-    src: "/images/product-snap-8-serum.png",
-    alt: "SNAP-8 peptide serum vial",
-    className: "right-[6%] top-[4%] w-[36%] sm:w-[30%]",
-    duration: "5.4s",
-    delay: "0.9s",
-    speed: -0.025,
-  },
-  {
-    src: "/images/product-nad-patches.png",
-    alt: "NAD+ support patches",
-    className: "bottom-[8%] left-[18%] w-[42%] sm:w-[36%]",
-    duration: "6s",
-    delay: "1.6s",
-    speed: 0.05,
-  },
-  {
-    src: "/images/product-needling-pen-v2.jpg",
-    alt: "Professional facial needling pen",
-    className: "bottom-[18%] right-[10%] w-[28%] sm:w-[24%]",
-    duration: "5s",
-    delay: "0.4s",
-    speed: -0.04,
-  },
-];
+import { useEffect, useRef } from "react";
 
 export function HomeHeroVisual() {
   const layerRef = useRef<HTMLDivElement>(null);
@@ -48,15 +13,13 @@ export function HomeHeroVisual() {
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (motion.matches) return;
 
-    const nodes = Array.from(layer.querySelectorAll<HTMLElement>("[data-parallax]"));
+    const node = layer.querySelector<HTMLElement>("[data-parallax]");
+    if (!node) return;
     let frame = 0;
 
     function update() {
-      const y = window.scrollY;
-      for (const node of nodes) {
-        const speed = Number(node.dataset.parallax) || 0;
-        node.style.transform = `translate3d(0, ${y * speed}px, 0)`;
-      }
+      const speed = Number(node.dataset.parallax) || 0;
+      node.style.transform = `translate3d(0, ${window.scrollY * speed}px, 0)`;
     }
 
     function onScroll() {
@@ -73,35 +36,26 @@ export function HomeHeroVisual() {
   }, []);
 
   return (
-    <div ref={layerRef} className="relative mx-auto aspect-[4/5] w-full max-w-lg lg:aspect-[5/6]">
-      <div className="absolute inset-6 bg-[#f3eee4] sm:inset-8" />
-      {floaters.map((item) => (
-        <div
-          key={item.src}
-          data-parallax={item.speed}
-          className={`absolute will-change-transform ${item.className}`}
-        >
-          <div
-            className="float-bob relative aspect-[3/4] overflow-hidden bg-paper shadow-[0_18px_40px_rgba(28,25,21,0.12)]"
-            style={
-              {
-                "--float-duration": item.duration,
-                "--float-delay": item.delay,
-              } as CSSProperties
-            }
-          >
-            <Image
-              src={item.src}
-              alt={item.alt}
-              fill
-              priority
-              unoptimized
-              sizes="(min-width: 1024px) 18vw, 40vw"
-              className="object-contain"
-            />
-          </div>
-        </div>
-      ))}
+    <div ref={layerRef} className="relative aspect-[4/3] w-full overflow-hidden">
+      <div data-parallax="0.035" className="absolute inset-[-6%] will-change-transform">
+        <Image
+          src="/images/hero-protocol-kit.jpg"
+          alt="Cellular Sequence protocol kit: peptide serums, needling pen, cooling case, gloves and aftercare"
+          fill
+          priority
+          unoptimized
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          className="hero-photo-fade object-cover"
+        />
+      </div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-paper/70 via-transparent to-paper/20"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-paper/15 via-transparent to-paper/55"
+      />
     </div>
   );
 }
