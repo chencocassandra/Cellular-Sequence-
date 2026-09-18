@@ -327,14 +327,14 @@ export const products: Product[] = [
     labelDetail: "Scalp set",
   },
   {
-    slug: "longevity-protocol",
-    name: "Longevity Protocol",
+    slug: "cellular-nad-protocol",
+    name: "Cellular NAD+ Protocol",
     category: "bundles",
     price: "$89",
     summary: "NAD+ support patches and antioxidant longevity complex.",
     badge: "Bundle",
     image: "/images/product-nad-patches.png",
-    labelName: "Longevity Protocol",
+    labelName: "NAD+ Protocol",
     labelDetail: "Patch + nutrients",
   },
 ];

@@ -29,6 +29,11 @@ const nextConfig: NextConfig = {
         destination: "/about/cellular-sequence",
         permanent: true,
       },
+      {
+        source: "/shop/longevity-protocol",
+        destination: "/shop/cellular-nad-protocol",
+        permanent: true,
+      },
       { source: "/skin/ghk-cu", destination: "/skin/peptide-serums", permanent: true },
     ];
   },

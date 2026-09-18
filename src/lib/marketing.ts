@@ -77,7 +77,7 @@ export const marketing = {
   openGraphImage: {
     // PLACEHOLDER: dedicated square/landscape share image when you have one.
     path: "/images/logo-cs-wordmark.png",
-    alt: "Cellular Sequence — science, peptides, longevity",
+    alt: "Cellular Sequence — peptide encyclopaedia and cosmetic shop",
   },
 } as const;
 

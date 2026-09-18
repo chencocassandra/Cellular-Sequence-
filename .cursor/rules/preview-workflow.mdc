@@ -8,6 +8,6 @@ alwaysApply: true
 - Default working branch is `preview`. Create it from `main` if it does not exist.
 - When the user wants to test first (“test this”, “preview”, “try this”, “don’t go live yet”), commit and push to `preview` only.
 - Never push to `main` unless they explicitly say “push to main” or “make this live”.
-- After pushing `preview`, state the branch name and remind them Vercel will make a preview URL under Deployments. Canonical host is `https://www.cellularsequence.com` once DNS is attached. Do not use `thelongevitycode.shop`.
+- After pushing `preview`, state the branch name and remind them Vercel will make a preview URL under Deployments. Canonical host is `https://www.cellularsequence.com` once DNS is attached.
 - When they confirm the preview looks good, merge `preview` into `main` and push `main` only if they asked to go live. If GitHub auth fails, give them the exact commands.
 - Do not use `git push --force` on `main`.
